@@ -28,7 +28,7 @@
 	},
 	"scripts": {
 		"phpunit": [
-			"./vendor/phpunit/phpunit/phpunit --colors=always"
+			"https://rlrebollos.github.io/Entheos-Forum/vendor/phpunit/phpunit/phpunit --colors=always"
 		],
 		"test-php": [
 			"@composer phpunit"

@@ -23,7 +23,7 @@
 			"jquery",
 			"../version",
 			"../effect",
-			"./effect-scale"
+			"https://rlrebollos.github.io/Entheos-Forum/effect-scale"
 		], factory );
 	} else {
 

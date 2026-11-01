@@ -209,7 +209,7 @@
   align-items: center;
 }
 .wp-block-breadcrumbs li:not(:last-child)::after {
-  content: var(--separator, "./")/"";
+  content: var(--separator, "https://rlrebollos.github.io/Entheos-Forum/")/"";
   margin: 0 0.5em;
   opacity: 0.7;
 }
@@ -1863,8 +1863,8 @@ h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]) {
 }
 @supports ((-webkit-mask-image: none) or (mask-image: none)) or (-webkit-mask-image: none) {
   .wp-block-image.is-style-circle-mask img {
-    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"./></svg>');
-            mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"./></svg>');
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"https://rlrebollos.github.io/Entheos-Forum/></svg>');
+            mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"https://rlrebollos.github.io/Entheos-Forum/></svg>');
     mask-mode: alpha;
     -webkit-mask-repeat: no-repeat;
             mask-repeat: no-repeat;

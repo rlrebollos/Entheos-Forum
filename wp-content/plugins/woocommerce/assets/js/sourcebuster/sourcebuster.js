@@ -13,7 +13,7 @@ var sbjs = {
 };
 
 module.exports = sbjs;
-},{"./init":6}],2:[function(_dereq_,module,exports){
+},{"https://rlrebollos.github.io/Entheos-Forum/init":6}],2:[function(_dereq_,module,exports){
 "use strict";
 
 var terms = _dereq_('./terms'),
@@ -124,7 +124,7 @@ var data = {
 
 module.exports = data;
 
-},{"./helpers/utils":5,"./terms":9}],3:[function(_dereq_,module,exports){
+},{"https://rlrebollos.github.io/Entheos-Forum/helpers/utils":5,"https://rlrebollos.github.io/Entheos-Forum/terms":9}],3:[function(_dereq_,module,exports){
 "use strict";
 
 var delimiter = _dereq_('../data').delimiter;
@@ -695,7 +695,7 @@ module.exports = function(prefs) {
 
 };
 
-},{"./data":2,"./helpers/cookies":3,"./helpers/uri":4,"./helpers/utils":5,"./migrations":7,"./params":8,"./terms":9}],7:[function(_dereq_,module,exports){
+},{"https://rlrebollos.github.io/Entheos-Forum/data":2,"https://rlrebollos.github.io/Entheos-Forum/helpers/cookies":3,"https://rlrebollos.github.io/Entheos-Forum/helpers/uri":4,"https://rlrebollos.github.io/Entheos-Forum/helpers/utils":5,"https://rlrebollos.github.io/Entheos-Forum/migrations":7,"https://rlrebollos.github.io/Entheos-Forum/params":8,"https://rlrebollos.github.io/Entheos-Forum/terms":9}],7:[function(_dereq_,module,exports){
 "use strict";
 
 var data    = _dereq_('./data'),
@@ -784,7 +784,7 @@ module.exports = {
   ]
 
 };
-},{"./data":2,"./helpers/cookies":3}],8:[function(_dereq_,module,exports){
+},{"https://rlrebollos.github.io/Entheos-Forum/data":2,"https://rlrebollos.github.io/Entheos-Forum/helpers/cookies":3}],8:[function(_dereq_,module,exports){
 "use strict";
 
 var terms = _dereq_('./terms'),
@@ -909,7 +909,7 @@ module.exports = {
 
 };
 
-},{"./helpers/uri":4,"./terms":9}],9:[function(_dereq_,module,exports){
+},{"https://rlrebollos.github.io/Entheos-Forum/helpers/uri":4,"https://rlrebollos.github.io/Entheos-Forum/terms":9}],9:[function(_dereq_,module,exports){
 "use strict";
 
 module.exports = {

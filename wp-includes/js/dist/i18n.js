@@ -119,7 +119,7 @@ var wp;
     "(": 9,
     "!": 8,
     "*": 7,
-    "./": 7,
+    "https://rlrebollos.github.io/Entheos-Forum/": 7,
     "%": 7,
     "+": 6,
     "-": 6,
@@ -180,7 +180,7 @@ var wp;
     "*": function(a, b) {
       return a * b;
     },
-    "./": function(a, b) {
+    "https://rlrebollos.github.io/Entheos-Forum/": function(a, b) {
       return a / b;
     },
     "%": function(a, b) {

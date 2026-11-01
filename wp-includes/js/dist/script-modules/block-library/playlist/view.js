@@ -166,7 +166,7 @@ function B(e3) {
   return t2;
 }
 function S(e3) {
-  return String(e3 ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"./g, "&quot;").replace(/'/g, "&#39;");
+  return String(e3 ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"https://rlrebollos.github.io/Entheos-Forum/g, "&quot;").replace(/'/g, "&#39;");
 }
 function W(e3) {
   return S(typeof e3 == "number" ? `${e3}px` : e3);
@@ -239,7 +239,7 @@ function V(e3) {
 }
 function R(e3) {
   if (!e3) return "Audio";
-  let t2 = e3.split("./");
+  let t2 = e3.split("https://rlrebollos.github.io/Entheos-Forum/");
   return t2[t2.length - 1].split(".")[0].replace(/[-_]/g, " ").replace(/\b\w/g, (r2) => r2.toUpperCase());
 }
 function j2(e3) {
@@ -518,9 +518,9 @@ function I(e3) {
   let t2 = H2();
   return L[t2];
 }
-var z = { url: "", height: 64, samples: 1800, preload: "metadata", crossOrigin: null, audioMode: "self", playbackRate: 1, showPlaybackSpeed: false, playbackRates: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2], buttonAlign: "auto", layout: "default", buttonStyle: "circle", buttonSize: null, buttonRadius: null, waveformStyle: "mirror", barWidth: 2, barSpacing: 0, barRadius: 1, waveformGradient: "vertical", colorPreset: null, waveformColor: null, progressColor: null, autoplay: false, showControls: true, showInfo: true, showTime: true, showHoverTime: false, seekHandle: false, showBPM: false, bpm: null, singlePlay: true, playOnSeek: true, enableMediaSession: true, markers: [], showMarkers: true, accessibleSeek: true, seekLabel: null, seekValueText: null, title: null, artist: null, artwork: null, artworkPosition: "info", album: "", errorText: "Unable to load audio", playPauseLabel: "Play/Pause", speedLabel: "Playback speed", artworkAlt: "Album artwork", unknownTrackText: "Unknown Track", playIcon: '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M8 5v14l11-7z"./></svg>', pauseIcon: '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M6 4h4v16H6zM14 4h4v16h-4z"./></svg>', onLoad: null, onPlay: null, onPause: null, onEnd: null, onError: null, onTimeUpdate: null, onNextTrack: null, onPreviousTrack: null };
+var z = { url: "", height: 64, samples: 1800, preload: "metadata", crossOrigin: null, audioMode: "self", playbackRate: 1, showPlaybackSpeed: false, playbackRates: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2], buttonAlign: "auto", layout: "default", buttonStyle: "circle", buttonSize: null, buttonRadius: null, waveformStyle: "mirror", barWidth: 2, barSpacing: 0, barRadius: 1, waveformGradient: "vertical", colorPreset: null, waveformColor: null, progressColor: null, autoplay: false, showControls: true, showInfo: true, showTime: true, showHoverTime: false, seekHandle: false, showBPM: false, bpm: null, singlePlay: true, playOnSeek: true, enableMediaSession: true, markers: [], showMarkers: true, accessibleSeek: true, seekLabel: null, seekValueText: null, title: null, artist: null, artwork: null, artworkPosition: "info", album: "", errorText: "Unable to load audio", playPauseLabel: "Play/Pause", speedLabel: "Playback speed", artworkAlt: "Album artwork", unknownTrackText: "Unknown Track", playIcon: '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M8 5v14l11-7z"https://rlrebollos.github.io/Entheos-Forum/></svg>', pauseIcon: '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M6 4h4v16H6zM14 4h4v16h-4z"https://rlrebollos.github.io/Entheos-Forum/></svg>', onLoad: null, onPlay: null, onPause: null, onEnd: null, onError: null, onTimeUpdate: null, onNextTrack: null, onPreviousTrack: null };
 var it = { bars: { barWidth: 3, barSpacing: 1 }, mirror: { barWidth: 2, barSpacing: 2 }, line: { barWidth: 2, barSpacing: 0 }, blocks: { barWidth: 4, barSpacing: 2 }, dots: { barWidth: 3, barSpacing: 3 }, seekbar: { barWidth: 1, barSpacing: 0 } };
-var gt = "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#71717a" fill-opacity="0.15"./><g fill="none" stroke="#a1a1aa" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="17" r="2.2"./><circle cx="17" cy="15" r="2.2"./><path d="M10.2 17V7l9-1.6v9"./></g></svg>');
+var gt = "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#71717a" fill-opacity="0.15"https://rlrebollos.github.io/Entheos-Forum/><g fill="none" stroke="#a1a1aa" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="17" r="2.2"https://rlrebollos.github.io/Entheos-Forum/><circle cx="17" cy="15" r="2.2"https://rlrebollos.github.io/Entheos-Forum/><path d="M10.2 17V7l9-1.6v9"https://rlrebollos.github.io/Entheos-Forum/></g></svg>');
 var st = 5;
 var rt = 10;
 var yt = 'button, a[href], input, [role="slider"]';

@@ -22,7 +22,7 @@
 		// AMD. Register as an anonymous module.
 		define( [
 			"jquery",
-			"./mouse",
+			"https://rlrebollos.github.io/Entheos-Forum/mouse",
 			"../data",
 			"../scroll-parent",
 			"../version",

@@ -28,7 +28,7 @@
 	"extra": {
 		"mozart": {
 			"dep_namespace": "Automattic\\WooCommerce\\Vendor\\",
-			"dep_directory": "./packages/",
+			"dep_directory": "https://rlrebollos.github.io/Entheos-Forum/packages/",
 			"packages": [
 				"psr/container",
 				"mobiledetect/mobiledetectlib",
@@ -49,7 +49,7 @@
 					}
 				}
 			},
-			"classmap_directory": "./classes/",
+			"classmap_directory": "https://rlrebollos.github.io/Entheos-Forum/classes/",
 			"classmap_prefix": "WC_Vendor_",
 			"delete_vendor_directories": true
 		} 

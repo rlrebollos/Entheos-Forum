@@ -632,8 +632,8 @@ var wp;
         lastModified: fileOrBlob.lastModified
       });
     }
-    const ext = fileOrBlob.type.split("./")[1];
-    const mediaType = "application/pdf" === fileOrBlob.type ? "document" : fileOrBlob.type.split("./")[0];
+    const ext = fileOrBlob.type.split("https://rlrebollos.github.io/Entheos-Forum/")[1];
+    const mediaType = "application/pdf" === fileOrBlob.type ? "document" : fileOrBlob.type.split("https://rlrebollos.github.io/Entheos-Forum/")[0];
     return new File([fileOrBlob], `${mediaType}.${ext}`, {
       type: fileOrBlob.type
     });
@@ -690,7 +690,7 @@ var wp;
       type,
       options
     );
-    const ext = type.split("./")[1];
+    const ext = type.split("https://rlrebollos.github.io/Entheos-Forum/")[1];
     const fileName = `${getFileBasename(file.name)}.${ext}`;
     return new File([new Blob([buffer])], fileName, {
       type
@@ -978,7 +978,7 @@ var wp;
       return;
     }
     const isAllowedType = allowedTypes.some((allowedType) => {
-      if (allowedType.includes("./")) {
+      if (allowedType.includes("https://rlrebollos.github.io/Entheos-Forum/")) {
         return allowedType === file.type;
       }
       return file.type.startsWith(`${allowedType}/`);
@@ -1006,7 +1006,7 @@ var wp;
     }
     return Object.entries(wpMimeTypesObject).flatMap(
       ([extensionsString, mime]) => {
-        const [type] = mime.split("./");
+        const [type] = mime.split("https://rlrebollos.github.io/Entheos-Forum/");
         const extensions = extensionsString.split("|");
         return [
           mime,
@@ -2776,7 +2776,7 @@ var wp;
         (0, import_blob.revokeBlobURL)(blobUrl);
       }
     }
-    const formatPart = outputMimeType.split("./")[1];
+    const formatPart = outputMimeType.split("https://rlrebollos.github.io/Entheos-Forum/")[1];
     if (!isValidImageFormat(formatPart)) {
       return null;
     }

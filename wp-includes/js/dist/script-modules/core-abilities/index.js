@@ -42,7 +42,7 @@ var require_url = __commonJS({
 var import_api_fetch = __toESM(require_api_fetch(), 1);
 var import_url = __toESM(require_url(), 1);
 import { registerAbility, registerAbilityCategory } from "@wordpress/abilities";
-var API_BASE = "./wp-abilities/v1";
+var API_BASE = "https://rlrebollos.github.io/Entheos-Forum/wp-abilities/v1";
 var ABILITIES_ENDPOINT = `${API_BASE}/abilities`;
 var CATEGORIES_ENDPOINT = `${API_BASE}/categories`;
 function createServerCallback(ability) {

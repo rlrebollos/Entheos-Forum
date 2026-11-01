@@ -42,7 +42,7 @@ jQuery( function( $ ) {
 			return;
 		}
 
-		$( 'a[href^="' + wc_geolocation_params.home_url + '"]:not(a[href*="v="]), a[href^="./"]:not(a[href*="v="])' ).each( function() {
+		$( 'a[href^="' + wc_geolocation_params.home_url + '"]:not(a[href*="v="]), a[href^="https://rlrebollos.github.io/Entheos-Forum/"]:not(a[href*="v="])' ).each( function() {
 			var $this      = $( this ),
 				href       = $this.attr( 'href' ),
 				href_parts = href.split( '#' );

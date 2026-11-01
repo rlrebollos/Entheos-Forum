@@ -74,7 +74,7 @@ __( "%s coming soon", "jetpack-videopress-pkg" );
 /* translators: %s: Name of the current feature */
 __( "%s not included", "jetpack-videopress-pkg" );
 __( "Reduced pricing is a limited offer for the first year and renews at regular price.", "jetpack-videopress-pkg" );
-__( "./month, paid yearly", "jetpack-videopress-pkg" );
+__( "https://rlrebollos.github.io/Entheos-Forum/month, paid yearly", "jetpack-videopress-pkg" );
 __( "% off", "jetpack-videopress-pkg" );
 __( "% off the first year", "jetpack-videopress-pkg" );
 __( "Products", "jetpack-videopress-pkg" );
@@ -155,7 +155,7 @@ __( "Connecting…", "jetpack-videopress-pkg" );
 __( "Connect", "jetpack-videopress-pkg" );
 /* translators: %1$s: the discount amount */
 __( "%1$s%% off", "jetpack-videopress-pkg" );
-__( "./month, billed yearly", "jetpack-videopress-pkg" );
+__( "https://rlrebollos.github.io/Entheos-Forum/month, billed yearly", "jetpack-videopress-pkg" );
 __( "Get VideoPress", "jetpack-videopress-pkg" );
 __( "Start for free", "jetpack-videopress-pkg" );
 __( "Upload one video", "jetpack-videopress-pkg" );

@@ -2528,8 +2528,8 @@
                     "Symfony\\Component\\Validator\\": ""
                 },
                 "exclude-from-classmap": [
-                    "./Tests/",
-                    "./Resources/bin/"
+                    "https://rlrebollos.github.io/Entheos-Forum/Tests/",
+                    "https://rlrebollos.github.io/Entheos-Forum/Resources/bin/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",

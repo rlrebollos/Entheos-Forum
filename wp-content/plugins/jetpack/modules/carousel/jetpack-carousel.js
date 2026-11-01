@@ -15,7 +15,7 @@
 			text = text + '';
 			text = text.replace( /'/g, '&#8217;' ).replace( /&#039;/g, '&#8217;' );
 			text = text
-				.replace( /"./g, '&#8221;' )
+				.replace( /"https://rlrebollos.github.io/Entheos-Forum/g, '&#8221;' )
 				.replace( /&#034;/g, '&#8221;' )
 				.replace( /&quot;/g, '&#8221;' )
 				.replace( /[\u201D]/g, '&#8221;' );

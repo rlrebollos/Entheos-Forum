@@ -27,8 +27,8 @@
 
 			// These are only for backcompat
 			// TODO: Remove after 1.12
-			"./controlgroup",
-			"./checkboxradio",
+			"https://rlrebollos.github.io/Entheos-Forum/controlgroup",
+			"https://rlrebollos.github.io/Entheos-Forum/checkboxradio",
 
 			"../keycode",
 			"../widget"

@@ -2081,7 +2081,7 @@ jQuery(function($) {
 			$('.webdav-'+instance_id+' .updraft_webdav_host_error').hide();
 			if ($(this).val().indexOf("@") >= 0) {
 				$(this).val($(this).val().replaceAll('@', encodeURIComponent('@')));
-			} else if ($(this).val().indexOf("./") >= 0) {
+			} else if ($(this).val().indexOf("https://rlrebollos.github.io/Entheos-Forum/") >= 0) {
 				$(this).val($(this).val().replaceAll('/', ''));
 				$('.webdav-'+instance_id+' .updraft_webdav_host_error').show();
 			}

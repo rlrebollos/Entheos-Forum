@@ -1141,7 +1141,7 @@ var require_util = __commonJS({
     }
     exports.escapeJsonPointer = escapeJsonPointer;
     function unescapeJsonPointer(str) {
-      return str.replace(/~1/g, "./").replace(/~0/g, "~");
+      return str.replace(/~1/g, "https://rlrebollos.github.io/Entheos-Forum/").replace(/~0/g, "~");
     }
     exports.unescapeJsonPointer = unescapeJsonPointer;
     function eachItem(xs, f) {
@@ -1211,9 +1211,9 @@ var require_util = __commonJS({
     function getErrorPath(dataProp, dataPropType, jsPropertySyntax) {
       if (dataProp instanceof codegen_1.Name) {
         const isNumber = dataPropType === Type.Num;
-        return jsPropertySyntax ? isNumber ? (0, codegen_1._)`"[" + ${dataProp} + "]"` : (0, codegen_1._)`"['" + ${dataProp} + "']"` : isNumber ? (0, codegen_1._)`"./" + ${dataProp}` : (0, codegen_1._)`"./" + ${dataProp}.replace(/~/g, "~0").replace(/\\//g, "~1")`;
+        return jsPropertySyntax ? isNumber ? (0, codegen_1._)`"[" + ${dataProp} + "]"` : (0, codegen_1._)`"['" + ${dataProp} + "']"` : isNumber ? (0, codegen_1._)`"https://rlrebollos.github.io/Entheos-Forum/" + ${dataProp}` : (0, codegen_1._)`"https://rlrebollos.github.io/Entheos-Forum/" + ${dataProp}.replace(/~/g, "~0").replace(/\\//g, "~1")`;
       }
-      return jsPropertySyntax ? (0, codegen_1.getProperty)(dataProp).toString() : "./" + escapeJsonPointer(dataProp);
+      return jsPropertySyntax ? (0, codegen_1.getProperty)(dataProp).toString() : "https://rlrebollos.github.io/Entheos-Forum/" + escapeJsonPointer(dataProp);
     }
     exports.getErrorPath = getErrorPath;
     function checkStrictMode(it, msg, mode = it.opts.strictSchema) {
@@ -2152,15 +2152,15 @@ var require_json_schema_traverse = __commonJS({
           if (Array.isArray(sch)) {
             if (key in traverse.arrayKeywords) {
               for (var i = 0; i < sch.length; i++)
-                _traverse(opts, pre, post, sch[i], jsonPtr + "./" + key + "./" + i, rootSchema, jsonPtr, key, schema, i);
+                _traverse(opts, pre, post, sch[i], jsonPtr + "https://rlrebollos.github.io/Entheos-Forum/" + key + "https://rlrebollos.github.io/Entheos-Forum/" + i, rootSchema, jsonPtr, key, schema, i);
             }
           } else if (key in traverse.propsKeywords) {
             if (sch && typeof sch == "object") {
               for (var prop in sch)
-                _traverse(opts, pre, post, sch[prop], jsonPtr + "./" + key + "./" + escapeJsonPtr(prop), rootSchema, jsonPtr, key, schema, prop);
+                _traverse(opts, pre, post, sch[prop], jsonPtr + "https://rlrebollos.github.io/Entheos-Forum/" + key + "https://rlrebollos.github.io/Entheos-Forum/" + escapeJsonPtr(prop), rootSchema, jsonPtr, key, schema, prop);
             }
           } else if (key in traverse.keywords || opts.allKeys && !(key in traverse.skipKeywords)) {
-            _traverse(opts, pre, post, sch, jsonPtr + "./" + key, rootSchema, jsonPtr, key, schema);
+            _traverse(opts, pre, post, sch, jsonPtr + "https://rlrebollos.github.io/Entheos-Forum/" + key, rootSchema, jsonPtr, key, schema);
           }
         }
         post(schema, jsonPtr, rootSchema, parentJsonPtr, parentKeyword, parentSchema, keyIndex);
@@ -2797,7 +2797,7 @@ var require_validate = __commonJS({
       let data;
       if ($data === "")
         return names_1.default.rootData;
-      if ($data[0] === "./") {
+      if ($data[0] === "https://rlrebollos.github.io/Entheos-Forum/") {
         if (!JSON_POINTER.test($data))
           throw new Error(`Invalid JSON-pointer: ${$data}`);
         jsonPointer = $data;
@@ -2820,7 +2820,7 @@ var require_validate = __commonJS({
           return data;
       }
       let expr = data;
-      const segments = jsonPointer.split("./");
+      const segments = jsonPointer.split("https://rlrebollos.github.io/Entheos-Forum/");
       for (const segment of segments) {
         if (segment) {
           data = (0, codegen_1._)`${data}${(0, codegen_1.getProperty)((0, util_1.unescapeJsonPointer)(segment))}`;
@@ -3065,9 +3065,9 @@ var require_compile = __commonJS({
     ]);
     function getJsonPointer(parsedRef, { baseId, schema, root }) {
       var _a;
-      if (((_a = parsedRef.fragment) === null || _a === void 0 ? void 0 : _a[0]) !== "./")
+      if (((_a = parsedRef.fragment) === null || _a === void 0 ? void 0 : _a[0]) !== "https://rlrebollos.github.io/Entheos-Forum/")
         return;
-      for (const part of parsedRef.fragment.slice(1).split("./")) {
+      for (const part of parsedRef.fragment.slice(1).split("https://rlrebollos.github.io/Entheos-Forum/")) {
         if (typeof schema === "boolean")
           return;
         const partSchema = schema[(0, util_1.unescapeFragment)(part)];
@@ -3247,8 +3247,8 @@ var require_utils = __commonJS({
         if (len === 1) {
           if (input === ".") {
             break;
-          } else if (input === "./") {
-            output.push("./");
+          } else if (input === "https://rlrebollos.github.io/Entheos-Forum/") {
+            output.push("https://rlrebollos.github.io/Entheos-Forum/");
             break;
           } else {
             output.push(input);
@@ -3258,42 +3258,42 @@ var require_utils = __commonJS({
           if (input[0] === ".") {
             if (input[1] === ".") {
               break;
-            } else if (input[1] === "./") {
+            } else if (input[1] === "https://rlrebollos.github.io/Entheos-Forum/") {
               input = input.slice(2);
               continue;
             }
-          } else if (input[0] === "./") {
-            if (input[1] === "." || input[1] === "./") {
-              output.push("./");
+          } else if (input[0] === "https://rlrebollos.github.io/Entheos-Forum/") {
+            if (input[1] === "." || input[1] === "https://rlrebollos.github.io/Entheos-Forum/") {
+              output.push("https://rlrebollos.github.io/Entheos-Forum/");
               break;
             }
           }
         } else if (len === 3) {
-          if (input === "./..") {
+          if (input === "https://rlrebollos.github.io/Entheos-Forum/..") {
             if (output.length !== 0) {
               output.pop();
             }
-            output.push("./");
+            output.push("https://rlrebollos.github.io/Entheos-Forum/");
             break;
           }
         }
         if (input[0] === ".") {
           if (input[1] === ".") {
-            if (input[2] === "./") {
+            if (input[2] === "https://rlrebollos.github.io/Entheos-Forum/") {
               input = input.slice(3);
               continue;
             }
-          } else if (input[1] === "./") {
+          } else if (input[1] === "https://rlrebollos.github.io/Entheos-Forum/") {
             input = input.slice(2);
             continue;
           }
-        } else if (input[0] === "./") {
+        } else if (input[0] === "https://rlrebollos.github.io/Entheos-Forum/") {
           if (input[1] === ".") {
-            if (input[2] === "./") {
+            if (input[2] === "https://rlrebollos.github.io/Entheos-Forum/") {
               input = input.slice(2);
               continue;
             } else if (input[2] === ".") {
-              if (input[3] === "./") {
+              if (input[3] === "https://rlrebollos.github.io/Entheos-Forum/") {
                 input = input.slice(3);
                 if (output.length !== 0) {
                   output.pop();
@@ -3303,7 +3303,7 @@ var require_utils = __commonJS({
             }
           }
         }
-        if ((nextSlash = input.indexOf("./", 1)) === -1) {
+        if ((nextSlash = input.indexOf("https://rlrebollos.github.io/Entheos-Forum/", 1)) === -1) {
           output.push(input);
           break;
         } else {
@@ -3313,7 +3313,7 @@ var require_utils = __commonJS({
       }
       return output.join("");
     }
-    var HOST_DELIMS = { "@": "%40", "./": "%2F", "?": "%3F", "#": "%23", ":": "%3A" };
+    var HOST_DELIMS = { "@": "%40", "https://rlrebollos.github.io/Entheos-Forum/": "%2F", "?": "%3F", "#": "%23", ":": "%3A" };
     var HOST_DELIM_RE = /[@/?#:]/g;
     var HOST_DELIM_NO_COLON_RE = /[@/?#]/g;
     function reescapeHostDelimiters(host, isIP) {
@@ -3471,13 +3471,13 @@ var require_schemes = __commonJS({
         component.port = void 0;
       }
       if (!component.path) {
-        component.path = "./";
+        component.path = "https://rlrebollos.github.io/Entheos-Forum/";
       }
       return component;
     }
     function wsParse(wsComponent) {
       wsComponent.secure = wsIsSecure(wsComponent);
-      wsComponent.resourceName = (wsComponent.path || "./") + (wsComponent.query ? "?" + wsComponent.query : "");
+      wsComponent.resourceName = (wsComponent.path || "https://rlrebollos.github.io/Entheos-Forum/") + (wsComponent.query ? "?" + wsComponent.query : "");
       wsComponent.path = void 0;
       wsComponent.query = void 0;
       return wsComponent;
@@ -3492,7 +3492,7 @@ var require_schemes = __commonJS({
       }
       if (wsComponent.resourceName) {
         const [path, query] = wsComponent.resourceName.split("?");
-        wsComponent.path = path && path !== "./" ? path : void 0;
+        wsComponent.path = path && path !== "https://rlrebollos.github.io/Entheos-Forum/" ? path : void 0;
         wsComponent.query = query;
         wsComponent.resourceName = void 0;
       }
@@ -3687,15 +3687,15 @@ var require_fast_uri = __commonJS({
               target.query = base.query;
             }
           } else {
-            if (relative.path[0] === "./") {
+            if (relative.path[0] === "https://rlrebollos.github.io/Entheos-Forum/") {
               target.path = removeDotSegments(relative.path);
             } else {
               if ((base.userinfo !== void 0 || base.host !== void 0 || base.port !== void 0) && !base.path) {
-                target.path = "./" + relative.path;
+                target.path = "https://rlrebollos.github.io/Entheos-Forum/" + relative.path;
               } else if (!base.path) {
                 target.path = relative.path;
               } else {
-                target.path = base.path.slice(0, base.path.lastIndexOf("./") + 1) + relative.path;
+                target.path = base.path.slice(0, base.path.lastIndexOf("https://rlrebollos.github.io/Entheos-Forum/") + 1) + relative.path;
               }
               target.path = removeDotSegments(target.path);
             }
@@ -3752,11 +3752,11 @@ var require_fast_uri = __commonJS({
       const authority = recomposeAuthority(component);
       if (authority !== void 0) {
         if (options.reference !== "suffix") {
-          uriTokens.push(".//");
+          uriTokens.push("https://rlrebollos.github.io/Entheos-Forum//");
         }
         uriTokens.push(authority);
-        if (component.path && component.path[0] !== "./") {
-          uriTokens.push("./");
+        if (component.path && component.path[0] !== "https://rlrebollos.github.io/Entheos-Forum/") {
+          uriTokens.push("https://rlrebollos.github.io/Entheos-Forum/");
         }
       }
       if (component.path !== void 0) {
@@ -3764,8 +3764,8 @@ var require_fast_uri = __commonJS({
         if (!options.absolutePath && (!schemeHandler || !schemeHandler.absolutePath)) {
           s = removeDotSegments(s);
         }
-        if (authority === void 0 && s[0] === "./" && s[1] === "./") {
-          s = "./%2F" + s.slice(2);
+        if (authority === void 0 && s[0] === "https://rlrebollos.github.io/Entheos-Forum/" && s[1] === "https://rlrebollos.github.io/Entheos-Forum/") {
+          s = "https://rlrebollos.github.io/Entheos-Forum/%2F" + s.slice(2);
         }
         uriTokens.push(s);
       }
@@ -3779,8 +3779,8 @@ var require_fast_uri = __commonJS({
     }
     var URI_PARSE = /^(?:([^#/:?]+):)?(?:\/\/((?:([^#/?@]*)@)?(\[[^#/?\]]+\]|[^#/:?]*)(?::(\d*))?))?([^#?]*)(?:\?([^#]*))?(?:#((?:.|[\n\r])*))?/u;
     function getParseError(parsed, matches) {
-      if (matches[2] !== void 0 && parsed.path && parsed.path[0] !== "./") {
-        return 'URI path must start with "./" when authority is present.';
+      if (matches[2] !== void 0 && parsed.path && parsed.path[0] !== "https://rlrebollos.github.io/Entheos-Forum/") {
+        return 'URI path must start with "https://rlrebollos.github.io/Entheos-Forum/" when authority is present.';
       }
       if (typeof parsed.port === "number" && (parsed.port < 0 || parsed.port > 65535)) {
         return "URI port is malformed.";
@@ -3804,7 +3804,7 @@ var require_fast_uri = __commonJS({
         if (options.scheme) {
           uri = options.scheme + ":" + uri;
         } else {
-          uri = ".//" + uri;
+          uri = "https://rlrebollos.github.io/Entheos-Forum//" + uri;
         }
       }
       const matches = uri.match(URI_PARSE);
@@ -4009,7 +4009,7 @@ var require_core = __commonJS({
     var deprecatedOptions = {
       ignoreKeywordsWithRef: "",
       jsPropertySyntax: "",
-      unicode: '"minLength"./"maxLength" account for unicode characters by default.'
+      unicode: '"minLength"https://rlrebollos.github.io/Entheos-Forum/"maxLength" account for unicode characters by default.'
     };
     var MAX_EXPRESSION = 200;
     function requiredOptions(o) {
@@ -4330,7 +4330,7 @@ var require_core = __commonJS({
         const rules = this.RULES.all;
         metaSchema = JSON.parse(JSON.stringify(metaSchema));
         for (const jsonPointer of keywordsJsonPointers) {
-          const segments = jsonPointer.split("./").slice(1);
+          const segments = jsonPointer.split("https://rlrebollos.github.io/Entheos-Forum/").slice(1);
           let keywords = metaSchema;
           for (const seg of segments)
             keywords = keywords[seg];
@@ -6509,7 +6509,7 @@ var require_dist = __commonJS({
     var draft4_1 = require_draft4();
     var discriminator_1 = require_discriminator();
     var draft4MetaSchema = require_json_schema_draft_04();
-    var META_SUPPORT_DATA = ["./properties"];
+    var META_SUPPORT_DATA = ["https://rlrebollos.github.io/Entheos-Forum/properties"];
     var META_SCHEMA_ID = "http://json-schema.org/draft-04/schema";
     var Ajv2 = class extends core_1.default {
       constructor(opts = {}) {
@@ -7086,7 +7086,7 @@ var require_ajv = __commonJS({
     var draft7_1 = require_draft7();
     var discriminator_1 = require_discriminator();
     var draft7MetaSchema = require_json_schema_draft_07();
-    var META_SUPPORT_DATA = ["./properties"];
+    var META_SUPPORT_DATA = ["https://rlrebollos.github.io/Entheos-Forum/properties"];
     var META_SCHEMA_ID = "http://json-schema.org/draft-07/schema";
     var Ajv2 = class extends core_1.default {
       _addVocabularies() {

@@ -35,7 +35,7 @@
 	function parseCookieValue(s) {
 		if (s.indexOf('"') === 0) {
 			// This is a quoted cookie as according to RFC2068, unescape...
-			s = s.slice(1, -1).replace(/\\"./g, '"').replace(/\\\\/g, '\\');
+			s = s.slice(1, -1).replace(/\\"https://rlrebollos.github.io/Entheos-Forum/g, '"').replace(/\\\\/g, '\\');
 		}
 
 		try {

@@ -16,7 +16,7 @@
   align-items: center;
 }
 .wp-block-breadcrumbs li:not(:last-child)::after {
-  content: var(--separator, "./")/"";
+  content: var(--separator, "https://rlrebollos.github.io/Entheos-Forum/")/"";
   margin: 0 0.5em;
   opacity: 0.7;
 }

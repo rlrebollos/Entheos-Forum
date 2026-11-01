@@ -485,7 +485,7 @@
 	 */
 	VariationForm.prototype.addSlashes = function ( string ) {
 		string = string.replace( /'/g, "\\'" );
-		string = string.replace( /"./g, '\\"' );
+		string = string.replace( /"https://rlrebollos.github.io/Entheos-Forum/g, '\\"' );
 		return string;
 	};
 

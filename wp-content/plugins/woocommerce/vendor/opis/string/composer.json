@@ -33,7 +33,7 @@
         }
     },
     "scripts": {
-      "tests": "./vendor/bin/phpunit --verbose --color"
+      "tests": "https://rlrebollos.github.io/Entheos-Forum/vendor/bin/phpunit --verbose --color"
     },
     "extra": {
         "branch-alias": {

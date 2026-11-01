@@ -3461,7 +3461,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    this.popState();return 33;
 	                    break;
 	                case 31:
-	                    yy_.yytext = strip(1, 2).replace(/\\"./g, '"');return 80;
+	                    yy_.yytext = strip(1, 2).replace(/\\"https://rlrebollos.github.io/Entheos-Forum/g, '"');return 80;
 	                    break;
 	                case 32:
 	                    yy_.yytext = strip(1, 2).replace(/\\'/g, "'");return 80;

@@ -470,7 +470,7 @@ var wp;
     W2 = getWhite(W2);
     if (!W1 || !W2) {
       throw new TypeError(
-        `Missing white point to convert ${!W1 ? "from" : ""}${!W1 && !W2 ? "/" : ""}${!W2 ? "to" : ""}`
+        `Missing white point to convert ${!W1 ? "from" : ""}${!W1 && !W2 ? "./" : ""}${!W2 ? "to" : ""}`
       );
     }
     if (W1 === W2) {
@@ -678,7 +678,7 @@ var wp;
         let { value, meta } = parseArgument(rawArg);
         if (
           // If there's a slash here, it's modern syntax
-          $0.startsWith("/") || // If there's still elements to process after there's already 3 in `args` (and the we're not dealing with "color()"), it's likely to be a legacy color like "hsl(0, 0%, 0%, 0.5)"
+          $0.startsWith("./") || // If there's still elements to process after there's already 3 in `args` (and the we're not dealing with "color()"), it's likely to be a legacy color like "hsl(0, 0%, 0%, 0.5)"
           name !== "color" && args.length === 3
         ) {
           lastAlpha = true;

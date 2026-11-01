@@ -9950,12 +9950,12 @@ var isValidParentPath = (currentPath, menuPath) => {
     return false;
   }
   const normalizePath = (path) => {
-    const normalized = path.startsWith("/") ? path : "/" + path;
-    return normalized.endsWith("/") && normalized.length > 1 ? normalized.slice(0, -1) : normalized;
+    const normalized = path.startsWith("./") ? path : "./" + path;
+    return normalized.endsWith("./") && normalized.length > 1 ? normalized.slice(0, -1) : normalized;
   };
   const normalizedCurrent = normalizePath(currentPath);
   const normalizedMenu = normalizePath(menuPath);
-  return normalizedCurrent.startsWith(normalizedMenu) && (normalizedCurrent[normalizedMenu.length] === "/" || normalizedMenu === "/");
+  return normalizedCurrent.startsWith(normalizedMenu) && (normalizedCurrent[normalizedMenu.length] === "./" || normalizedMenu === "./");
 };
 var findClosestMenuItem = (currentPath, menuItems) => {
   const exactMatch = menuItems.find((item) => item.to === currentPath);
@@ -10330,7 +10330,7 @@ function DashboardBackButton() {
     {
       __next40pxDefaultSize: true,
       className: "boot-sidebar__back-button",
-      href: dashboardLink || "/",
+      href: dashboardLink || "./",
       icon: (0, import_i18n5.isRTL)() ? chevron_right_default : chevron_left_default,
       label: (0, import_i18n5.__)("Go to the Dashboard"),
       children: (0, import_i18n5.__)("Dashboard")
@@ -10817,7 +10817,7 @@ function createPathHistory() {
   return createBrowserHistory({
     parseLocation: () => {
       const url = new URL(window.location.href);
-      const path = url.searchParams.get("p") || "/";
+      const path = url.searchParams.get("p") || "./";
       const pathHref = `${path}${url.hash}`;
       return parseHref(pathHref, window.history.state);
     },

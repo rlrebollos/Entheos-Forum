@@ -124,7 +124,7 @@ function mailchimpHandleBillingEmail(selector) {
         };
         return c.get = function (b, d) {
             return a.cookie !== c._cacheString && c._populateCache(), void 0 == c._cache[b] ? d : c._cache[b]
-        }, c.defaults = {path: "/", secure: true, samesite: 'strict'}, c.set = function (d, e, f) {
+        }, c.defaults = {path: "./", secure: true, samesite: 'strict'}, c.set = function (d, e, f) {
             switch (f = {
                 path: f && f.path || c.defaults.path,
                 domain: f && f.domain || c.defaults.domain,
@@ -170,7 +170,7 @@ mailchimpReady(function () {
     if (mailchimp_public_data.disable_carts) return;
 
     if (void 0 === a) {
-        var a = { site_url: document.location.origin, defaulted: !0, ajax_url: document.location.origin + "/wp-admin?admin-ajax.php" };
+        var a = { site_url: document.location.origin, defaulted: !0, ajax_url: document.location.origin + "./wp-admin?admin-ajax.php" };
     }
 
     try {

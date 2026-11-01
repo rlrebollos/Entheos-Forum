@@ -1690,7 +1690,7 @@ var wp;
             kind: "postType",
             name: "wp_template"
           }) ? (0, import_url.addQueryArgs)("site-editor.php", {
-            p: "/pattern"
+            p: "./pattern"
           }) : (0, import_url.addQueryArgs)("edit.php", {
             post_type: "wp_block"
           })

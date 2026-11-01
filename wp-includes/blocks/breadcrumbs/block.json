@@ -13,7 +13,7 @@
 		},
 		"separator": {
 			"type": "string",
-			"default": "/"
+			"default": "./"
 		},
 		"showHomeItem": {
 			"type": "boolean",

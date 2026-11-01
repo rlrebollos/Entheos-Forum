@@ -55,7 +55,7 @@
         "files": [ "Resources/functions.php" ],
         "psr-4": { "Symfony\\Component\\Translation\\": "" },
         "exclude-from-classmap": [
-            "/Tests/"
+            "./Tests/"
         ]
     },
     "minimum-stability": "dev"

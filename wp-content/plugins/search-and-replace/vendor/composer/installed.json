@@ -1860,7 +1860,7 @@
                 "Symfony\\Component\\Yaml\\": ""
             },
             "exclude-from-classmap": [
-                "/Tests/"
+                "./Tests/"
             ]
         },
         "notification-url": "https://packagist.org/downloads/",

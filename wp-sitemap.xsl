@@ -16,7 +16,7 @@
 	<xsl:variable name="has-changefreq" select="count( /sitemap:urlset/sitemap:url/sitemap:changefreq )" />
 	<xsl:variable name="has-priority"   select="count( /sitemap:urlset/sitemap:url/sitemap:priority )"   />
 
-	<xsl:template match="/">
+	<xsl:template match="./">
 		<html lang="en-US">
 			<head>
 				<title>XML Sitemap</title>

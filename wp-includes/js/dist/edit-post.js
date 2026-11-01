@@ -10713,7 +10713,7 @@ var wp;
         post_type: "wp_block"
       });
       const patternsUrl = (0, import_url4.addQueryArgs)("site-editor.php", {
-        p: "/pattern"
+        p: "./pattern"
       });
       return canUser("create", {
         kind: "postType",

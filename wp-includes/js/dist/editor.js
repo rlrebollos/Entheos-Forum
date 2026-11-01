@@ -2793,12 +2793,12 @@ var wp;
     }
     return state2;
   }
-  function stylesPath(state2 = "/", action) {
+  function stylesPath(state2 = "./", action) {
     switch (action.type) {
       case "SET_STYLES_PATH":
         return action.path;
       case "RESET_STYLES_NAVIGATION":
-        return "/";
+        return "./";
     }
     return state2;
   }
@@ -4656,7 +4656,7 @@ var wp;
     } else if (supports?.__experimentalSelector) {
       rootSelector = supports.__experimentalSelector;
     } else {
-      rootSelector = ".wp-block-" + name2.replace("core/", "").replace("/", "-");
+      rootSelector = ".wp-block-" + name2.replace("core/", "").replace("./", "-");
     }
     if (path === "root") {
       return rootSelector;
@@ -5320,7 +5320,7 @@ var wp;
   function flattenTree(input = {}, prefix2, token) {
     let result = [];
     Object.keys(input).forEach((key) => {
-      const newKey = prefix2 + kebabCase(key.replace("/", "-"));
+      const newKey = prefix2 + kebabCase(key.replace("./", "-"));
       const newLeaf = input[key];
       if (newLeaf instanceof Object) {
         const newPrefix = newKey + token;
@@ -8304,7 +8304,7 @@ var wp;
     }
   );
   function getStylesPath(state2) {
-    return state2.stylesPath ?? "/";
+    return state2.stylesPath ?? "./";
   }
   function getShowStylebook(state2) {
     return state2.showStylebook ?? false;
@@ -8598,7 +8598,7 @@ var wp;
         /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
           import_components.__experimentalInputControl,
           {
-            prefix: /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(import_components.__experimentalInputControlPrefixWrapper, { children: "/" }),
+            prefix: /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(import_components.__experimentalInputControlPrefixWrapper, { children: "./" }),
             suffix: /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(import_components.__experimentalInputControlSuffixWrapper, { variant: "control", children: /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
               import_components.Button,
               {
@@ -28198,7 +28198,7 @@ var wp;
     })(i3);
     if (e3 instanceof File) return { o: d2(f3 || t2(e3.name)), u: BigInt(e3.size), l: o4 };
     if (e3 instanceof Response) {
-      const n3 = e3.headers.get("content-disposition"), i4 = n3 && n3.match(/;\s*filename\*?=["']?(.*?)["']?$/i), a3 = i4 && i4[1] || e3.url && new URL(e3.url).pathname.split("/").findLast(Boolean), s3 = a3 && decodeURIComponent(a3), u3 = r4 || +e3.headers.get("content-length");
+      const n3 = e3.headers.get("content-disposition"), i4 = n3 && n3.match(/;\s*filename\*?=["']?(.*?)["']?$/i), a3 = i4 && i4[1] || e3.url && new URL(e3.url).pathname.split("./").findLast(Boolean), s3 = a3 && decodeURIComponent(a3), u3 = r4 || +e3.headers.get("content-length");
       return { o: d2(f3 || t2(s3)), u: BigInt(u3), l: o4 };
     }
     return f3 = d2(f3, void 0 !== e3 || void 0 !== r4), "string" == typeof e3 ? { o: f3, u: BigInt(t2(e3).length), l: o4 } : e3 instanceof Blob ? { o: f3, u: BigInt(e3.size), l: o4 } : e3 instanceof ArrayBuffer || ArrayBuffer.isView(e3) ? { o: f3, u: BigInt(e3.byteLength), l: o4 } : { o: f3, u: u2(e3, r4), l: o4 };
@@ -49107,7 +49107,7 @@ If there's a particular need for this, please submit a feature request at https:
       ComponentToUse,
       {
         icon: selectedIcon && isSelected2 ? selectedIcon : icon,
-        "aria-controls": identifier.replace("/", ":"),
+        "aria-controls": identifier.replace("./", ":"),
         "aria-checked": roleSupportsCheckedState(props.role) ? isSelected2 : void 0,
         onClick: () => {
           if (isSelected2) {
@@ -49485,7 +49485,7 @@ If there's a particular need for this, please submit a feature request at https:
           isActive,
           className: clsx_default("interface-complementary-area", className),
           scope,
-          id: identifier.replace("/", ":"),
+          id: identifier.replace("./", ":"),
           children: [
             /* @__PURE__ */ (0, import_jsx_runtime270.jsx)(
               complementary_area_header_default,
@@ -56039,7 +56039,7 @@ If there's a particular need for this, please submit a feature request at https:
     } else {
       _caption = title ? (0, import_i18n144.sprintf)(
         // translators: %1s: Title of a media work from Openverse; %2s: Work's licence e.g: "CC0 1.0".
-        (0, import_i18n144._x)('"%1$s"/ %2$s', "caption"),
+        (0, import_i18n144._x)('"%1$s"./ %2$s', "caption"),
         getExternalLink(
           foreignLandingUrl,
           (0, import_html_entities10.decodeEntities)(title)
@@ -56116,7 +56116,7 @@ If there's a particular need for this, please submit a feature request at https:
       { throwOnError: true }
     )
   );
-  var getMediaItemType = (mediaItem) => mediaItem?.media_type || mediaItem?.mime_type?.split("/")[0] || mediaItem?.type;
+  var getMediaItemType = (mediaItem) => mediaItem?.media_type || mediaItem?.mime_type?.split("./")[0] || mediaItem?.type;
   var getImageAttachmentIds = (mediaItems) => [
     ...new Set(
       (Array.isArray(mediaItems) ? mediaItems : [mediaItems]).filter(
@@ -56342,7 +56342,7 @@ If there's a particular need for this, please submit a feature request at https:
     const currentPostId = typeof currentPost?.id === "number" ? currentPost.id : currentPost?.wp_id;
     const postData = currentPostId ? { post: currentPostId } : {};
     (0, import_api_fetch3.default)({
-      path: "/wp/v2/media",
+      path: "./wp/v2/media",
       method: "POST",
       data: {
         url,
@@ -56845,22 +56845,22 @@ If there's a particular need for this, please submit a feature request at https:
         NavigationButtonAsItem,
         {
           icon: typography_default,
-          path: "/typography",
+          path: "./typography",
           children: (0, import_i18n147.__)("Typography")
         }
       ),
-      hasColorPanel && /* @__PURE__ */ (0, import_jsx_runtime291.jsx)(NavigationButtonAsItem, { icon: color_default, path: "/colors", children: (0, import_i18n147.__)("Colors") }),
+      hasColorPanel && /* @__PURE__ */ (0, import_jsx_runtime291.jsx)(NavigationButtonAsItem, { icon: color_default, path: "./colors", children: (0, import_i18n147.__)("Colors") }),
       hasBackgroundPanel && /* @__PURE__ */ (0, import_jsx_runtime291.jsx)(
         NavigationButtonAsItem,
         {
           icon: background_default,
-          path: "/background",
+          path: "./background",
           "aria-label": (0, import_i18n147.__)("Background styles"),
           children: (0, import_i18n147.__)("Background")
         }
       ),
-      hasShadowPanel && /* @__PURE__ */ (0, import_jsx_runtime291.jsx)(NavigationButtonAsItem, { icon: shadow_default, path: "/shadows", children: (0, import_i18n147.__)("Shadows") }),
-      hasLayoutPanel && /* @__PURE__ */ (0, import_jsx_runtime291.jsx)(NavigationButtonAsItem, { icon: layout_default, path: "/layout", children: (0, import_i18n147.__)("Layout") })
+      hasShadowPanel && /* @__PURE__ */ (0, import_jsx_runtime291.jsx)(NavigationButtonAsItem, { icon: shadow_default, path: "./shadows", children: (0, import_i18n147.__)("Shadows") }),
+      hasLayoutPanel && /* @__PURE__ */ (0, import_jsx_runtime291.jsx)(NavigationButtonAsItem, { icon: layout_default, path: "./layout", children: (0, import_i18n147.__)("Layout") })
     ] }) });
   }
   var root_menu_default = RootMenu;
@@ -57365,7 +57365,7 @@ If there's a particular need for this, please submit a feature request at https:
         children: [
           /* @__PURE__ */ (0, import_jsx_runtime296.jsx)(import_components99.CardBody, { children: /* @__PURE__ */ (0, import_jsx_runtime296.jsxs)(import_components99.__experimentalVStack, { spacing: 4, children: [
             /* @__PURE__ */ (0, import_jsx_runtime296.jsx)(import_components99.Card, { className: "global-styles-ui-screen-root__active-style-tile", children: /* @__PURE__ */ (0, import_jsx_runtime296.jsx)(import_components99.CardMedia, { className: "global-styles-ui-screen-root__active-style-tile-preview", children: /* @__PURE__ */ (0, import_jsx_runtime296.jsx)(preview_styles_default, {}) }) }),
-            hasVariations && /* @__PURE__ */ (0, import_jsx_runtime296.jsx)(import_components99.__experimentalItemGroup, { children: /* @__PURE__ */ (0, import_jsx_runtime296.jsx)(NavigationButtonAsItem, { path: "/variations", children: /* @__PURE__ */ (0, import_jsx_runtime296.jsxs)(import_components99.__experimentalHStack, { justify: "space-between", children: [
+            hasVariations && /* @__PURE__ */ (0, import_jsx_runtime296.jsx)(import_components99.__experimentalItemGroup, { children: /* @__PURE__ */ (0, import_jsx_runtime296.jsx)(NavigationButtonAsItem, { path: "./variations", children: /* @__PURE__ */ (0, import_jsx_runtime296.jsxs)(import_components99.__experimentalHStack, { justify: "space-between", children: [
               /* @__PURE__ */ (0, import_jsx_runtime296.jsx)(import_components99.FlexItem, { children: (0, import_i18n149.__)("Browse styles") }),
               /* @__PURE__ */ (0, import_jsx_runtime296.jsx)(
                 IconWithCurrentColor,
@@ -57390,7 +57390,7 @@ If there's a particular need for this, please submit a feature request at https:
                 )
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime296.jsx)(import_components99.__experimentalItemGroup, { children: /* @__PURE__ */ (0, import_jsx_runtime296.jsx)(NavigationButtonAsItem, { path: "/blocks", children: /* @__PURE__ */ (0, import_jsx_runtime296.jsxs)(import_components99.__experimentalHStack, { justify: "space-between", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime296.jsx)(import_components99.__experimentalItemGroup, { children: /* @__PURE__ */ (0, import_jsx_runtime296.jsx)(NavigationButtonAsItem, { path: "./blocks", children: /* @__PURE__ */ (0, import_jsx_runtime296.jsxs)(import_components99.__experimentalHStack, { justify: "space-between", children: [
               /* @__PURE__ */ (0, import_jsx_runtime296.jsx)(import_components99.FlexItem, { children: (0, import_i18n149.__)("Blocks") }),
               /* @__PURE__ */ (0, import_jsx_runtime296.jsx)(
                 IconWithCurrentColor,
@@ -57447,7 +57447,7 @@ If there's a particular need for this, please submit a feature request at https:
       return /* @__PURE__ */ (0, import_jsx_runtime297.jsx)(
         NavigationButtonAsItem,
         {
-          path: "/blocks/" + encodeURIComponent(name2) + "/variations/" + encodeURIComponent(style.name),
+          path: "./blocks/" + encodeURIComponent(name2) + "./variations/" + encodeURIComponent(style.name),
           children: style.label
         },
         index2
@@ -57570,7 +57570,7 @@ If there's a particular need for this, please submit a feature request at https:
     return /* @__PURE__ */ (0, import_jsx_runtime299.jsx)(
       NavigationButtonAsItem,
       {
-        path: "/blocks/" + encodeURIComponent(block.name),
+        path: "./blocks/" + encodeURIComponent(block.name),
         children: /* @__PURE__ */ (0, import_jsx_runtime299.jsxs)(import_components102.__experimentalHStack, { justify: "flex-start", children: [
           /* @__PURE__ */ (0, import_jsx_runtime299.jsx)(import_block_editor7.BlockIcon, { icon: block.icon }),
           /* @__PURE__ */ (0, import_jsx_runtime299.jsx)(import_components102.FlexItem, { children: block.title })
@@ -58173,7 +58173,7 @@ If there's a particular need for this, please submit a feature request at https:
     const [fallbackBackgroundColor] = useStyle("color.background");
     const [gradientValue] = useStyle(prefix2 + "color.gradient");
     const [color] = useStyle(prefix2 + "color.text");
-    return /* @__PURE__ */ (0, import_jsx_runtime304.jsx)(NavigationButtonAsItem, { path: parentMenu + "/typography/" + element, children: /* @__PURE__ */ (0, import_jsx_runtime304.jsxs)(import_components107.__experimentalHStack, { justify: "flex-start", children: [
+    return /* @__PURE__ */ (0, import_jsx_runtime304.jsx)(NavigationButtonAsItem, { path: parentMenu + "./typography/" + element, children: /* @__PURE__ */ (0, import_jsx_runtime304.jsxs)(import_components107.__experimentalHStack, { justify: "flex-start", children: [
       /* @__PURE__ */ (0, import_jsx_runtime304.jsx)(
         import_components107.FlexItem,
         {
@@ -58423,7 +58423,7 @@ If there's a particular need for this, please submit a feature request at https:
   // packages/global-styles-ui/build-module/font-library/api.mjs
   var import_api_fetch6 = __toESM(require_api_fetch(), 1);
   var import_core_data36 = __toESM(require_core_data(), 1);
-  var FONT_FAMILIES_URL = "/wp/v2/font-families";
+  var FONT_FAMILIES_URL = "./wp/v2/font-families";
   function invalidateFontFamilyCache(registry) {
     const { receiveEntityRecords } = registry.dispatch(import_core_data36.store);
     receiveEntityRecords(
@@ -58689,7 +58689,7 @@ If there's a particular need for this, please submit a feature request at https:
           }
           return response.blob();
         }).then((blob) => {
-          const filename = url.split("/").pop();
+          const filename = url.split("./").pop();
           const file = new File2([blob], filename, {
             type: blob.type
           });
@@ -59497,9 +59497,9 @@ If there's a particular need for this, please submit a feature request at https:
         /* @__PURE__ */ (0, import_jsx_runtime312.jsxs)(
           import_components114.Navigator,
           {
-            initialPath: libraryFontSelected ? "/fontFamily" : "/",
+            initialPath: libraryFontSelected ? "./fontFamily" : "./",
             children: [
-              /* @__PURE__ */ (0, import_jsx_runtime312.jsx)(import_components114.Navigator.Screen, { path: "/", children: /* @__PURE__ */ (0, import_jsx_runtime312.jsxs)(import_components114.__experimentalVStack, { spacing: "8", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime312.jsx)(import_components114.Navigator.Screen, { path: "./", children: /* @__PURE__ */ (0, import_jsx_runtime312.jsxs)(import_components114.__experimentalVStack, { spacing: "8", children: [
                 notice && /* @__PURE__ */ (0, import_jsx_runtime312.jsx)(
                   import_components114.Notice,
                   {
@@ -59528,7 +59528,7 @@ If there's a particular need for this, please submit a feature request at https:
                             font_card_default,
                             {
                               font: font2,
-                              navigatorPath: "/fontFamily",
+                              navigatorPath: "./fontFamily",
                               variantsText: getFontCardVariantsText(
                                 font2
                               ),
@@ -59566,7 +59566,7 @@ If there's a particular need for this, please submit a feature request at https:
                             font_card_default,
                             {
                               font: font2,
-                              navigatorPath: "/fontFamily",
+                              navigatorPath: "./fontFamily",
                               variantsText: getFontCardVariantsText(
                                 font2
                               ),
@@ -59586,7 +59586,7 @@ If there's a particular need for this, please submit a feature request at https:
                   )
                 ] })
               ] }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime312.jsxs)(import_components114.Navigator.Screen, { path: "/fontFamily", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime312.jsxs)(import_components114.Navigator.Screen, { path: "./fontFamily", children: [
                 libraryFontSelected && /* @__PURE__ */ (0, import_jsx_runtime312.jsx)(
                   ConfirmDeleteDialog,
                   {
@@ -60039,10 +60039,10 @@ If there's a particular need for this, please submit a feature request at https:
         /* @__PURE__ */ (0, import_jsx_runtime315.jsxs)(
           import_components117.Navigator,
           {
-            initialPath: "/",
+            initialPath: "./",
             className: "font-library__tabpanel-layout",
             children: [
-              /* @__PURE__ */ (0, import_jsx_runtime315.jsxs)(import_components117.Navigator.Screen, { path: "/", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime315.jsxs)(import_components117.Navigator.Screen, { path: "./", children: [
                 /* @__PURE__ */ (0, import_jsx_runtime315.jsxs)(import_components117.__experimentalHStack, { justify: "space-between", children: [
                   /* @__PURE__ */ (0, import_jsx_runtime315.jsxs)(import_components117.__experimentalVStack, { children: [
                     /* @__PURE__ */ (0, import_jsx_runtime315.jsx)(import_components117.__experimentalHeading, { level: 2, size: 13, children: selectedCollection.name }),
@@ -60113,7 +60113,7 @@ If there's a particular need for this, please submit a feature request at https:
                           font_card_default,
                           {
                             font: font2.font_family_settings,
-                            navigatorPath: "/fontFamily",
+                            navigatorPath: "./fontFamily",
                             shouldFocus: font2.font_family_settings.slug === lastSelectedFontSlug,
                             onClick: () => {
                               setSelectedFont(
@@ -60128,7 +60128,7 @@ If there's a particular need for this, please submit a feature request at https:
                   }
                 ) })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime315.jsxs)(import_components117.Navigator.Screen, { path: "/fontFamily", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime315.jsxs)(import_components117.Navigator.Screen, { path: "./fontFamily", children: [
                 /* @__PURE__ */ (0, import_jsx_runtime315.jsxs)(import_components117.Flex, { justify: "flex-start", children: [
                   /* @__PURE__ */ (0, import_jsx_runtime315.jsx)(
                     import_components117.Navigator.BackButton,
@@ -66388,7 +66388,7 @@ If there's a particular need for this, please submit a feature request at https:
           },
           {}
         ],
-        "/lib/inflate.js": [
+        "./lib/inflate.js": [
           function(require2, module2, exports2) {
             "use strict";
             var zlib_inflate = require2("./zlib/inflate");
@@ -66608,7 +66608,7 @@ If there's a particular need for this, please submit a feature request at https:
       },
       {},
       []
-    )("/lib/inflate.js");
+    )("./lib/inflate.js");
   })();
 
   // packages/global-styles-ui/build-module/font-library/lib/lib-font.browser.mjs
@@ -70723,7 +70723,7 @@ If there's a particular need for this, please submit a feature request at https:
   function FontSizes() {
     return /* @__PURE__ */ (0, import_jsx_runtime320.jsxs)(import_components123.__experimentalVStack, { spacing: 2, children: [
       /* @__PURE__ */ (0, import_jsx_runtime320.jsx)(import_components123.__experimentalHStack, { justify: "space-between", children: /* @__PURE__ */ (0, import_jsx_runtime320.jsx)(Subtitle, { level: 3, children: (0, import_i18n165.__)("Font Sizes") }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime320.jsx)(import_components123.__experimentalItemGroup, { isBordered: true, isSeparated: true, children: /* @__PURE__ */ (0, import_jsx_runtime320.jsx)(NavigationButtonAsItem, { path: "/typography/font-sizes", children: /* @__PURE__ */ (0, import_jsx_runtime320.jsxs)(import_components123.__experimentalHStack, { direction: "row", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime320.jsx)(import_components123.__experimentalItemGroup, { isBordered: true, isSeparated: true, children: /* @__PURE__ */ (0, import_jsx_runtime320.jsx)(NavigationButtonAsItem, { path: "./typography/font-sizes", children: /* @__PURE__ */ (0, import_jsx_runtime320.jsxs)(import_components123.__experimentalHStack, { direction: "row", children: [
         /* @__PURE__ */ (0, import_jsx_runtime320.jsx)(import_components123.FlexItem, { children: (0, import_i18n165.__)("Font size presets") }),
         /* @__PURE__ */ (0, import_jsx_runtime320.jsx)(icon_default, { icon: (0, import_i18n165.isRTL)() ? chevron_left_default : chevron_right_default })
       ] }) }) })
@@ -71035,7 +71035,7 @@ If there's a particular need for this, please submit a feature request at https:
         safeDefaultPaletteEnabled
       ]
     );
-    const screenPath = !name2 ? "/colors/palette" : "/blocks/" + encodeURIComponent(name2) + "/colors/palette";
+    const screenPath = !name2 ? "./colors/palette" : "./blocks/" + encodeURIComponent(name2) + "./colors/palette";
     return /* @__PURE__ */ (0, import_jsx_runtime326.jsxs)(import_components127.__experimentalVStack, { spacing: 3, children: [
       /* @__PURE__ */ (0, import_jsx_runtime326.jsx)(Subtitle, { level: 3, children: (0, import_i18n168.__)("Palette") }),
       /* @__PURE__ */ (0, import_jsx_runtime326.jsx)(import_components127.__experimentalItemGroup, { isBordered: true, isSeparated: true, children: /* @__PURE__ */ (0, import_jsx_runtime326.jsx)(NavigationButtonAsItem, { path: screenPath, children: /* @__PURE__ */ (0, import_jsx_runtime326.jsxs)(import_components127.__experimentalHStack, { direction: "row", children: [
@@ -73656,7 +73656,7 @@ If there's a particular need for this, please submit a feature request at https:
     return /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(import_jsx_runtime356.Fragment, { children: blockStyles.map((style, index2) => /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(
       import_components150.Navigator.Screen,
       {
-        path: parentMenu + "/variations/" + style.name,
+        path: parentMenu + "./variations/" + style.name,
         children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(
           screen_block_default,
           {
@@ -73749,7 +73749,7 @@ If there's a particular need for this, please submit a feature request at https:
           import_components150.Navigator,
           {
             className: "global-styles-ui-sidebar__navigator-provider",
-            initialPath: path || "/",
+            initialPath: path || "./",
             children: [
               (path || onPathChange) && /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(
                 PathSynchronizer,
@@ -73758,30 +73758,30 @@ If there's a particular need for this, please submit a feature request at https:
                   onPathChange
                 }
               ),
-              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "/", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_root_default, {}) }),
-              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "/colors", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_colors_default, {}) }),
-              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "/typography", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_typography_default, {}) }),
-              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "/typography/font-sizes", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(font_sizes_default, {}) }),
-              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "/typography/font-sizes/:origin/:slug", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(font_size_default, {}) }),
-              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "/layout", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_layout_default, {}) }),
-              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "/colors/palette", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_color_palette_default, {}) }),
-              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "/variations", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_style_variations_default, {}) }),
-              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "/css", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_css_default, {}) }),
-              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "/revisions/:revisionId?", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_revisions_default, {}) }),
-              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "/shadows", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(ScreenShadows, {}) }),
-              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "/shadows/edit/:category/:slug", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(ScreenShadowsEdit, {}) }),
-              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "/background", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_background_default, {}) }),
-              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "/typography/text", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_typography_element_default, { element: "text" }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "/typography/link", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_typography_element_default, { element: "link" }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "/typography/heading", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_typography_element_default, { element: "heading" }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "/typography/caption", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_typography_element_default, { element: "caption" }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "/typography/button", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_typography_element_default, { element: "button" }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "/blocks", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_block_list_default, {}) }),
+              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "./", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_root_default, {}) }),
+              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "./colors", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_colors_default, {}) }),
+              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "./typography", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_typography_default, {}) }),
+              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "./typography/font-sizes", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(font_sizes_default, {}) }),
+              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "./typography/font-sizes/:origin/:slug", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(font_size_default, {}) }),
+              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "./layout", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_layout_default, {}) }),
+              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "./colors/palette", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_color_palette_default, {}) }),
+              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "./variations", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_style_variations_default, {}) }),
+              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "./css", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_css_default, {}) }),
+              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "./revisions/:revisionId?", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_revisions_default, {}) }),
+              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "./shadows", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(ScreenShadows, {}) }),
+              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "./shadows/edit/:category/:slug", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(ScreenShadowsEdit, {}) }),
+              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "./background", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_background_default, {}) }),
+              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "./typography/text", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_typography_element_default, { element: "text" }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "./typography/link", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_typography_element_default, { element: "link" }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "./typography/heading", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_typography_element_default, { element: "heading" }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "./typography/caption", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_typography_element_default, { element: "caption" }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "./typography/button", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_typography_element_default, { element: "button" }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(GlobalStylesNavigationScreen, { path: "./blocks", children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(screen_block_list_default, {}) }),
               blocks.map((block) => /* @__PURE__ */ (0, import_jsx_runtime356.jsxs)(import_element197.Fragment, { children: [
                 /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(
                   GlobalStylesNavigationScreen,
                   {
-                    path: "/blocks/" + encodeURIComponent(block.name),
+                    path: "./blocks/" + encodeURIComponent(block.name),
                     children: /* @__PURE__ */ (0, import_jsx_runtime356.jsx)(
                       screen_block_default,
                       {
@@ -73797,7 +73797,7 @@ If there's a particular need for this, please submit a feature request at https:
                   ContextScreens,
                   {
                     name: block.name,
-                    parentMenu: "/blocks/" + encodeURIComponent(block.name),
+                    parentMenu: "./blocks/" + encodeURIComponent(block.name),
                     selectedViewport,
                     showResponsiveStateControls,
                     showBlockStateControls
@@ -73836,7 +73836,7 @@ If there's a particular need for this, please submit a feature request at https:
         if (path !== previousParentPath) {
           navigator2.goTo(path);
         } else if (childPath !== previousChildPath && onPathChange) {
-          onPathChange(childPath ?? "/");
+          onPathChange(childPath ?? "./");
         }
       }
     }, [
@@ -73912,10 +73912,10 @@ If there's a particular need for this, please submit a feature request at https:
       if (!selectedBlockClientId || !blockHasGlobalStyles) {
         return;
       }
-      if (!path || path !== "/blocks" && !path.startsWith("/blocks/")) {
+      if (!path || path !== "./blocks" && !path.startsWith("./blocks/")) {
         return;
       }
-      const newPath = "/blocks/" + encodeURIComponent(selectedBlockName);
+      const newPath = "./blocks/" + encodeURIComponent(selectedBlockName);
       if (newPath !== path) {
         onPathChange?.(newPath);
       }
@@ -77086,7 +77086,7 @@ If there's a particular need for this, please submit a feature request at https:
               categoryName: "block",
               additionalShortcuts: [
                 {
-                  keyCombination: { character: "/" },
+                  keyCombination: { character: "./" },
                   description: (0, import_i18n198.__)(
                     "Change the block type after adding a new paragraph."
                   ),
@@ -77597,7 +77597,7 @@ If there's a particular need for this, please submit a feature request at https:
     if (ratio === void 0 || ratio === null) {
       return NaN;
     }
-    const [a3, b3, ...rest] = String(ratio).split("/").map(Number);
+    const [a3, b3, ...rest] = String(ratio).split("./").map(Number);
     if (a3 <= 0 || b3 <= 0 || Number.isNaN(a3) || Number.isNaN(b3) || rest.length) {
       return NaN;
     }
@@ -79467,7 +79467,7 @@ If there's a particular need for this, please submit a feature request at https:
     isDebounced: true,
     async options(filterValue) {
       const options = await (0, import_api_fetch9.default)({
-        path: (0, import_url15.addQueryArgs)("/wp/v2/search", {
+        path: (0, import_url15.addQueryArgs)("./wp/v2/search", {
           per_page: SHOWN_SUGGESTIONS,
           search: filterValue,
           type: "post"
@@ -80353,7 +80353,7 @@ If there's a particular need for this, please submit a feature request at https:
   };
   var getStyleBookNavigationFromPath = (path) => {
     if (path && typeof path === "string") {
-      if (path === "/" || path.startsWith("/typography") || path.startsWith("/colors") || path.startsWith("/blocks")) {
+      if (path === "./" || path.startsWith("./typography") || path.startsWith("./colors") || path.startsWith("./blocks")) {
         return {
           top: true
         };
@@ -80588,7 +80588,7 @@ If there's a particular need for this, please submit a feature request at https:
         mediaUpload: canUserUploadMedia ? import_media_utils7.uploadMedia : void 0
       });
     }, [editorSettings2, canUserUploadMedia]);
-    const [internalPath, setInternalPath] = (0, import_element223.useState)("/");
+    const [internalPath, setInternalPath] = (0, import_element223.useState)("./");
     const section = path ?? internalPath;
     const onChangeSection = onPathChange ?? setInternalPath;
     const isSelected2 = (blockName) => {
@@ -80600,11 +80600,11 @@ If there's a particular need for this, please submit a feature request at https:
       if (STYLE_BOOK_COLOR_GROUPS.find(
         (group) => group.slug === blockName
       )) {
-        onChangeSection("/colors/palette");
+        onChangeSection("./colors/palette");
         return;
       }
       if (blockName === "typography") {
-        onChangeSection("/typography");
+        onChangeSection("./typography");
         return;
       }
       if (isBlockVariation) {
@@ -80617,15 +80617,15 @@ If there's a particular need for this, please submit a feature request at https:
     const examplesForSinglePageUse = getExamplesForSinglePageUse(examples);
     let previewCategory = null;
     let blockVariation = null;
-    if (section.includes("/colors")) {
+    if (section.includes("./colors")) {
       previewCategory = "colors";
-    } else if (section.includes("/typography")) {
+    } else if (section.includes("./typography")) {
       previewCategory = "text";
-    } else if (section.includes("/blocks")) {
+    } else if (section.includes("./blocks")) {
       previewCategory = "blocks";
-      let blockName = decodeURIComponent(section).split("/blocks/")[1];
-      if (blockName?.includes("/variations")) {
-        [blockName, blockVariation] = blockName.split("/variations/");
+      let blockName = decodeURIComponent(section).split("./blocks/")[1];
+      if (blockName?.includes("./variations")) {
+        [blockName, blockVariation] = blockName.split("./variations/");
       }
       if (blockName && examples.find((example) => example.name === blockName)) {
         previewCategory = blockName;
@@ -80932,14 +80932,14 @@ If there's a particular need for this, please submit a feature request at https:
           if (STYLE_BOOK_COLOR_GROUPS.find(
             (group) => group.slug === blockName
           )) {
-            onPathChange?.("/colors/palette");
+            onPathChange?.("./colors/palette");
             return;
           }
           if (blockName === "typography") {
-            onPathChange?.("/typography");
+            onPathChange?.("./typography");
             return;
           }
-          onPathChange?.("/blocks/" + encodeURIComponent(blockName));
+          onPathChange?.("./blocks/" + encodeURIComponent(blockName));
         }
       }
     );
@@ -80973,7 +80973,7 @@ If there's a particular need for this, please submit a feature request at https:
     );
   }
   function StylesCanvasStyleBook({ path, onPathChange }, ref) {
-    if (path?.startsWith("/revisions")) {
+    if (path?.startsWith("./revisions")) {
       return /* @__PURE__ */ (0, import_jsx_runtime381.jsx)(
         StylesCanvasRevisionStyleBook,
         {
@@ -81275,7 +81275,7 @@ If there's a particular need for this, please submit a feature request at https:
     if (showStylebook2) {
       return (0, import_i18n212.__)("Style Book");
     }
-    if (path?.startsWith("/revisions")) {
+    if (path?.startsWith("./revisions")) {
       return (0, import_i18n212.__)("Style Revisions");
     }
     return "";
@@ -81314,7 +81314,7 @@ If there's a particular need for this, please submit a feature request at https:
           ref: sectionFocusReturnRef
         }
       );
-    } else if (stylesPath2?.startsWith("/revisions")) {
+    } else if (stylesPath2?.startsWith("./revisions")) {
       content = /* @__PURE__ */ (0, import_jsx_runtime385.jsx)(
         revisions_default,
         {
@@ -89118,7 +89118,7 @@ If there's a particular need for this, please submit a feature request at https:
             /* @__PURE__ */ (0, import_jsx_runtime470.jsx)(
               import_components226.__experimentalInputControl,
               {
-                prefix: /* @__PURE__ */ (0, import_jsx_runtime470.jsx)(import_components226.__experimentalInputControlPrefixWrapper, { children: "/" }),
+                prefix: /* @__PURE__ */ (0, import_jsx_runtime470.jsx)(import_components226.__experimentalInputControlPrefixWrapper, { children: "./" }),
                 suffix: /* @__PURE__ */ (0, import_jsx_runtime470.jsx)(import_components226.__experimentalInputControlSuffixWrapper, { variant: "control", children: /* @__PURE__ */ (0, import_jsx_runtime470.jsx)(
                   import_components226.Button,
                   {
@@ -93717,7 +93717,7 @@ If there's a particular need for this, please submit a feature request at https:
         hasFixedToolbar: getPreference("core", "fixedToolbar"),
         hasBlockSelection: !!getBlockSelectionStart2(),
         hasSectionRootClientId: !!getSectionRootClientId(),
-        isStylesCanvasActive: !!getStylesPath2()?.startsWith("/revisions") || getShowStylebook2()
+        isStylesCanvasActive: !!getStylesPath2()?.startsWith("./revisions") || getShowStylebook2()
       };
     }, []);
     const canBeZoomedOut = ["post", "page", "wp_template"].includes(postType2) && hasSectionRootClientId;
@@ -95300,7 +95300,7 @@ If there's a particular need for this, please submit a feature request at https:
 				values="0.5 0.3 0.2 0 0.15
 				        0.2 0.2 0.1 0 0
 				        0.2 0.2 0.1 0 0
-				        0   0   0   0.8 0"/>
+				        0   0   0   0.8 0"./>
 		</filter>
 	</defs>
 </svg>
@@ -95826,7 +95826,7 @@ If there's a particular need for this, please submit a feature request at https:
     useCollaboratorNotifications(postId2, postType2);
     const isLargeViewport = (0, import_compose79.useViewportMatch)("medium");
     const secondarySidebarLabel = isListViewOpened2 ? (0, import_i18n311.__)("Document Overview") : (0, import_i18n311.__)("Block Library");
-    const shouldShowStylesCanvas = showStylebook2 || stylesPath2?.startsWith("/revisions");
+    const shouldShowStylesCanvas = showStylebook2 || stylesPath2?.startsWith("./revisions");
     const shouldShowBlockEditor = !shouldShowStylesCanvas;
     const [entitiesSavedStatesCallback, setEntitiesSavedStatesCallback] = (0, import_element311.useState)(false);
     const closeEntitiesSavedStates = (0, import_element311.useCallback)(
@@ -100592,7 +100592,7 @@ If there's a particular need for this, please submit a feature request at https:
       };
     }, []);
     const loadCustomCSS = () => {
-      onChangePath("/css");
+      onChangePath("./css");
     };
     return /* @__PURE__ */ (0, import_jsx_runtime557.jsx)(
       import_components284.DropdownMenu,
@@ -100844,8 +100844,8 @@ If there's a particular need for this, please submit a feature request at https:
       (0, import_data270.useDispatch)(store)
     );
     const isMobileViewport = (0, import_compose85.useViewportMatch)("medium", "<");
-    const isRevisionsOpened = stylesPath2.startsWith("/revisions") && !showStylebook2;
-    const isRevisionsStyleBookOpened = stylesPath2.startsWith("/revisions") && showStylebook2;
+    const isRevisionsOpened = stylesPath2.startsWith("./revisions") && !showStylebook2;
+    const isRevisionsStyleBookOpened = stylesPath2.startsWith("./revisions") && showStylebook2;
     const previousActiveArea = (0, import_compose85.usePrevious)(activeComplementaryArea);
     (0, import_element343.useEffect)(() => {
       if (activeComplementaryArea === "edit-site/global-styles" && previousActiveArea !== "edit-site/global-styles") {
@@ -100861,9 +100861,9 @@ If there's a particular need for this, please submit a feature request at https:
     const toggleRevisions = () => {
       setIsListViewOpened2(false);
       if (isRevisionsOpened || isRevisionsStyleBookOpened) {
-        setStylesPath2("/");
+        setStylesPath2("./");
       } else {
-        setStylesPath2("/revisions");
+        setStylesPath2("./revisions");
       }
     };
     const toggleStyleBook = () => {

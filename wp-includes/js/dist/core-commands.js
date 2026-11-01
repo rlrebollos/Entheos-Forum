@@ -295,8 +295,8 @@ var wp;
     return debouncedValue;
   }
   var ROUTE_MAPPING = {
-    "/template": "/templates",
-    "/pattern": "/patterns"
+    "./template": "./templates",
+    "./pattern": "./patterns"
   };
   function getSiteEditorPage() {
     return window.__experimentalExtensibleSiteEditor ? "admin.php?page=site-editor-v2" : "site-editor.php";
@@ -308,7 +308,7 @@ var wp;
     for (const [oldPath, newPath] of Object.entries(ROUTE_MAPPING)) {
       if (path === oldPath || path.startsWith(oldPath + "?")) {
         if (path.includes("postType=wp_template_part")) {
-          return "/template-parts";
+          return "./template-parts";
         }
         return path.replace(oldPath, newPath);
       }
@@ -490,14 +490,14 @@ var wp;
             if (isSiteEditor) {
               history.navigate(
                 mapRoute(
-                  "/pattern?postType=wp_template_part&categoryId=all-parts"
+                  "./pattern?postType=wp_template_part&categoryId=all-parts"
                 )
               );
             } else {
               document.location = (0, import_url.addQueryArgs)(
                 getSiteEditorPage(),
                 {
-                  p: mapRoute("/pattern"),
+                  p: mapRoute("./pattern"),
                   postType: "wp_template_part",
                   categoryId: "all-parts"
                 }
@@ -540,12 +540,12 @@ var wp;
           category: "view",
           callback: ({ close }) => {
             if (isSiteEditor) {
-              history.navigate("/styles");
+              history.navigate("./styles");
             } else {
               document.location = (0, import_url.addQueryArgs)(
                 getSiteEditorPage(),
                 {
-                  p: "/styles"
+                  p: "./styles"
                 }
               );
             }
@@ -559,12 +559,12 @@ var wp;
           category: "view",
           callback: ({ close }) => {
             if (isSiteEditor) {
-              history.navigate("/navigation");
+              history.navigate("./navigation");
             } else {
               document.location = (0, import_url.addQueryArgs)(
                 getSiteEditorPage(),
                 {
-                  p: "/navigation"
+                  p: "./navigation"
                 }
               );
             }
@@ -578,12 +578,12 @@ var wp;
           category: "view",
           callback: ({ close }) => {
             if (isSiteEditor) {
-              history.navigate(mapRoute("/template"));
+              history.navigate(mapRoute("./template"));
             } else {
               document.location = (0, import_url.addQueryArgs)(
                 getSiteEditorPage(),
                 {
-                  p: mapRoute("/template")
+                  p: mapRoute("./template")
                 }
               );
             }
@@ -600,12 +600,12 @@ var wp;
           callback: ({ close }) => {
             if (canCreateTemplate) {
               if (isSiteEditor) {
-                history.navigate(mapRoute("/pattern"));
+                history.navigate(mapRoute("./pattern"));
               } else {
                 document.location = (0, import_url.addQueryArgs)(
                   getSiteEditorPage(),
                   {
-                    p: mapRoute("/pattern")
+                    p: mapRoute("./pattern")
                   }
                 );
               }
@@ -658,13 +658,13 @@ var wp;
           callback: ({ close }) => {
             close();
             if (isSiteEditor) {
-              history.navigate("/styles?section=/css");
+              history.navigate("./styles?section=/css");
             } else {
               document.location = (0, import_url.addQueryArgs)(
                 getSiteEditorPage(),
                 {
-                  p: "/styles",
-                  section: "/css"
+                  p: "./styles",
+                  section: "./css"
                 }
               );
             }

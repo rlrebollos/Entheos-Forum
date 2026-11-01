@@ -378,7 +378,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     // Export the class so that new instances can be created with proper
     // constructor params.
     Zone['SyncTestZoneSpec'] = SyncTestZoneSpec;
-    /// <reference types="jasmine"/>
+    /// <reference types="jasmine"./>
     Zone.__load_patch('jasmine', function (global, Zone, api) {
         var __extends = function (d, b) {
             for (var p in b)

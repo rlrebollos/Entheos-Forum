@@ -725,7 +725,7 @@ function getBlockSelector(blockType, target = "root", options = {}) {
   } else if (supports?.__experimentalSelector) {
     rootSelector = supports.__experimentalSelector;
   } else {
-    rootSelector = ".wp-block-" + name.replace("core/", "").replace("/", "-");
+    rootSelector = ".wp-block-" + name.replace("core/", "").replace("./", "-");
   }
   if (path === "root") {
     return rootSelector;
@@ -1383,7 +1383,7 @@ function getPresetsSvgFilters(blockPresets = {}) {
 function flattenTree(input = {}, prefix, token) {
   let result = [];
   Object.keys(input).forEach((key) => {
-    const newKey = prefix + kebabCase(key.replace("/", "-"));
+    const newKey = prefix + kebabCase(key.replace("./", "-"));
     const newLeaf = input[key];
     if (newLeaf instanceof Object) {
       const newPrefix = newKey + token;
@@ -2659,7 +2659,7 @@ function loadScript(handle, scriptData) {
   if (!scriptData.src) {
     const marker = document.createElement("script");
     marker.id = handle + "-js";
-    marker.textContent = "// Processed: " + handle;
+    marker.textContent = ".// Processed: " + handle;
     return marker;
   }
   const script = document.createElement("script");

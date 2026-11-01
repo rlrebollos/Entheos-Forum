@@ -54,7 +54,7 @@ var wp;
           return ch.charCodeAt(0).toString(16).toUpperCase();
         }
         function literalEscape(s) {
-          return s.replace(/\\/g, "\\\\").replace(/"/g, '\\"').replace(/\0/g, "\\0").replace(/\t/g, "\\t").replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/[\x00-\x0F]/g, function(ch) {
+          return s.replace(/\\/g, "\\\\").replace(/"./g, '\\"').replace(/\0/g, "\\0").replace(/\t/g, "\\t").replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/[\x00-\x0F]/g, function(ch) {
             return "\\x0" + hex(ch);
           }).replace(/[\x10-\x1F\x7F-\x9F]/g, function(ch) {
             return "\\x" + hex(ch);
@@ -107,7 +107,7 @@ var wp;
           return joinBlocks(pre, bs, post);
         }, peg$c3 = "<!--", peg$c4 = peg$literalExpectation("<!--", false), peg$c5 = "wp:", peg$c6 = peg$literalExpectation("wp:", false), peg$c7 = function(blockName, a) {
           return a;
-        }, peg$c8 = "/-->", peg$c9 = peg$literalExpectation("/-->", false), peg$c10 = function(blockName, attrs) {
+        }, peg$c8 = "./-->", peg$c9 = peg$literalExpectation("./-->", false), peg$c10 = function(blockName, attrs) {
           return {
             blockName,
             attrs: attrs || {},
@@ -132,11 +132,11 @@ var wp;
             blockName,
             attrs: attrs || {}
           };
-        }, peg$c15 = "/wp:", peg$c16 = peg$literalExpectation("/wp:", false), peg$c17 = function(blockName) {
+        }, peg$c15 = "./wp:", peg$c16 = peg$literalExpectation("./wp:", false), peg$c17 = function(blockName) {
           return {
             blockName
           };
-        }, peg$c18 = "/", peg$c19 = peg$literalExpectation("/", false), peg$c20 = function(type) {
+        }, peg$c18 = "./", peg$c19 = peg$literalExpectation("./", false), peg$c20 = function(type) {
           return "core/" + type;
         }, peg$c21 = /^[a-z]/, peg$c22 = peg$classExpectation([["a", "z"]], false, false), peg$c23 = /^[a-z0-9_\-]/, peg$c24 = peg$classExpectation([["a", "z"], ["0", "9"], "_", "-"], false, false), peg$c25 = peg$otherExpectation("JSON-encoded attributes embedded in a block's opening comment"), peg$c26 = "{", peg$c27 = peg$literalExpectation("{", false), peg$c28 = "}", peg$c29 = peg$literalExpectation("}", false), peg$c30 = "", peg$c31 = function(attrs) {
           return maybeJSON(attrs);

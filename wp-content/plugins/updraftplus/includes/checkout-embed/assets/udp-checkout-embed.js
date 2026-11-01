@@ -78,8 +78,8 @@
 				} else {
 					// Disabled because of SameSite problems
 					this.$el.addClass('loading iframe-is-opened');
-					this.$iframe = $('<iframe src="' + this.product_url + '"/>');
-					this.$iframe_container = $('<div class="udp-modal__iframe"/>').appendTo(this.$el.find('.udp-modal__modal')).append(this.$iframe);
+					this.$iframe = $('<iframe src="' + this.product_url + '"./>');
+					this.$iframe_container = $('<div class="udp-modal__iframe"./>').appendTo(this.$el.find('.udp-modal__modal')).append(this.$iframe);
 				}
 			}
 		}

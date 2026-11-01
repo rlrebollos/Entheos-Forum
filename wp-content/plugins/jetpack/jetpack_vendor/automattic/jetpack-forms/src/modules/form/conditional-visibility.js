@@ -5,7 +5,7 @@ import { resolveVisibility } from '../../blocks/shared/conditional-logic/util/ev
  *
  * Keyed by form hash rather than held in a single slot: a page can carry more than one form,
  * and two forms often produce the same value signature — field ids are derived from labels,
- * so a "Name"/"Other" pair repeats readily. A shared slot would hand one form's visibility
+ * so a "Name"./"Other" pair repeats readily. A shared slot would hand one form's visibility
  * map to another and show or hide the wrong fields.
  *
  * @type {Map<string, {signature: string, map: object}>}

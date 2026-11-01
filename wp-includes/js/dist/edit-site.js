@@ -13348,11 +13348,11 @@ var wp;
         };
       }, []);
       let backPath;
-      if (path !== "/") {
+      if (path !== "./") {
         if (isBlockTheme || isClassicThemeWithStyleBookSupport2) {
-          backPath = "/";
-        } else if (path !== "/pattern") {
-          backPath = "/pattern";
+          backPath = "./";
+        } else if (path !== "./pattern") {
+          backPath = "./pattern";
         }
       }
       const backButtonProps = {
@@ -16918,7 +16918,7 @@ var wp;
   var import_api_fetch = __toESM(require_api_fetch(), 1);
   var import_element42 = __toESM(require_element(), 1);
   var import_url4 = __toESM(require_url(), 1);
-  var ACTIVE_THEMES_URL = "/wp/v2/themes?status=active";
+  var ACTIVE_THEMES_URL = "./wp/v2/themes?status=active";
   function useActualCurrentTheme() {
     const [currentTheme, setCurrentTheme] = (0, import_element42.useState)();
     (0, import_element42.useEffect)(() => {
@@ -17336,7 +17336,7 @@ var wp;
           callback: ({ close }) => {
             close();
             if (canvas !== "edit") {
-              history.navigate("/styles?canvas=edit", {
+              history.navigate("./styles?canvas=edit", {
                 transition: "canvas-mode-edit-transition"
               });
             }
@@ -17403,12 +17403,12 @@ var wp;
           callback: ({ close }) => {
             close();
             if (canvas !== "edit") {
-              history.navigate("/styles?canvas=edit", {
+              history.navigate("./styles?canvas=edit", {
                 transition: "canvas-mode-edit-transition"
               });
             }
             openGeneralSidebar2("edit-site/global-styles");
-            setStylesPath("/revisions");
+            setStylesPath("./revisions");
           }
         }
       ];
@@ -17678,7 +17678,7 @@ var wp;
       /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(
         SidebarNavigationItem,
         {
-          to: "/identity",
+          to: "./identity",
           uid: "identity-navigation-item",
           icon: site_logo_default,
           activeOnRouteName: "identity",
@@ -17689,7 +17689,7 @@ var wp;
       /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(
         SidebarNavigationItem,
         {
-          to: isBlockBasedTheme ? "/styles" : "/stylebook",
+          to: isBlockBasedTheme ? "./styles" : "./stylebook",
           uid: isBlockBasedTheme ? "global-styles-navigation-item" : "stylebook-navigation-item",
           icon: styles_default,
           activeOnRouteName: isBlockBasedTheme ? "styles" : void 0,
@@ -17701,7 +17701,7 @@ var wp;
         SidebarNavigationItem,
         {
           uid: "page-navigation-item",
-          to: "/page",
+          to: "./page",
           withChevron: true,
           icon: page_default,
           isHidden: !isBlockBasedTheme,
@@ -17712,7 +17712,7 @@ var wp;
         SidebarNavigationItem,
         {
           uid: "navigation-navigation-item",
-          to: "/navigation",
+          to: "./navigation",
           withChevron: true,
           icon: navigation_default,
           isHidden: !isBlockBasedTheme,
@@ -17723,7 +17723,7 @@ var wp;
         SidebarNavigationItem,
         {
           uid: "patterns-navigation-item",
-          to: "/pattern",
+          to: "./pattern",
           withChevron: true,
           icon: symbol_default,
           children: (0, import_i18n11.__)("Patterns")
@@ -17733,7 +17733,7 @@ var wp;
         SidebarNavigationItem,
         {
           uid: "template-navigation-item",
-          to: "/template",
+          to: "./template",
           withChevron: true,
           icon: layout_default,
           isHidden: !isBlockBasedTheme,
@@ -18879,7 +18879,7 @@ var wp;
     } else if (supports?.__experimentalSelector) {
       rootSelector = supports.__experimentalSelector;
     } else {
-      rootSelector = ".wp-block-" + name2.replace("core/", "").replace("/", "-");
+      rootSelector = ".wp-block-" + name2.replace("core/", "").replace("./", "-");
     }
     if (path === "root") {
       return rootSelector;
@@ -19543,7 +19543,7 @@ var wp;
   function flattenTree(input = {}, prefix2, token) {
     let result = [];
     Object.keys(input).forEach((key) => {
-      const newKey = prefix2 + kebabCase(key.replace("/", "-"));
+      const newKey = prefix2 + kebabCase(key.replace("./", "-"));
       const newLeaf = input[key];
       if (newLeaf instanceof Object) {
         const newPrefix = newKey + token;
@@ -21239,7 +21239,7 @@ var wp;
     async function handleExport() {
       try {
         const response = await (0, import_api_fetch2.default)({
-          path: "/wp-block-editor/v1/export",
+          path: "./wp-block-editor/v1/export",
           parse: false,
           headers: {
             Accept: "application/zip"
@@ -21768,17 +21768,17 @@ var wp;
   function getListPathForPostType(postType2) {
     switch (postType2) {
       case "navigation":
-        return "/navigation";
+        return "./navigation";
       case "wp_block":
-        return "/pattern?postType=wp_block";
+        return "./pattern?postType=wp_block";
       case "wp_template_part":
-        return "/pattern?postType=wp_template_part";
+        return "./pattern?postType=wp_template_part";
       case "wp_template":
-        return "/template";
+        return "./template";
       case "page":
-        return "/page";
+        return "./page";
       case "post":
-        return "/";
+        return "./";
     }
     throw "Unknown post type";
   }
@@ -21950,7 +21950,7 @@ var wp;
   var import_jsx_runtime122 = __toESM(require_jsx_runtime(), 1);
   var homeRoute = {
     name: "home",
-    path: "/",
+    path: "./",
     areas: {
       sidebar({ siteData }) {
         if (!isThemeDataLoaded(siteData)) {
@@ -41440,7 +41440,7 @@ If there's a particular need for this, please submit a feature request at https:
   var import_jsx_runtime214 = __toESM(require_jsx_runtime(), 1);
   var identityRoute = {
     name: "identity",
-    path: "/identity",
+    path: "./identity",
     areas: {
       sidebar: /* @__PURE__ */ (0, import_jsx_runtime214.jsx)(SidebarNavigationScreenIdentity, {}),
       content: /* @__PURE__ */ (0, import_jsx_runtime214.jsx)(SidebarIdentity, {}),
@@ -42407,7 +42407,7 @@ If there's a particular need for this, please submit a feature request at https:
     return /* @__PURE__ */ (0, import_jsx_runtime226.jsx)(
       NavigationButtonAsItem,
       {
-        path: "/blocks/" + encodeURIComponent(block.name),
+        path: "./blocks/" + encodeURIComponent(block.name),
         children: /* @__PURE__ */ (0, import_jsx_runtime226.jsxs)(import_components82.__experimentalHStack, { justify: "flex-start", children: [
           /* @__PURE__ */ (0, import_jsx_runtime226.jsx)(import_block_editor8.BlockIcon, { icon: block.icon }),
           /* @__PURE__ */ (0, import_jsx_runtime226.jsx)(import_components82.FlexItem, { children: block.title })
@@ -48849,7 +48849,7 @@ If there's a particular need for this, please submit a feature request at https:
           },
           {}
         ],
-        "/lib/inflate.js": [
+        "./lib/inflate.js": [
           function(require2, module2, exports2) {
             "use strict";
             var zlib_inflate = require2("./zlib/inflate");
@@ -49069,7 +49069,7 @@ If there's a particular need for this, please submit a feature request at https:
       },
       {},
       []
-    )("/lib/inflate.js");
+    )("./lib/inflate.js");
   })();
 
   // packages/global-styles-ui/build-module/font-library/lib/lib-font.browser.mjs
@@ -53535,7 +53535,7 @@ If there's a particular need for this, please submit a feature request at https:
     }, [path, history, openGeneralSidebar2, setPreference]);
     const openRevisions = (0, import_element164.useCallback)(async () => {
       await openGlobalStyles();
-      setStylesPath("/revisions");
+      setStylesPath("./revisions");
     }, [openGlobalStyles, setStylesPath]);
     const shouldShowGlobalStylesFooter = !!revisionsCount && !isLoadingRevisions;
     return /* @__PURE__ */ (0, import_jsx_runtime287.jsx)(import_jsx_runtime287.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime287.jsx)(
@@ -53607,7 +53607,7 @@ If there's a particular need for this, please submit a feature request at https:
     const history = useHistory13();
     return (0, import_element165.useMemo)(() => {
       return [
-        query.section ?? "/",
+        query.section ?? "./",
         (updatedSection) => {
           history.navigate(
             (0, import_url14.addQueryArgs)(path, {
@@ -53664,7 +53664,7 @@ If there's a particular need for this, please submit a feature request at https:
     const { path, query } = useLocation21();
     const history = useHistory14();
     const { user: userConfig } = useGlobalStyles3();
-    const section = query.section ?? "/";
+    const section = query.section ?? "./";
     const onChangeSection = (updatedSection) => {
       history.navigate(
         (0, import_url15.addQueryArgs)(path, {
@@ -53691,10 +53691,10 @@ If there's a particular need for this, please submit a feature request at https:
   }
   var stylesRoute = {
     name: "styles",
-    path: "/styles",
+    path: "./styles",
     areas: {
       content: /* @__PURE__ */ (0, import_jsx_runtime289.jsx)(SidebarGlobalStyles, {}),
-      sidebar: /* @__PURE__ */ (0, import_jsx_runtime289.jsx)(SidebarNavigationScreenGlobalStyles, { backPath: "/" }),
+      sidebar: /* @__PURE__ */ (0, import_jsx_runtime289.jsx)(SidebarNavigationScreenGlobalStyles, { backPath: "./" }),
       preview: ({ siteData }) => /* @__PURE__ */ (0, import_jsx_runtime289.jsx)(StylesPreviewArea, { siteData }),
       mobileContent: /* @__PURE__ */ (0, import_jsx_runtime289.jsx)(SidebarGlobalStyles, {})
     },
@@ -54324,7 +54324,7 @@ If there's a particular need for this, please submit a feature request at https:
             type: "snackbar"
           }
         );
-        history.navigate("/navigation");
+        history.navigate("./navigation");
       } catch (error2) {
         createErrorNotice(
           (0, import_i18n131.sprintf)(
@@ -54551,13 +54551,13 @@ If there's a particular need for this, please submit a feature request at https:
   var import_jsx_runtime299 = __toESM(require_jsx_runtime(), 1);
   var navigationRoute = {
     name: "navigation",
-    path: "/navigation",
+    path: "./navigation",
     areas: {
       sidebar({ siteData }) {
         if (!isThemeDataLoaded(siteData)) {
           return null;
         }
-        return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime299.jsx)(SidebarNavigationScreenNavigationMenus, { backPath: "/" }) : /* @__PURE__ */ (0, import_jsx_runtime299.jsx)(SidebarNavigationScreenUnsupported, {});
+        return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime299.jsx)(SidebarNavigationScreenNavigationMenus, { backPath: "./" }) : /* @__PURE__ */ (0, import_jsx_runtime299.jsx)(SidebarNavigationScreenUnsupported, {});
       },
       preview({ siteData }) {
         const isBlockTheme = siteData.currentTheme?.is_block_theme;
@@ -54567,7 +54567,7 @@ If there's a particular need for this, please submit a feature request at https:
         if (!isThemeDataLoaded(siteData)) {
           return /* @__PURE__ */ (0, import_jsx_runtime299.jsx)(import_jsx_runtime299.Fragment, {});
         }
-        return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime299.jsx)(SidebarNavigationScreenNavigationMenus, { backPath: "/" }) : /* @__PURE__ */ (0, import_jsx_runtime299.jsx)(SidebarNavigationScreenUnsupported, {});
+        return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime299.jsx)(SidebarNavigationScreenNavigationMenus, { backPath: "./" }) : /* @__PURE__ */ (0, import_jsx_runtime299.jsx)(SidebarNavigationScreenUnsupported, {});
       }
     }
   };
@@ -54576,13 +54576,13 @@ If there's a particular need for this, please submit a feature request at https:
   var import_jsx_runtime300 = __toESM(require_jsx_runtime(), 1);
   var navigationItemRoute = {
     name: "navigation-item",
-    path: "/wp_navigation/:postId",
+    path: "./wp_navigation/:postId",
     areas: {
       sidebar({ siteData }) {
         if (!isThemeDataLoaded(siteData)) {
           return null;
         }
-        return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime300.jsx)(SidebarNavigationScreenNavigationMenu, { backPath: "/navigation" }) : /* @__PURE__ */ (0, import_jsx_runtime300.jsx)(SidebarNavigationScreenUnsupported, {});
+        return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime300.jsx)(SidebarNavigationScreenNavigationMenu, { backPath: "./navigation" }) : /* @__PURE__ */ (0, import_jsx_runtime300.jsx)(SidebarNavigationScreenUnsupported, {});
       },
       preview({ siteData }) {
         if (!isThemeDataLoaded(siteData)) {
@@ -54594,7 +54594,7 @@ If there's a particular need for this, please submit a feature request at https:
         if (!isThemeDataLoaded(siteData)) {
           return /* @__PURE__ */ (0, import_jsx_runtime300.jsx)(import_jsx_runtime300.Fragment, {});
         }
-        return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime300.jsx)(SidebarNavigationScreenNavigationMenu, { backPath: "/navigation" }) : /* @__PURE__ */ (0, import_jsx_runtime300.jsx)(SidebarNavigationScreenUnsupported, {});
+        return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime300.jsx)(SidebarNavigationScreenNavigationMenu, { backPath: "./navigation" }) : /* @__PURE__ */ (0, import_jsx_runtime300.jsx)(SidebarNavigationScreenUnsupported, {});
       }
     }
   };
@@ -56318,11 +56318,11 @@ If there's a particular need for this, please submit a feature request at https:
   var import_jsx_runtime309 = __toESM(require_jsx_runtime(), 1);
   var patternsRoute = {
     name: "patterns",
-    path: "/pattern",
+    path: "./pattern",
     areas: {
       sidebar({ siteData }) {
         const isBlockTheme = siteData.currentTheme?.is_block_theme;
-        const backPath = isBlockTheme || isClassicThemeWithStyleBookSupport(siteData) ? "/" : void 0;
+        const backPath = isBlockTheme || isClassicThemeWithStyleBookSupport(siteData) ? "./" : void 0;
         return /* @__PURE__ */ (0, import_jsx_runtime309.jsx)(SidebarNavigationScreenPatterns, { backPath });
       },
       content: /* @__PURE__ */ (0, import_jsx_runtime309.jsx)(DataviewsPatterns, {}),
@@ -56331,7 +56331,7 @@ If there's a particular need for this, please submit a feature request at https:
           return void 0;
         }
         const isBlockTheme = siteData.currentTheme?.is_block_theme;
-        const backPath = isBlockTheme || isClassicThemeWithStyleBookSupport(siteData) ? "/" : void 0;
+        const backPath = isBlockTheme || isClassicThemeWithStyleBookSupport(siteData) ? "./" : void 0;
         return /* @__PURE__ */ (0, import_jsx_runtime309.jsx)(SidebarNavigationScreenPatterns, { backPath });
       },
       mobileContent({ query }) {
@@ -56344,11 +56344,11 @@ If there's a particular need for this, please submit a feature request at https:
   var import_jsx_runtime310 = __toESM(require_jsx_runtime(), 1);
   var patternItemRoute = {
     name: "pattern-item",
-    path: "/wp_block/:postId",
+    path: "./wp_block/:postId",
     areas: {
       sidebar({ siteData }) {
         const isBlockTheme = siteData.currentTheme?.is_block_theme;
-        const backPath = isBlockTheme || isClassicThemeWithStyleBookSupport(siteData) ? "/" : void 0;
+        const backPath = isBlockTheme || isClassicThemeWithStyleBookSupport(siteData) ? "./" : void 0;
         return /* @__PURE__ */ (0, import_jsx_runtime310.jsx)(SidebarNavigationScreenPatterns, { backPath });
       },
       // Also rendered on mobile, where this route is only reached at canvas=edit.
@@ -56360,9 +56360,9 @@ If there's a particular need for this, please submit a feature request at https:
   var import_jsx_runtime311 = __toESM(require_jsx_runtime(), 1);
   var templatePartItemRoute = {
     name: "template-part-item",
-    path: "/wp_template_part/*postId",
+    path: "./wp_template_part/*postId",
     areas: {
-      sidebar: /* @__PURE__ */ (0, import_jsx_runtime311.jsx)(SidebarNavigationScreenPatterns, { backPath: "/" }),
+      sidebar: /* @__PURE__ */ (0, import_jsx_runtime311.jsx)(SidebarNavigationScreenPatterns, { backPath: "./" }),
       // Also rendered on mobile, where this route is only reached at canvas=edit.
       preview: /* @__PURE__ */ (0, import_jsx_runtime311.jsx)(EditSiteEditor, {})
     }
@@ -56456,7 +56456,7 @@ If there's a particular need for this, please submit a feature request at https:
     return /* @__PURE__ */ (0, import_jsx_runtime312.jsx)(
       SidebarNavigationItem,
       {
-        to: (0, import_url18.addQueryArgs)("/template", { activeView: text }),
+        to: (0, import_url18.addQueryArgs)("./template", { activeView: text }),
         icon,
         "aria-current": isActive,
         children: text
@@ -56487,7 +56487,7 @@ If there's a particular need for this, please submit a feature request at https:
       /* @__PURE__ */ (0, import_jsx_runtime312.jsx)(
         SidebarNavigationItem,
         {
-          to: "/template",
+          to: "./template",
           icon: published_default,
           "aria-current": activeView === "active",
           children: (0, import_i18n142.__)("Active templates")
@@ -56496,7 +56496,7 @@ If there's a particular need for this, please submit a feature request at https:
       /* @__PURE__ */ (0, import_jsx_runtime312.jsx)(
         SidebarNavigationItem,
         {
-          to: (0, import_url18.addQueryArgs)("/template", { activeView: "user" }),
+          to: (0, import_url18.addQueryArgs)("./template", { activeView: "user" }),
           icon: comment_author_avatar_default,
           "aria-current": activeView === "user",
           // Let's avoid calling them "custom templates" to avoid
@@ -57662,7 +57662,7 @@ If there's a particular need for this, please submit a feature request at https:
       date: (0, import_i18n147.sprintf)(
         // translators: %s: The homepage url.
         (0, import_i18n147.__)("E.g. %s"),
-        homeUrl + "/" + (/* @__PURE__ */ new Date()).getFullYear()
+        homeUrl + "./" + (/* @__PURE__ */ new Date()).getFullYear()
       )
     };
     (0, import_element187.useEffect)(() => {
@@ -59476,7 +59476,7 @@ If there's a particular need for this, please submit a feature request at https:
       date: (0, import_i18n153.sprintf)(
         // translators: %s: The homepage url.
         (0, import_i18n153.__)("E.g. %s"),
-        homeUrl + "/" + (/* @__PURE__ */ new Date()).getFullYear()
+        homeUrl + "./" + (/* @__PURE__ */ new Date()).getFullYear()
       )
     };
     (0, import_element193.useEffect)(() => {
@@ -59839,13 +59839,13 @@ If there's a particular need for this, please submit a feature request at https:
   }
   var templatesRoute = {
     name: "templates",
-    path: "/template",
+    path: "./template",
     areas: {
       sidebar({ siteData }) {
         if (!isThemeDataLoaded(siteData)) {
           return null;
         }
-        return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime325.jsx)(SidebarNavigationScreenTemplatesBrowse, { backPath: "/" }) : /* @__PURE__ */ (0, import_jsx_runtime325.jsx)(SidebarNavigationScreenUnsupported, {});
+        return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime325.jsx)(SidebarNavigationScreenTemplatesBrowse, { backPath: "./" }) : /* @__PURE__ */ (0, import_jsx_runtime325.jsx)(SidebarNavigationScreenUnsupported, {});
       },
       content({ siteData }) {
         const isBlockTheme = siteData.currentTheme?.is_block_theme;
@@ -59895,7 +59895,7 @@ If there's a particular need for this, please submit a feature request at https:
       if (!isThemeDataLoaded(siteData)) {
         return null;
       }
-      return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime326.jsx)(SidebarNavigationScreenTemplatesBrowse, { backPath: "/" }) : /* @__PURE__ */ (0, import_jsx_runtime326.jsx)(SidebarNavigationScreenUnsupported, {});
+      return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime326.jsx)(SidebarNavigationScreenTemplatesBrowse, { backPath: "./" }) : /* @__PURE__ */ (0, import_jsx_runtime326.jsx)(SidebarNavigationScreenUnsupported, {});
     },
     // Also rendered on mobile, where this route is only reached at canvas=edit.
     preview({ siteData }) {
@@ -59907,7 +59907,7 @@ If there's a particular need for this, please submit a feature request at https:
   };
   var templateItemRoute = {
     name: "template-item",
-    path: "/wp_template/*postId",
+    path: "./wp_template/*postId",
     areas
   };
 
@@ -60522,7 +60522,7 @@ If there's a particular need for this, please submit a feature request at https:
   }
   var pagesRoute = {
     name: "pages",
-    path: "/page",
+    path: "./page",
     areas: {
       sidebar({ siteData }) {
         if (!isThemeDataLoaded(siteData)) {
@@ -60532,7 +60532,7 @@ If there's a particular need for this, please submit a feature request at https:
           SidebarNavigationScreen,
           {
             title: (0, import_i18n157.__)("Pages"),
-            backPath: "/",
+            backPath: "./",
             content: /* @__PURE__ */ (0, import_jsx_runtime330.jsx)(DataViewsSidebarContent, { postType: "page" })
           }
         ) : /* @__PURE__ */ (0, import_jsx_runtime330.jsx)(SidebarNavigationScreenUnsupported, {});
@@ -60573,7 +60573,7 @@ If there's a particular need for this, please submit a feature request at https:
   var import_jsx_runtime331 = __toESM(require_jsx_runtime(), 1);
   var pageItemRoute = {
     name: "page-item",
-    path: "/page/:postId",
+    path: "./page/:postId",
     areas: {
       sidebar({ siteData }) {
         if (!isThemeDataLoaded(siteData)) {
@@ -60583,7 +60583,7 @@ If there's a particular need for this, please submit a feature request at https:
           SidebarNavigationScreen,
           {
             title: (0, import_i18n158.__)("Pages"),
-            backPath: "/",
+            backPath: "./",
             content: /* @__PURE__ */ (0, import_jsx_runtime331.jsx)(DataViewsSidebarContent, { postType: "page" })
           }
         ) : /* @__PURE__ */ (0, import_jsx_runtime331.jsx)(SidebarNavigationScreenUnsupported, {});
@@ -60605,7 +60605,7 @@ If there's a particular need for this, please submit a feature request at https:
   var { StyleBookPreview: StyleBookPreview2 } = unlock(import_editor45.privateApis);
   var stylebookRoute = {
     name: "stylebook",
-    path: "/stylebook",
+    path: "./stylebook",
     areas: {
       sidebar({ siteData }) {
         if (!isThemeDataLoaded(siteData)) {
@@ -60615,7 +60615,7 @@ If there's a particular need for this, please submit a feature request at https:
           SidebarNavigationScreen,
           {
             title: (0, import_i18n159.__)("Styles"),
-            backPath: "/",
+            backPath: "./",
             description: (0, import_i18n159.__)(
               `Preview your website's visual identity: colors, typography, and blocks.`
             )

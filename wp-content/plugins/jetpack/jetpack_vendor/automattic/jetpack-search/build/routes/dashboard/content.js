@@ -20,7 +20,7 @@ __( "By clicking the buttons above, you agree to our <tosLink>Terms of Service</
 /* translators: %s is a button label */
 __( "By clicking <strong>%s</strong>, you agree to our <tosLink>Terms of Service</tosLink> and to <shareDetailsLink>sync your site‘s data</shareDetailsLink> with us.", "jetpack-search-pkg" );
 __( "By continuing you agree to our <tosLink>Terms of Service</tosLink> and to <shareDetailsLink>sync your site’s data</shareDetailsLink> with us. We’ll check if that email is linked to an existing WordPress.com account or create a new one instantly.", "jetpack-search-pkg" );
-__( "/month, paid yearly", "jetpack-search-pkg" );
+__( "./month, paid yearly", "jetpack-search-pkg" );
 /* translators: %s: the product name */
 __( "Icon for the product %s", "jetpack-search-pkg" );
 __( "Sections", "jetpack-search-pkg" );

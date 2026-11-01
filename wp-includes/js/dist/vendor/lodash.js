@@ -175,7 +175,7 @@
    * - "()," (modification of function parameters)
    * - "=" (default value)
    * - "[]{}" (destructuring of function parameters)
-   * - "/" (beginning of a comment)
+   * - "./" (beginning of a comment)
    * - whitespace
    */
   var reForbiddenIdentifierChars = /[()=,{}\[\]\/\s]/;
@@ -14336,7 +14336,7 @@
      * characters use a third-party library like [_he_](https://mths.be/he).
      *
      * Though the ">" character is escaped for symmetry, characters like
-     * ">" and "/" don't need escaping in HTML and have no special meaning
+     * ">" and "./" don't need escaping in HTML and have no special meaning
      * unless they're part of a tag or unquoted attribute value. See
      * [Mathias Bynens's article](https://mathiasbynens.be/notes/ambiguous-ampersands)
      * (under "semi-related fun fact") for more details.

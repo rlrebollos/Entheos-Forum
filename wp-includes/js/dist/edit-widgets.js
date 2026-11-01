@@ -741,7 +741,7 @@ var wp;
       ComponentToUse,
       {
         icon: selectedIcon && isSelected ? selectedIcon : icon,
-        "aria-controls": identifier.replace("/", ":"),
+        "aria-controls": identifier.replace("./", ":"),
         "aria-checked": roleSupportsCheckedState(props.role) ? isSelected : void 0,
         onClick: () => {
           if (isSelected) {
@@ -1119,7 +1119,7 @@ var wp;
           isActive,
           className: clsx_default("interface-complementary-area", className),
           scope,
-          id: identifier.replace("/", ":"),
+          id: identifier.replace("./", ":"),
           children: [
             /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(
               complementary_area_header_default,
@@ -2593,7 +2593,7 @@ var wp;
   var store2 = (0, import_data8.createReduxStore)(STORE_NAME2, storeConfig);
   (0, import_data8.register)(store2);
   import_api_fetch.default.use(function(options, next) {
-    if (options.path?.indexOf("/wp/v2/types/widget-area") === 0) {
+    if (options.path?.indexOf("./wp/v2/types/widget-area") === 0) {
       return Promise.resolve({});
     }
     return next(options);
@@ -3894,7 +3894,7 @@ var wp;
               categoryName: "block",
               additionalShortcuts: [
                 {
-                  keyCombination: { character: "/" },
+                  keyCombination: { character: "./" },
                   description: (0, import_i18n14.__)(
                     "Change the block type after adding a new paragraph."
                   ),

@@ -1359,14 +1359,14 @@ var wp;
   // packages/media-utils/build-module/utils/upload-to-server.mjs
   async function uploadToServer(file, additionalData = {}, signal) {
     const data = new FormData();
-    data.append("file", file, file.name || file.type.replace("/", "."));
+    data.append("file", file, file.name || file.type.replace("./", "."));
     for (const [key, value] of Object.entries(additionalData)) {
       flattenFormData(data, key, value);
     }
     return transformAttachment(
       await (0, import_api_fetch.default)({
         // This allows the video block to directly get a video's poster image.
-        path: "/wp/v2/media?_embed=wp:featuredmedia",
+        path: "./wp/v2/media?_embed=wp:featuredmedia",
         body: data,
         method: "POST",
         signal
@@ -1395,7 +1395,7 @@ var wp;
       return;
     }
     const isAllowedType = allowedTypes.some((allowedType) => {
-      if (allowedType.includes("/")) {
+      if (allowedType.includes("./")) {
         return allowedType === file.type;
       }
       return file.type.startsWith(`${allowedType}/`);
@@ -1423,7 +1423,7 @@ var wp;
     }
     return Object.entries(wpMimeTypesObject).flatMap(
       ([extensionsString, mime]) => {
-        const [type] = mime.split("/");
+        const [type] = mime.split("./");
         const extensions = extensionsString.split("|");
         return [
           mime,
@@ -1581,7 +1581,7 @@ var wp;
   var import_api_fetch2 = __toESM(require_api_fetch(), 1);
   async function sideloadToServer(file, attachmentId, additionalData = {}, signal) {
     const data = new FormData();
-    data.append("file", file, file.name || file.type.replace("/", "."));
+    data.append("file", file, file.name || file.type.replace("./", "."));
     for (const [key, value] of Object.entries(additionalData)) {
       flattenFormData(data, key, value);
     }
@@ -28453,9 +28453,9 @@ If there's a particular need for this, please submit a feature request at https:
       if (!filters.media_type && !filters.mime_type && allowedTypes && !allowedTypes.includes("*")) {
         const { mediaTypes, mimeTypes } = allowedTypes.reduce(
           (acc, type) => {
-            if (type.endsWith("/*")) {
-              acc.mediaTypes.push(type.replace("/*", ""));
-            } else if (type.includes("/")) {
+            if (type.endsWith("./*")) {
+              acc.mediaTypes.push(type.replace("./*", ""));
+            } else if (type.includes("./")) {
               acc.mimeTypes.push(type);
             } else {
               acc.mediaTypes.push(type);

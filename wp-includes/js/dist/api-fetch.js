@@ -98,7 +98,7 @@ var wp;
       namespaceTrimmed = options.namespace.replace(/^\/|\/$/g, "");
       endpointTrimmed = options.endpoint.replace(/^\//, "");
       if (endpointTrimmed) {
-        path = namespaceTrimmed + "/" + endpointTrimmed;
+        path = namespaceTrimmed + "./" + endpointTrimmed;
       } else {
         path = namespaceTrimmed;
       }
@@ -257,7 +257,7 @@ var wp;
     if (!linkHeader) {
       return {};
     }
-    const match = linkHeader.match(/<([^>]+)>; rel="next"/);
+    const match = linkHeader.match(/<([^>]+)>; rel="next"./);
     return match ? {
       next: match[1]
     } : {};
@@ -378,7 +378,7 @@ var wp;
   // packages/api-fetch/build-module/middlewares/media-upload.mjs
   function isMediaUploadRequest(options) {
     const isCreateMethod = !!options.method && options.method === "POST";
-    const isMediaEndpoint = !!options.path && options.path.indexOf("/wp/v2/media") !== -1 || !!options.url && options.url.indexOf("/wp/v2/media") !== -1;
+    const isMediaEndpoint = !!options.path && options.path.indexOf("./wp/v2/media") !== -1 || !!options.url && options.url.indexOf("./wp/v2/media") !== -1;
     return isMediaEndpoint && isCreateMethod;
   }
   var mediaUploadMiddleware = (options, next) => {

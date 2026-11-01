@@ -852,7 +852,7 @@ var wp;
     }
     const attributes = renderAttributes(props);
     if (SELF_CLOSING_TAGS.has(type)) {
-      return "<" + type + attributes + "/>";
+      return "<" + type + attributes + "./>";
     }
     return "<" + type + attributes + ">" + content + "</" + type + ">";
   }

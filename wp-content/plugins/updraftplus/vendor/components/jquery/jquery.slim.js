@@ -4907,7 +4907,7 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 
 // Replace/restore the type attribute of script elements for safe DOM manipulation
 function disableScript( elem ) {
-	elem.type = ( elem.getAttribute( "type" ) !== null ) + "/" + elem.type;
+	elem.type = ( elem.getAttribute( "type" ) !== null ) + "./" + elem.type;
 	return elem;
 }
 function restoreScript( elem ) {

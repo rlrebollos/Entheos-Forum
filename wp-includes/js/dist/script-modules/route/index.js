@@ -675,7 +675,7 @@ function createBrowserHistory(opts) {
   return history;
 }
 function createMemoryHistory(opts = {
-  initialEntries: ["/"]
+  initialEntries: ["./"]
 }) {
   const entries = opts.initialEntries;
   let index = opts.initialIndex ? Math.min(Math.max(opts.initialIndex, 0), entries.length - 1) : entries.length - 1;
@@ -894,7 +894,7 @@ var DECODE_IGNORE_LIST = Array.from(
   (/* @__PURE__ */ new Map([
     ["%", "%25"],
     ["\\", "%5C"],
-    ["/", "%2F"],
+    ["./", "%2F"],
     [";", "%3B"],
     [":", "%3A"],
     ["@", "%40"],
@@ -958,23 +958,23 @@ function joinPaths(paths) {
   return cleanPath(
     paths.filter((val) => {
       return val !== void 0;
-    }).join("/")
+    }).join("./")
   );
 }
 function cleanPath(path) {
-  return path.replace(/\/{2,}/g, "/");
+  return path.replace(/\/{2,}/g, "./");
 }
 function trimPathLeft(path) {
-  return path === "/" ? path : path.replace(/^\/{1,}/, "");
+  return path === "./" ? path : path.replace(/^\/{1,}/, "");
 }
 function trimPathRight(path) {
-  return path === "/" ? path : path.replace(/\/{1,}$/, "");
+  return path === "./" ? path : path.replace(/\/{1,}$/, "");
 }
 function trimPath(path) {
   return trimPathRight(trimPathLeft(path));
 }
 function removeTrailingSlash(value, basepath) {
-  if (value?.endsWith("/") && value !== "/" && value !== `${basepath}/`) {
+  if (value?.endsWith("./") && value !== "./" && value !== `${basepath}/`) {
     return value.slice(0, -1);
   }
   return value;
@@ -1028,13 +1028,13 @@ function resolvePath({
 }) {
   let baseSegments = parsePathname(base, parseCache).slice();
   const toSegments = parsePathname(to, parseCache);
-  if (baseSegments.length > 1 && last(baseSegments)?.value === "/") {
+  if (baseSegments.length > 1 && last(baseSegments)?.value === "./") {
     baseSegments.pop();
   }
   for (let index = 0, length = toSegments.length; index < length; index++) {
     const toSegment = toSegments[index];
     const value = toSegment.value;
-    if (value === "/") {
+    if (value === "./") {
       if (!index) {
         baseSegments = [toSegment];
       } else if (index === length - 1) {
@@ -1048,12 +1048,12 @@ function resolvePath({
     }
   }
   if (baseSegments.length > 1) {
-    if (last(baseSegments).value === "/") {
+    if (last(baseSegments).value === "./") {
       if (trailingSlash === "never") {
         baseSegments.pop();
       }
     } else if (trailingSlash === "always") {
-      baseSegments.push({ type: SEGMENT_TYPE_PATHNAME, value: "/" });
+      baseSegments.push({ type: SEGMENT_TYPE_PATHNAME, value: "./" });
     }
   }
   const segmentValues = baseSegments.map(segmentToString);
@@ -1076,17 +1076,17 @@ var WILDCARD_W_CURLY_BRACES_RE = /^(.*?)\{\$\}(.*)$/;
 function baseParsePathname(pathname) {
   pathname = cleanPath(pathname);
   const segments = [];
-  if (pathname.slice(0, 1) === "/") {
+  if (pathname.slice(0, 1) === "./") {
     pathname = pathname.substring(1);
     segments.push({
       type: SEGMENT_TYPE_PATHNAME,
-      value: "/"
+      value: "./"
     });
   }
   if (!pathname) {
     return segments;
   }
-  const split = pathname.split("/").filter(Boolean);
+  const split = pathname.split("./").filter(Boolean);
   segments.push(
     ...split.map((part) => {
       const wildcardBracesMatch = part.match(WILDCARD_W_CURLY_BRACES_RE);
@@ -1150,11 +1150,11 @@ function baseParsePathname(pathname) {
       };
     })
   );
-  if (pathname.slice(-1) === "/") {
+  if (pathname.slice(-1) === "./") {
     pathname = pathname.substring(1);
     segments.push({
       type: SEGMENT_TYPE_PATHNAME,
-      value: "/"
+      value: "./"
     });
   }
   return segments;
@@ -1270,11 +1270,11 @@ function matchByPath(from, {
 }, parseCache) {
   const stringTo = to;
   const baseSegments = parsePathname(
-    from.startsWith("/") ? from : `/${from}`,
+    from.startsWith("./") ? from : `/${from}`,
     parseCache
   );
   const routeSegments = parsePathname(
-    stringTo.startsWith("/") ? stringTo : `/${stringTo}`,
+    stringTo.startsWith("./") ? stringTo : `/${stringTo}`,
     parseCache
   );
   const params = {};
@@ -1335,7 +1335,7 @@ function isMatch(baseSegments, routeSegments, params, fuzzy, caseSensitive) {
         return true;
       }
       if (routeSegment.type === SEGMENT_TYPE_PATHNAME) {
-        if (routeSegment.value === "/" && !baseSegment?.value) {
+        if (routeSegment.value === "./" && !baseSegment?.value) {
           routeIndex++;
           continue;
         }
@@ -1358,7 +1358,7 @@ function isMatch(baseSegments, routeSegments, params, fuzzy, caseSensitive) {
         if (!baseSegment) {
           return false;
         }
-        if (baseSegment.value === "/") {
+        if (baseSegment.value === "./") {
           return false;
         }
         let _paramValue = "";
@@ -1398,7 +1398,7 @@ function isMatch(baseSegments, routeSegments, params, fuzzy, caseSensitive) {
           routeIndex++;
           continue;
         }
-        if (baseSegment.value === "/") {
+        if (baseSegment.value === "./") {
           routeIndex++;
           continue;
         }
@@ -1454,7 +1454,7 @@ function isMatch(baseSegments, routeSegments, params, fuzzy, caseSensitive) {
       params["**"] = joinPaths(
         baseSegments.slice(baseIndex).map((d) => d.value)
       );
-      return !!fuzzy && routeSegments[routeSegments.length - 1]?.value !== "/";
+      return !!fuzzy && routeSegments[routeSegments.length - 1]?.value !== "./";
     }
     if (routeIndex < routeSegments.length && baseIndex >= baseSegments.length) {
       for (let i = routeIndex; i < routeSegments.length; i++) {
@@ -1502,14 +1502,14 @@ function sortRoutes(routes) {
     const trimmed = trimPathLeft(d.fullPath);
     let parsed = parsePathname(trimmed);
     let skip = 0;
-    while (parsed.length > skip + 1 && parsed[skip]?.value === "/") {
+    while (parsed.length > skip + 1 && parsed[skip]?.value === "./") {
       skip++;
     }
     if (skip > 0) parsed = parsed.slice(skip);
     let optionalParamCount = 0;
     let hasStaticAfter = false;
     const scores = parsed.map((segment, index) => {
-      if (segment.value === "/") {
+      if (segment.value === "./") {
         return SLASH_SCORE;
       }
       if (segment.type === SEGMENT_TYPE_PATHNAME) {
@@ -1526,7 +1526,7 @@ function sortRoutes(routes) {
       }
       for (let i2 = index + 1; i2 < parsed.length; i2++) {
         const nextSegment = parsed[i2];
-        if (nextSegment.type === SEGMENT_TYPE_PATHNAME && nextSegment.value !== "/") {
+        if (nextSegment.type === SEGMENT_TYPE_PATHNAME && nextSegment.value !== "./") {
           hasStaticAfter = true;
           return handleParam(
             segment,
@@ -1594,7 +1594,7 @@ function processRouteTree({
       routesById[childRoute.id] = childRoute;
       if (!childRoute.isRoot && childRoute.path) {
         const trimmedFullPath = trimPathRight(childRoute.fullPath);
-        if (!routesByPath[trimmedFullPath] || childRoute.fullPath.endsWith("/")) {
+        if (!routesByPath[trimmedFullPath] || childRoute.fullPath.endsWith("./")) {
           routesByPath[trimmedFullPath] = childRoute;
         }
       }
@@ -2655,14 +2655,14 @@ function rewriteBasepath(opts) {
     input: ({ url }) => {
       const pathname = opts.caseSensitive ? url.pathname : url.pathname.toLowerCase();
       if (pathname === checkBasepath) {
-        url.pathname = "/";
+        url.pathname = "./";
       } else if (pathname.startsWith(checkBasepathWithSlash)) {
         url.pathname = url.pathname.slice(normalizedBasepath.length);
       }
       return url;
     },
     output: ({ url }) => {
-      url.pathname = joinPaths(["/", trimmedBasepath, url.pathname]);
+      url.pathname = joinPaths(["./", trimmedBasepath, url.pathname]);
       return url;
     }
   };
@@ -2721,7 +2721,7 @@ var RouterCore = class {
         );
       }
       const prevOptions = this.options;
-      const prevBasepath = this.basepath ?? prevOptions?.basepath ?? "/";
+      const prevBasepath = this.basepath ?? prevOptions?.basepath ?? "./";
       const basepathWasUnset = this.basepath === void 0;
       const prevRewriteOption = prevOptions?.rewrite;
       this.options = {
@@ -2773,7 +2773,7 @@ var RouterCore = class {
         setupScrollRestoration(this);
       }
       let needsLocationUpdate = false;
-      const nextBasepath = this.options.basepath ?? "/";
+      const nextBasepath = this.options.basepath ?? "./";
       const nextRewriteOption = this.options.rewrite;
       const basepathChanged = basepathWasUnset || prevBasepath !== nextBasepath;
       const rewriteChanged = prevRewriteOption !== nextRewriteOption;
@@ -3231,7 +3231,7 @@ var RouterCore = class {
         if (trimPath(normalizeUrl(this.latestLocation.href)) !== trimPath(normalizeUrl(nextLocation.href))) {
           let href = nextLocation.url;
           if (this.origin && href.startsWith(this.origin)) {
-            href = href.replace(this.origin, "") || "/";
+            href = href.replace(this.origin, "") || "./";
           }
           throw redirect({ href });
         }
@@ -3440,7 +3440,7 @@ var RouterCore = class {
         const location = this.buildLocation(redirect2.options);
         let href = location.url;
         if (this.origin && href.startsWith(this.origin)) {
-          href = href.replace(this.origin, "") || "/";
+          href = href.replace(this.origin, "") || "./";
         }
         redirect2.options.href = location.href;
         redirect2.headers.set("Location", href);
@@ -3619,7 +3619,7 @@ var RouterCore = class {
     let isGlobalNotFound = false;
     if (
       // If we found a route, and it's not an index route and we have left over path
-      foundRoute ? foundRoute.path !== "/" && routeParams["**"] : (
+      foundRoute ? foundRoute.path !== "./" && routeParams["**"] : (
         // Or if we didn't find a route and we have left over path
         trimPathRight(next.pathname)
       )
@@ -3814,7 +3814,7 @@ var SearchParamError = class extends Error {
 };
 var PathParamError = class extends Error {
 };
-var normalize = (str) => str.endsWith("/") && str.length > 1 ? str.slice(0, -1) : str;
+var normalize = (str) => str.endsWith("./") && str.length > 1 ? str.slice(0, -1) : str;
 function comparePaths(a, b) {
   return normalize(a) === normalize(b);
 }
@@ -3884,7 +3884,7 @@ function getMatchedRoutes({
     for (const route of flatRoutes) {
       const matchedParams = getMatchedParams(route);
       if (matchedParams) {
-        if (route.path !== "/" && matchedParams["**"]) {
+        if (route.path !== "./" && matchedParams["**"]) {
           if (!fuzzyMatch) {
             fuzzyMatch = { foundRoute: route, routeParams: matchedParams };
           }
@@ -4007,7 +4007,7 @@ var BaseRoute = class {
         );
       }
       let path = isRoot ? rootRouteId : options2?.path;
-      if (path && path !== "/") {
+      if (path && path !== "./") {
         path = trimPathLeft(path);
       }
       const customId = options2?.id || path;
@@ -4016,12 +4016,12 @@ var BaseRoute = class {
         customId
       ]);
       if (path === rootRouteId) {
-        path = "/";
+        path = "./";
       }
       if (id !== rootRouteId) {
-        id = joinPaths(["/", id]);
+        id = joinPaths(["./", id]);
       }
-      const fullPath = id === rootRouteId ? "/" : joinPaths([this.parentRoute.fullPath, path]);
+      const fullPath = id === rootRouteId ? "./" : joinPaths([this.parentRoute.fullPath, path]);
       this._path = path;
       this._id = id;
       this._fullPath = fullPath;
@@ -4550,7 +4550,7 @@ function useLinkProps(options, forwardedRef) {
     let external = false;
     if (router.origin) {
       if (href.startsWith(router.origin)) {
-        href = router.history.createHref(href.replace(router.origin, "")) || "/";
+        href = router.history.createHref(href.replace(router.origin, "")) || "./";
       } else {
         external = true;
       }
@@ -4591,7 +4591,7 @@ function useLinkProps(options, forwardedRef) {
           next.pathname,
           router.basepath
         );
-        const pathIsFuzzyEqual = currentPathSplit.startsWith(nextPathSplit) && (currentPathSplit.length === nextPathSplit.length || currentPathSplit[nextPathSplit.length] === "/");
+        const pathIsFuzzyEqual = currentPathSplit.startsWith(nextPathSplit) && (currentPathSplit.length === nextPathSplit.length || currentPathSplit[nextPathSplit.length] === "./");
         if (!pathIsFuzzyEqual) {
           return false;
         }

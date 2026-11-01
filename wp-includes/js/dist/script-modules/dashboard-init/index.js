@@ -58,7 +58,7 @@ async function init() {
       name: "widgetModule",
       kind: "root",
       key: "name",
-      baseURL: "/wp/v2/widget-modules",
+      baseURL: "./wp/v2/widget-modules",
       plural: "widgetModules",
       label: (0, import_i18n.__)("Widget modules"),
       supportsPagination: false

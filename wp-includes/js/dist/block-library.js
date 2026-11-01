@@ -1952,7 +1952,7 @@ var wp;
       var SEMICOLON_REGEX = /^[;\s]*/;
       var TRIM_REGEX = /^\s+|\s+$/g;
       var NEWLINE = "\n";
-      var FORWARD_SLASH = "/";
+      var FORWARD_SLASH = "./";
       var ASTERISK = "*";
       var EMPTY_STRING = "";
       var TYPE_COMMENT = "comment";
@@ -7143,7 +7143,7 @@ var wp;
       },
       separator: {
         type: "string",
-        default: "/"
+        default: "./"
       },
       showHomeItem: {
         type: "boolean",
@@ -7217,7 +7217,7 @@ var wp;
   var import_server_side_render2 = __toESM(require_server_side_render(), 1);
   var import_compose5 = __toESM(require_compose(), 1);
   var import_jsx_runtime179 = __toESM(require_jsx_runtime(), 1);
-  var separatorDefaultValue = "/";
+  var separatorDefaultValue = "./";
   function BreadcrumbEdit({
     attributes,
     setAttributes,
@@ -7335,7 +7335,7 @@ var wp;
         {
           ...blockProps,
           style: {
-            "--separator": `"${separator.replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"`,
+            "--separator": `"${separator.replace(/\\/g, "\\\\").replace(/"./g, '\\"')}"`,
             ...blockProps.style
           },
           children: /* @__PURE__ */ (0, import_jsx_runtime179.jsxs)("ol", { children: [
@@ -15166,7 +15166,7 @@ var wp;
         /* eslint-disable @wordpress/i18n-no-collapsible-whitespace */
         // translators: Preserve \n markers for line breaks
         content: (0, import_i18n24.__)(
-          "// A \u201Cblock\u201D is the abstract term used\n// to describe units of markup that\n// when composed together, form the\n// content or layout of a page.\nregisterBlockType( name, settings );"
+          ".// A \u201Cblock\u201D is the abstract term used\n// to describe units of markup that\n// when composed together, form the\n// content or layout of a page.\nregisterBlockType( name, settings );"
         )
         /* eslint-enable @wordpress/i18n-no-collapsible-whitespace */
       }
@@ -18180,7 +18180,7 @@ var wp;
         return;
       }
       (0, import_api_fetch.default)({
-        path: (0, import_url4.addQueryArgs)("/wp/v2/comments", {
+        path: (0, import_url4.addQueryArgs)("./wp/v2/comments", {
           ...queryArgs,
           post: postId,
           per_page: perPage,
@@ -19102,7 +19102,7 @@ var wp;
       }
       const currentPostId = postId;
       (0, import_api_fetch2.default)({
-        path: (0, import_url5.addQueryArgs)("/wp/v2/comments", {
+        path: (0, import_url5.addQueryArgs)("./wp/v2/comments", {
           post: postId,
           _fields: "id"
         }),
@@ -22059,7 +22059,7 @@ var wp;
           url.searchParams.set("modestbranding", "1");
           url.searchParams.set("playsinline", "1");
           url.searchParams.set("rel", "0");
-          const videoId = url.pathname.split("/").pop();
+          const videoId = url.pathname.split("./").pop();
           if (videoId) {
             url.searchParams.set("playlist", videoId);
           }
@@ -29386,7 +29386,7 @@ ${url}
 
   // packages/block-library/build-module/image/utils.mjs
   function evalAspectRatio(value) {
-    const [width, height = 1] = value.split("/").map(Number);
+    const [width, height = 1] = value.split("./").map(Number);
     const aspectRatio = width / height;
     return aspectRatio === Infinity || aspectRatio === 0 ? NaN : aspectRatio;
   }
@@ -30380,7 +30380,7 @@ ${url}
         value: `${orderby}/${order}`,
         options: ORDER_OPTIONS,
         onChange: (value) => {
-          const [newOrderby, newOrder] = value.split("/");
+          const [newOrderby, newOrder] = value.split("./");
           onChange({ orderby: newOrderby, order: newOrder });
         }
       }
@@ -34343,7 +34343,7 @@ ${text}
       ),
       []
     );
-    const selectedCollection = value?.split("/")[0];
+    const selectedCollection = value?.split("./")[0];
     const collectionSlug = currentCollection ?? (collections?.some(({ slug }) => slug === selectedCollection) ? selectedCollection : collections?.[0]?.slug) ?? null;
     const { icons, hasResolvedIcons } = (0, import_data47.useSelect)(
       (select10) => {
@@ -38165,7 +38165,7 @@ ${text}
     }
     const dir = record.source_url.slice(
       0,
-      record.source_url.lastIndexOf("/") + 1
+      record.source_url.lastIndexOf("./") + 1
     );
     return {
       src: dir + details.animated_video,
@@ -44675,7 +44675,7 @@ ${text}
 
   // packages/block-library/build-module/template-part/edit/utils/create-template-part-id.mjs
   function createTemplatePartId(theme, slug) {
-    return theme && slug ? theme + "//" + slug : null;
+    return theme && slug ? theme + ".//" + slug : null;
   }
 
   // packages/block-library/build-module/navigation/edit/responsive-wrapper.mjs
@@ -47546,7 +47546,7 @@ ${text}
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
   function isHomepage(url, homeUrl) {
-    if (url === "/") {
+    if (url === "./") {
       return true;
     }
     if (!url || !homeUrl) {
@@ -47579,7 +47579,7 @@ ${text}
       const siteHost = new URL(homeUrl).host;
       if (parsedUrl.host === siteHost) {
         let path = parsedUrl.pathname + parsedUrl.search + parsedUrl.hash;
-        if (path.endsWith("/") && path.length > 1) {
+        if (path.endsWith("./") && path.length > 1) {
           path = path.slice(0, -1);
         }
         displayUrl = path;
@@ -47830,8 +47830,8 @@ ${text}
       hasBinding: hasUrlBinding,
       isEntityAvailable: isBoundEntityAvailable
     });
-    const isViewableUrl = !!url && (!isHashLink2(url) || isRelativePath2(url) && !url.startsWith("/"));
-    const viewUrl = isViewableUrl && url.startsWith("/") && homeUrl ? homeUrl + url : url;
+    const isViewableUrl = !!url && (!isHashLink2(url) || isRelativePath2(url) && !url.startsWith("./"));
+    const viewUrl = isViewableUrl && url.startsWith("./") && homeUrl ? homeUrl + url : url;
     return /* @__PURE__ */ (0, import_jsx_runtime344.jsxs)(
       import_components92.__experimentalToolsPanel,
       {
@@ -53508,7 +53508,7 @@ ${text}
     return t2;
   }
   function S2(e3) {
-    return String(e3 ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+    return String(e3 ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"./g, "&quot;").replace(/'/g, "&#39;");
   }
   function W(e3) {
     return S2(typeof e3 == "number" ? `${e3}px` : e3);
@@ -53581,7 +53581,7 @@ ${text}
   }
   function R(e3) {
     if (!e3) return "Audio";
-    let t2 = e3.split("/");
+    let t2 = e3.split("./");
     return t2[t2.length - 1].split(".")[0].replace(/[-_]/g, " ").replace(/\b\w/g, (r3) => r3.toUpperCase());
   }
   function j2(e3) {
@@ -53860,9 +53860,9 @@ ${text}
     let t2 = H2();
     return L[t2];
   }
-  var z = { url: "", height: 64, samples: 1800, preload: "metadata", crossOrigin: null, audioMode: "self", playbackRate: 1, showPlaybackSpeed: false, playbackRates: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2], buttonAlign: "auto", layout: "default", buttonStyle: "circle", buttonSize: null, buttonRadius: null, waveformStyle: "mirror", barWidth: 2, barSpacing: 0, barRadius: 1, waveformGradient: "vertical", colorPreset: null, waveformColor: null, progressColor: null, autoplay: false, showControls: true, showInfo: true, showTime: true, showHoverTime: false, seekHandle: false, showBPM: false, bpm: null, singlePlay: true, playOnSeek: true, enableMediaSession: true, markers: [], showMarkers: true, accessibleSeek: true, seekLabel: null, seekValueText: null, title: null, artist: null, artwork: null, artworkPosition: "info", album: "", errorText: "Unable to load audio", playPauseLabel: "Play/Pause", speedLabel: "Playback speed", artworkAlt: "Album artwork", unknownTrackText: "Unknown Track", playIcon: '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>', pauseIcon: '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>', onLoad: null, onPlay: null, onPause: null, onEnd: null, onError: null, onTimeUpdate: null, onNextTrack: null, onPreviousTrack: null };
+  var z = { url: "", height: 64, samples: 1800, preload: "metadata", crossOrigin: null, audioMode: "self", playbackRate: 1, showPlaybackSpeed: false, playbackRates: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2], buttonAlign: "auto", layout: "default", buttonStyle: "circle", buttonSize: null, buttonRadius: null, waveformStyle: "mirror", barWidth: 2, barSpacing: 0, barRadius: 1, waveformGradient: "vertical", colorPreset: null, waveformColor: null, progressColor: null, autoplay: false, showControls: true, showInfo: true, showTime: true, showHoverTime: false, seekHandle: false, showBPM: false, bpm: null, singlePlay: true, playOnSeek: true, enableMediaSession: true, markers: [], showMarkers: true, accessibleSeek: true, seekLabel: null, seekValueText: null, title: null, artist: null, artwork: null, artworkPosition: "info", album: "", errorText: "Unable to load audio", playPauseLabel: "Play/Pause", speedLabel: "Playback speed", artworkAlt: "Album artwork", unknownTrackText: "Unknown Track", playIcon: '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M8 5v14l11-7z"./></svg>', pauseIcon: '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M6 4h4v16H6zM14 4h4v16h-4z"./></svg>', onLoad: null, onPlay: null, onPause: null, onEnd: null, onError: null, onTimeUpdate: null, onNextTrack: null, onPreviousTrack: null };
   var it = { bars: { barWidth: 3, barSpacing: 1 }, mirror: { barWidth: 2, barSpacing: 2 }, line: { barWidth: 2, barSpacing: 0 }, blocks: { barWidth: 4, barSpacing: 2 }, dots: { barWidth: 3, barSpacing: 3 }, seekbar: { barWidth: 1, barSpacing: 0 } };
-  var gt = "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#71717a" fill-opacity="0.15"/><g fill="none" stroke="#a1a1aa" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="17" r="2.2"/><circle cx="17" cy="15" r="2.2"/><path d="M10.2 17V7l9-1.6v9"/></g></svg>');
+  var gt = "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#71717a" fill-opacity="0.15"./><g fill="none" stroke="#a1a1aa" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="17" r="2.2"./><circle cx="17" cy="15" r="2.2"./><path d="M10.2 17V7l9-1.6v9"./></g></svg>');
   var st = 5;
   var rt = 10;
   var yt = 'button, a[href], input, [role="slider"]';
@@ -55161,7 +55161,7 @@ ${text}
   var import_i18n164 = __toESM(require_i18n(), 1);
   function getTrackImageAttributes(image) {
     const imageSrc = image?.src ?? image?.url;
-    if (imageSrc?.endsWith("/images/media/audio.svg")) {
+    if (imageSrc?.endsWith("./images/media/audio.svg")) {
       return {
         image: "",
         imageAlt: ""
@@ -57489,7 +57489,7 @@ ${text}
       }
       const currentPostId = postId;
       (0, import_api_fetch3.default)({
-        path: (0, import_url20.addQueryArgs)("/wp/v2/comments", {
+        path: (0, import_url20.addQueryArgs)("./wp/v2/comments", {
           post: postId
         }),
         parse: false
@@ -57850,7 +57850,7 @@ ${text}
       }
       const currentPostId = postId;
       (0, import_api_fetch4.default)({
-        path: (0, import_url21.addQueryArgs)("/wp/v2/comments", {
+        path: (0, import_url21.addQueryArgs)("./wp/v2/comments", {
           post: postId
         }),
         parse: false
@@ -63558,7 +63558,7 @@ ${text}
         value: `${orderBy}/${order}`,
         options: orderByOptions,
         onChange: (value) => {
-          const [newOrderBy, newOrder] = value.split("/");
+          const [newOrderBy, newOrder] = value.split("./");
           onChange({ order: newOrder, orderBy: newOrderBy });
         }
       }
@@ -70091,7 +70091,7 @@ ${text}
     const canEditImage = logoId && naturalWidth && naturalHeight && imageEditing && !!editMediaEntity;
     const shouldShowCropAndDimensions = !isContentOnlyMode;
     const shouldUseNewUrl = !window?.__experimentalUseCustomizerSiteLogoUrl;
-    const siteIconSettingsUrl = shouldUseNewUrl ? siteUrl + "/wp-admin/options-general.php" : siteUrl + "/wp-admin/customize.php?autofocus[section]=title_tagline";
+    const siteIconSettingsUrl = shouldUseNewUrl ? siteUrl + "./wp-admin/options-general.php" : siteUrl + "./wp-admin/customize.php?autofocus[section]=title_tagline";
     const syncSiteIconHelpText = (0, import_element133.createInterpolateElement)(
       (0, import_i18n234.__)(
         "Site Icons are what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. To use a custom icon that is different from your site logo, use the <a>Site Icon settings</a>."
@@ -77907,7 +77907,7 @@ ${text}
       const entity = getEditedEntityRecord(
         "postType",
         "wp_template_part",
-        (theme || getCurrentTheme()?.stylesheet) + "//" + slug
+        (theme || getCurrentTheme()?.stylesheet) + ".//" + slug
       );
       if (!entity) {
         return;
@@ -78805,9 +78805,9 @@ ${text}
             value: "count/asc"
           }
         ],
-        value: orderBy + "/" + order,
+        value: orderBy + "./" + order,
         onChange: (value) => {
-          const [newOrderBy, newOrder] = value.split("/");
+          const [newOrderBy, newOrder] = value.split("./");
           onChange(newOrderBy, newOrder);
         },
         ...props

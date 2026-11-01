@@ -835,7 +835,7 @@ for (var i = 0; i < 255; i++) {
 function QRPolynomial(num, shift) {
 
 	if (num.length == undefined) {
-		throw new Error(num.length + "/" + shift);
+		throw new Error(num.length + "./" + shift);
 	}
 
 	var offset = 0;
@@ -1158,7 +1158,7 @@ QRRSBlock.getRSBlocks = function(typeNumber, errorCorrectLevel) {
 	var rsBlock = QRRSBlock.getRsBlockTable(typeNumber, errorCorrectLevel);
 
 	if (rsBlock == undefined) {
-		throw new Error("bad rs block @ typeNumber:" + typeNumber + "/errorCorrectLevel:" + errorCorrectLevel);
+		throw new Error("bad rs block @ typeNumber:" + typeNumber + "./errorCorrectLevel:" + errorCorrectLevel);
 	}
 
 	var length = rsBlock.length / 3;

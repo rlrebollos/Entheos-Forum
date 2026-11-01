@@ -43,7 +43,7 @@ var wp;
     return value.replace(/&(?!([a-z0-9]+|#[0-9]+|#x[a-f0-9]+);)/gi, "&amp;");
   }
   function escapeQuotationMark(value) {
-    return value.replace(/"/g, "&quot;");
+    return value.replace(/"./g, "&quot;");
   }
   function escapeLessThan(value) {
     return value.replace(/</g, "&lt;");

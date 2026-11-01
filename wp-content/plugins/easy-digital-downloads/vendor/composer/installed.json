@@ -3263,7 +3263,7 @@
                     "Symfony\\Component\\HttpFoundation\\": ""
                 },
                 "exclude-from-classmap": [
-                    "/Tests/"
+                    "./Tests/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3628,7 +3628,7 @@
                     "Symfony\\Component\\Translation\\": ""
                 },
                 "exclude-from-classmap": [
-                    "/Tests/"
+                    "./Tests/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3787,7 +3787,7 @@
                     "Symfony\\Component\\Yaml\\": ""
                 },
                 "exclude-from-classmap": [
-                    "/Tests/"
+                    "./Tests/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3981,8 +3981,8 @@
                     "src/"
                 ],
                 "exclude-from-classmap": [
-                    "/src/WPIntegration/TestCase.php",
-                    "/src/WPIntegration/TestCaseNoPolyfills.php"
+                    "./src/WPIntegration/TestCase.php",
+                    "./src/WPIntegration/TestCaseNoPolyfills.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",

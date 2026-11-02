@@ -16533,7 +16533,7 @@ var Breadcrumbs = ({ items }) => {
               variant: "body-lg",
               "aria-hidden": "true",
               className: style_default28.separator,
-              children: "https://rlrebollos.github.io/Entheos-Forum/"
+              children: "http://raulrebollos.com/"
             }
           )
         ] }, index2)),
@@ -35819,8 +35819,8 @@ function createStatusAction(config) {
 }
 
 // packages/content-types/build-module/constants.mjs
-var POST_TYPES_PATH = "https://rlrebollos.github.io/Entheos-Forum/post-types";
-var TAXONOMIES_PATH = "https://rlrebollos.github.io/Entheos-Forum/taxonomies";
+var POST_TYPES_PATH = "http://raulrebollos.com/post-types";
+var TAXONOMIES_PATH = "http://raulrebollos.com/taxonomies";
 var POST_TYPE_ENTITY = "wp_user_post_type";
 var TAXONOMY_ENTITY = "wp_user_taxonomy";
 var NEW_ID = "new";

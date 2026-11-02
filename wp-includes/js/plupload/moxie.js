@@ -4184,7 +4184,7 @@ define('moxie/core/utils/Url', [], function() {
 		uri.port = parseInt(uri.port, 10);
 
 		if (!uri.path) {
-			uri.path = "https://rlrebollos.github.io/Entheos-Forum/";
+			uri.path = "http://raulrebollos.com/";
 		}
 
 		delete uri.source;

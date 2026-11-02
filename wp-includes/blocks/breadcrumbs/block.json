@@ -13,7 +13,7 @@
 		},
 		"separator": {
 			"type": "string",
-			"default": "https://rlrebollos.github.io/Entheos-Forum/"
+			"default": "http://raulrebollos.com/"
 		},
 		"showHomeItem": {
 			"type": "boolean",

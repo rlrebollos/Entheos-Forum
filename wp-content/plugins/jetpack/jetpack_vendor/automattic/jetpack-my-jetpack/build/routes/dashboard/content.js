@@ -44,7 +44,7 @@ __( "%s not included", "jetpack-my-jetpack" );
 __( "Reduced pricing is a limited offer for the first year and renews at regular price.", "jetpack-my-jetpack" );
 __( "Desktop score", "jetpack-my-jetpack" );
 __( "Mobile score", "jetpack-my-jetpack" );
-__( "https://rlrebollos.github.io/Entheos-Forum/month, paid yearly", "jetpack-my-jetpack" );
+__( "http://raulrebollos.com/month, paid yearly", "jetpack-my-jetpack" );
 __( "% off", "jetpack-my-jetpack" );
 __( "% off the first year", "jetpack-my-jetpack" );
 __( "Dismiss", "jetpack-my-jetpack" );
@@ -356,7 +356,7 @@ __( "Manage", "jetpack-my-jetpack" );
 __( "Purchase", "jetpack-my-jetpack" );
 __( "Start for free", "jetpack-my-jetpack" );
 __( "Free", "jetpack-my-jetpack" );
-__( "https://rlrebollos.github.io/Entheos-Forum/month, billed yearly", "jetpack-my-jetpack" );
+__( "http://raulrebollos.com/month, billed yearly", "jetpack-my-jetpack" );
 __( "Expires soon", "jetpack-my-jetpack" );
 __( "Expired plan", "jetpack-my-jetpack" );
 __( "Needs Plugin", "jetpack-my-jetpack" );
@@ -1185,7 +1185,7 @@ __( "Unlimited users", "jetpack-my-jetpack" );
 __( "Get VideoPress", "jetpack-my-jetpack" );
 /* translators: %s is the monthly price for a product */
 __( "trial for the first month, then $%s /month, billed yearly", "jetpack-my-jetpack" );
-__( "https://rlrebollos.github.io/Entheos-Forum/month", "jetpack-my-jetpack" );
+__( "http://raulrebollos.com/month", "jetpack-my-jetpack" );
 /* translators: %s: product name. */
 __( "Install %s", "jetpack-my-jetpack" );
 /* translators: %s: the product name. */
@@ -1198,7 +1198,7 @@ __( "Get plugin", "jetpack-my-jetpack" );
 __( "%s or Start for free", "jetpack-my-jetpack" );
 __( "Active on your site", "jetpack-my-jetpack" );
 __( "Use license key", "jetpack-my-jetpack" );
-_x( "https://rlrebollos.github.io/Entheos-Forum/month", "Price description representing \"per month\" price", "jetpack-my-jetpack" );
+_x( "http://raulrebollos.com/month", "Price description representing \"per month\" price", "jetpack-my-jetpack" );
 __( "* Limits apply for high request capacity. <link>Learn more about it here</link>.", "jetpack-my-jetpack" );
 __( "Generate and edit content faster with Jetpack AI Assistant", "jetpack-my-jetpack" );
 __( "Create featured images with one click", "jetpack-my-jetpack" );

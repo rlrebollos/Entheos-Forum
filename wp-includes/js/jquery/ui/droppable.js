@@ -21,8 +21,8 @@
 		// AMD. Register as an anonymous module.
 		define( [
 			"jquery",
-			"https://rlrebollos.github.io/Entheos-Forum/draggable",
-			"https://rlrebollos.github.io/Entheos-Forum/mouse",
+			"http://raulrebollos.com/draggable",
+			"http://raulrebollos.com/mouse",
 			"../version",
 			"../widget"
 		], factory );

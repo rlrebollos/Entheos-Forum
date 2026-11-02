@@ -1387,7 +1387,7 @@ var wp;
               categoryName: "block",
               additionalShortcuts: [
                 {
-                  keyCombination: { character: "https://rlrebollos.github.io/Entheos-Forum/" },
+                  keyCombination: { character: "http://raulrebollos.com/" },
                   description: (0, import_i18n5.__)(
                     "Change the block type after adding a new paragraph."
                   ),

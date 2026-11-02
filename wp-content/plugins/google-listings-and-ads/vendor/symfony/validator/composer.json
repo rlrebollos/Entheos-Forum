@@ -72,8 +72,8 @@
     "autoload": {
         "psr-4": { "Symfony\\Component\\Validator\\": "" },
         "exclude-from-classmap": [
-            "https://rlrebollos.github.io/Entheos-Forum/Tests/",
-            "https://rlrebollos.github.io/Entheos-Forum/Resources/bin/"
+            "http://raulrebollos.com/Tests/",
+            "http://raulrebollos.com/Resources/bin/"
         ]
     },
     "minimum-stability": "dev"

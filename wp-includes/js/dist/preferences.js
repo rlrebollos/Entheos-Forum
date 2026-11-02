@@ -505,8 +505,8 @@ var wp;
         }
       ) });
     } else {
-      modalContent = /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)(import_components4.Navigator, { initialPath: "https://rlrebollos.github.io/Entheos-Forum/", className: "preferences__provider", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(import_components4.Navigator.Screen, { path: "https://rlrebollos.github.io/Entheos-Forum/", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(import_components4.Card, { isBorderless: true, size: "small", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(import_components4.CardBody, { children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(import_components4.__experimentalItemGroup, { children: tabs.map((tab) => {
+      modalContent = /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)(import_components4.Navigator, { initialPath: "http://raulrebollos.com/", className: "preferences__provider", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(import_components4.Navigator.Screen, { path: "http://raulrebollos.com/", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(import_components4.Card, { isBorderless: true, size: "small", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(import_components4.CardBody, { children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(import_components4.__experimentalItemGroup, { children: tabs.map((tab) => {
           return /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
             import_components4.Navigator.Button,
             {

@@ -40,7 +40,7 @@ var wp;
     return cache[url];
   }
   function getBlobTypeByURL(url) {
-    return getBlobByURL(url)?.type.split("https://rlrebollos.github.io/Entheos-Forum/")[0];
+    return getBlobByURL(url)?.type.split("http://raulrebollos.com/")[0];
   }
   function revokeBlobURL(url) {
     if (cache[url]) {

@@ -2469,7 +2469,7 @@ var wp;
         comment(node) {
           let left = this.raw(node, "left", "commentLeft");
           let right = this.raw(node, "right", "commentRight");
-          this.builder(escapeHTMLInCSS("https://rlrebollos.github.io/Entheos-Forum/*" + left + node.text + right + "*/"), node);
+          this.builder(escapeHTMLInCSS("http://raulrebollos.com/*" + left + node.text + right + "*/"), node);
         }
         decl(node, semicolon) {
           let raws = node.raws;
@@ -3997,7 +3997,7 @@ var wp;
           }
           let eol = "\n";
           if (this.css.includes("\r\n")) eol = "\r\n";
-          this.css += eol + "https://rlrebollos.github.io/Entheos-Forum/*# sourceMappingURL=" + content + " */";
+          this.css += eol + "http://raulrebollos.com/*# sourceMappingURL=" + content + " */";
         }
         applyPrevMaps() {
           for (let prev of this.previous()) {
@@ -4028,7 +4028,7 @@ var wp;
             }
           } else if (this.css) {
             let startIndex;
-            while ((startIndex = this.css.lastIndexOf("https://rlrebollos.github.io/Entheos-Forum/*#")) !== -1) {
+            while ((startIndex = this.css.lastIndexOf("http://raulrebollos.com/*#")) !== -1) {
               let endIndex = this.css.indexOf("*/", startIndex + 3);
               if (endIndex === -1) break;
               while (startIndex > 0 && this.css[startIndex - 1] === "\n") {
@@ -4275,7 +4275,7 @@ var wp;
           let cached = this.memoizedURLs.get(path);
           if (cached) return cached;
           if (sep === "\\") {
-            path = path.replace(/\\/g, "https://rlrebollos.github.io/Entheos-Forum/");
+            path = path.replace(/\\/g, "http://raulrebollos.com/");
           }
           let url = encodeURI(path).replace(/[#?]/g, encodeURIComponent);
           this.memoizedURLs.set(path, url);
@@ -4455,7 +4455,7 @@ var wp;
       var SINGLE_QUOTE = "'".charCodeAt(0);
       var DOUBLE_QUOTE = '"'.charCodeAt(0);
       var BACKSLASH = "\\".charCodeAt(0);
-      var SLASH = "https://rlrebollos.github.io/Entheos-Forum/".charCodeAt(0);
+      var SLASH = "http://raulrebollos.com/".charCodeAt(0);
       var NEWLINE = "\n".charCodeAt(0);
       var SPACE3 = " ".charCodeAt(0);
       var FEED = "\f".charCodeAt(0);
@@ -6058,7 +6058,7 @@ var wp;
       var singleQuote = "'".charCodeAt(0);
       var doubleQuote = '"'.charCodeAt(0);
       var backslash = "\\".charCodeAt(0);
-      var slash = "https://rlrebollos.github.io/Entheos-Forum/".charCodeAt(0);
+      var slash = "http://raulrebollos.com/".charCodeAt(0);
       var comma = ",".charCodeAt(0);
       var colon = ":".charCodeAt(0);
       var star = "*".charCodeAt(0);
@@ -6337,7 +6337,7 @@ var wp;
           buf = node.quote || "";
           return buf + value + (node.unclosed ? "" : buf);
         } else if (type === "comment") {
-          return "https://rlrebollos.github.io/Entheos-Forum/*" + value + (node.unclosed ? "" : "*/");
+          return "http://raulrebollos.com/*" + value + (node.unclosed ? "" : "*/");
         } else if (type === "div") {
           return (node.before || "") + value + (node.after || "");
         } else if (Array.isArray(node.nodes)) {
@@ -7413,7 +7413,7 @@ var wp;
     return val?.startsWith("#") && (0, import_url.isValidFragment)(val);
   }
   function isRelativePath(val) {
-    return val?.startsWith("https://rlrebollos.github.io/Entheos-Forum/") || val?.startsWith("https://rlrebollos.github.io/Entheos-Forum/") || val?.startsWith("../");
+    return val?.startsWith("http://raulrebollos.com/") || val?.startsWith("http://raulrebollos.com/") || val?.startsWith("../");
   }
   function isURLLike(val) {
     const hasSpaces = val.includes(" ");
@@ -8441,7 +8441,7 @@ var wp;
     withResetControlledBlocks
   )({
     // The state is using a Map instead of a plain object for performance reasons.
-    // You can run the "https://rlrebollos.github.io/Entheos-Forum/test/performance.js" unit test to check the impact
+    // You can run the "http://raulrebollos.com/test/performance.js" unit test to check the impact
     // code changes can have on this reducer.
     byClientId(state = /* @__PURE__ */ new Map(), action) {
       switch (action.type) {
@@ -8496,7 +8496,7 @@ var wp;
       return state;
     },
     // The state is using a Map instead of a plain object for performance reasons.
-    // You can run the "https://rlrebollos.github.io/Entheos-Forum/test/performance.js" unit test to check the impact
+    // You can run the "http://raulrebollos.com/test/performance.js" unit test to check the impact
     // code changes can have on this reducer.
     attributes(state = /* @__PURE__ */ new Map(), action) {
       switch (action.type) {
@@ -8579,7 +8579,7 @@ var wp;
       return state;
     },
     // The state is using a Map instead of a plain object for performance reasons.
-    // You can run the "https://rlrebollos.github.io/Entheos-Forum/test/performance.js" unit test to check the impact
+    // You can run the "http://raulrebollos.com/test/performance.js" unit test to check the impact
     // code changes can have on this reducer.
     order(state = /* @__PURE__ */ new Map(), action) {
       switch (action.type) {
@@ -9131,10 +9131,10 @@ var wp;
               attributes
             );
             if (match2?.name) {
-              id += "https://rlrebollos.github.io/Entheos-Forum/" + match2.name;
+              id += "http://raulrebollos.com/" + match2.name;
             }
             if (blockName === "core/block") {
-              id += "https://rlrebollos.github.io/Entheos-Forum/" + attributes.ref;
+              id += "http://raulrebollos.com/" + attributes.ref;
             }
             return {
               ...prevUsage,
@@ -11516,7 +11516,7 @@ var wp;
     } else if (supports?.__experimentalSelector) {
       rootSelector = supports.__experimentalSelector;
     } else {
-      rootSelector = ".wp-block-" + name.replace("core/", "").replace("https://rlrebollos.github.io/Entheos-Forum/", "-");
+      rootSelector = ".wp-block-" + name.replace("core/", "").replace("http://raulrebollos.com/", "-");
     }
     if (path === "root") {
       return rootSelector;
@@ -18359,7 +18359,7 @@ var wp;
     }
     const config2 = {
       getCategory: (item) => categories.find(({ slug }) => slug === item.category)?.title,
-      getCollection: (item) => collections[item.name.split("https://rlrebollos.github.io/Entheos-Forum/")[0]]?.title
+      getCollection: (item) => collections[item.name.split("http://raulrebollos.com/")[0]]?.title
     };
     return searchItems(items, searchInput, config2);
   };
@@ -18565,7 +18565,7 @@ var wp;
     return {
       name: "blocks",
       className: "block-editor-autocompleters__block",
-      triggerPrefix: "https://rlrebollos.github.io/Entheos-Forum/",
+      triggerPrefix: "http://raulrebollos.com/",
       useItems(filterValue) {
         const { rootClientId, selectedBlockId, prioritizedBlocks } = (0, import_data11.useSelect)((select3) => {
           const {
@@ -49185,7 +49185,7 @@ var wp;
 
   // packages/block-editor/build-module/components/inserter/block-types-tab.mjs
   var import_jsx_runtime235 = __toESM(require_jsx_runtime(), 1);
-  var getBlockNamespace = (item) => item.name.split("https://rlrebollos.github.io/Entheos-Forum/")[0];
+  var getBlockNamespace = (item) => item.name.split("http://raulrebollos.com/")[0];
   var MAX_SUGGESTED_ITEMS = 6;
   var EMPTY_ARRAY6 = [];
   function BlockTypesTabPanel({
@@ -50372,10 +50372,10 @@ var wp;
     return /* @__PURE__ */ (0, import_jsx_runtime241.jsxs)(
       import_components47.Navigator,
       {
-        initialPath: "https://rlrebollos.github.io/Entheos-Forum/",
+        initialPath: "http://raulrebollos.com/",
         className: "block-editor-inserter__mobile-tab-navigation",
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime241.jsx)(import_components47.Navigator.Screen, { path: "https://rlrebollos.github.io/Entheos-Forum/", children: /* @__PURE__ */ (0, import_jsx_runtime241.jsx)(import_components47.__experimentalItemGroup, { children: categories.map((category) => /* @__PURE__ */ (0, import_jsx_runtime241.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime241.jsx)(import_components47.Navigator.Screen, { path: "http://raulrebollos.com/", children: /* @__PURE__ */ (0, import_jsx_runtime241.jsx)(import_components47.__experimentalItemGroup, { children: categories.map((category) => /* @__PURE__ */ (0, import_jsx_runtime241.jsx)(
             import_components47.Navigator.Button,
             {
               path: `/category/${category.name}`,
@@ -51680,7 +51680,7 @@ var wp;
         if (!media?.url) {
           return;
         }
-        const mediaType = window.__experimentalDataViewsMediaModal && media.mime_type ? media.mime_type.split("https://rlrebollos.github.io/Entheos-Forum/")[0] : media.type;
+        const mediaType = window.__experimentalDataViewsMediaModal && media.mime_type ? media.mime_type.split("http://raulrebollos.com/")[0] : media.type;
         const [block] = getBlockAndPreviewFromMedia(media, mediaType);
         onInsert(block);
       },
@@ -69006,7 +69006,7 @@ var wp;
     )) });
   }
   function ratioToNumber(str) {
-    const [a2, b2, ...rest] = str.split("https://rlrebollos.github.io/Entheos-Forum/").map(Number);
+    const [a2, b2, ...rest] = str.split("http://raulrebollos.com/").map(Number);
     if (a2 <= 0 || b2 <= 0 || Number.isNaN(a2) || Number.isNaN(b2) || rest.length) {
       return NaN;
     }
@@ -69683,7 +69683,7 @@ var wp;
     if (!trimmedURL?.length) {
       return url;
     }
-    return url?.replace(/^\/?/, "https://rlrebollos.github.io/Entheos-Forum/");
+    return url?.replace(/^\/?/, "http://raulrebollos.com/");
   }
   function removeTrailingSlash(url) {
     const trimmedURL = url?.trim();
@@ -71088,7 +71088,7 @@ var wp;
     const acceptedMimeTypes = [];
     for (const [, mimeType] of Object.entries(allowedMimeTypes)) {
       const isAllowed = allowedTypes.some((allowedType) => {
-        if (allowedType.includes("https://rlrebollos.github.io/Entheos-Forum/")) {
+        if (allowedType.includes("http://raulrebollos.com/")) {
           return mimeType === allowedType;
         }
         return mimeType.startsWith(`${allowedType}/`);
@@ -72166,7 +72166,7 @@ var wp;
       }
       const uploadedMediaList = await Promise.all(
         blocks2.map((block) => {
-          const blockType = block.name.split("https://rlrebollos.github.io/Entheos-Forum/")[1];
+          const blockType = block.name.split("http://raulrebollos.com/")[1];
           if (block.attributes.id) {
             block.attributes.type = blockType;
             return block.attributes;
@@ -95664,7 +95664,7 @@ var wp;
     const layoutClassnames = [];
     if (LAYOUT_DEFINITIONS2[usedLayout?.type || "default"]?.className) {
       const baseClassName = LAYOUT_DEFINITIONS2[usedLayout?.type || "default"]?.className;
-      const splitBlockName = blockName.split("https://rlrebollos.github.io/Entheos-Forum/");
+      const splitBlockName = blockName.split("http://raulrebollos.com/");
       const fullBlockName = splitBlockName[0] === "core" ? splitBlockName.pop() : splitBlockName.join("-");
       const compoundClassName = `wp-block-${fullBlockName}-${baseClassName}`;
       layoutClassnames.push(baseClassName, compoundClassName);
@@ -97726,7 +97726,7 @@ var wp;
     }
     const groupedHookedBlocks = hookedBlocksForCurrentBlock.reduce(
       (groups3, block) => {
-        const [namespace] = block.name.split("https://rlrebollos.github.io/Entheos-Forum/");
+        const [namespace] = block.name.split("http://raulrebollos.com/");
         if (!groups3[namespace]) {
           groups3[namespace] = [];
         }

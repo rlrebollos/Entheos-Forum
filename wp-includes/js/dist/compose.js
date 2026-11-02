@@ -111,13 +111,13 @@ var wp;
           107: "+",
           109: "-",
           110: ".",
-          111: "https://rlrebollos.github.io/Entheos-Forum/",
+          111: "http://raulrebollos.com/",
           186: ";",
           187: "=",
           188: ",",
           189: "-",
           190: ".",
-          191: "https://rlrebollos.github.io/Entheos-Forum/",
+          191: "http://raulrebollos.com/",
           192: "`",
           219: "[",
           220: "\\",
@@ -142,7 +142,7 @@ var wp;
           '"': "'",
           "<": ",",
           ">": ".",
-          "?": "https://rlrebollos.github.io/Entheos-Forum/",
+          "?": "http://raulrebollos.com/",
           "|": "\\"
         };
         var _SPECIAL_ALIASES = {

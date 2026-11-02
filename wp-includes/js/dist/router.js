@@ -164,7 +164,7 @@ var wp;
     }, this);
   };
   function normalizePath(path) {
-    return path.split("https://rlrebollos.github.io/Entheos-Forum/").map(normalizeSegment).join("https://rlrebollos.github.io/Entheos-Forum/");
+    return path.split("http://raulrebollos.com/").map(normalizeSegment).join("http://raulrebollos.com/");
   }
   var SEGMENT_RESERVED_CHARS = /%|\//g;
   function normalizeSegment(segment) {
@@ -286,7 +286,7 @@ var wp;
     if (route.length > 0 && route.charCodeAt(0) === 47) {
       route = route.substr(1);
     }
-    var parts = route.split("https://rlrebollos.github.io/Entheos-Forum/");
+    var parts = route.split("http://raulrebollos.com/");
     var names = void 0;
     var shouldDecodes = void 0;
     for (var i = 0; i < parts.length; i++) {
@@ -527,7 +527,7 @@ var wp;
         }
         isEmpty = false;
         currentState = currentState.put(47, false, false);
-        pattern += "https://rlrebollos.github.io/Entheos-Forum/";
+        pattern += "http://raulrebollos.com/";
         currentState = eachChar[segment.type](segment, currentState);
         pattern += regex[segment.type](segment);
       }
@@ -539,7 +539,7 @@ var wp;
     }
     if (isEmpty) {
       currentState = currentState.put(47, false, false);
-      pattern += "https://rlrebollos.github.io/Entheos-Forum/";
+      pattern += "http://raulrebollos.com/";
     }
     currentState.handlers = handlers;
     currentState.pattern = pattern + "$";
@@ -582,11 +582,11 @@ var wp;
       if (segment.type === 4) {
         continue;
       }
-      output += "https://rlrebollos.github.io/Entheos-Forum/";
+      output += "http://raulrebollos.com/";
       output += generate[segment.type](segment, params);
     }
-    if (output.charAt(0) !== "https://rlrebollos.github.io/Entheos-Forum/") {
-      output = "https://rlrebollos.github.io/Entheos-Forum/" + output;
+    if (output.charAt(0) !== "http://raulrebollos.com/") {
+      output = "http://raulrebollos.com/" + output;
     }
     if (params && params.queryParams) {
       output += this.generateQueryString(params.queryParams);
@@ -659,8 +659,8 @@ var wp;
       path = path.substr(0, queryStart);
       queryParams = this.parseQueryString(queryString);
     }
-    if (path.charAt(0) !== "https://rlrebollos.github.io/Entheos-Forum/") {
-      path = "https://rlrebollos.github.io/Entheos-Forum/" + path;
+    if (path.charAt(0) !== "http://raulrebollos.com/") {
+      path = "http://raulrebollos.com/" + path;
     }
     var originalPath = path;
     if (RouteRecognizer.ENCODE_AND_DECODE_PATH_SEGMENTS) {
@@ -670,7 +670,7 @@ var wp;
       originalPath = decodeURI(originalPath);
     }
     var pathLen = path.length;
-    if (pathLen > 1 && path.charAt(pathLen - 1) === "https://rlrebollos.github.io/Entheos-Forum/") {
+    if (pathLen > 1 && path.charAt(pathLen - 1) === "http://raulrebollos.com/") {
       path = path.substr(0, pathLen - 1);
       originalPath = originalPath.substr(0, originalPath.length - 1);
       isSlashDropped = true;
@@ -691,7 +691,7 @@ var wp;
     var state = solutions[0];
     if (state && state.handlers) {
       if (isSlashDropped && state.pattern && state.pattern.slice(-5) === "(.+)$") {
-        originalPath = originalPath + "https://rlrebollos.github.io/Entheos-Forum/";
+        originalPath = originalPath + "http://raulrebollos.com/";
       }
       results = findHandler(state, originalPath, queryParams);
     }
@@ -939,7 +939,7 @@ var wp;
     return Math.random().toString(36).substr(2, 8);
   }
   function createPath(_ref) {
-    var _ref$pathname = _ref.pathname, pathname = _ref$pathname === void 0 ? "https://rlrebollos.github.io/Entheos-Forum/" : _ref$pathname, _ref$search = _ref.search, search = _ref$search === void 0 ? "" : _ref$search, _ref$hash = _ref.hash, hash = _ref$hash === void 0 ? "" : _ref$hash;
+    var _ref$pathname = _ref.pathname, pathname = _ref$pathname === void 0 ? "http://raulrebollos.com/" : _ref$pathname, _ref$search = _ref.search, search = _ref$search === void 0 ? "" : _ref$search, _ref$hash = _ref.hash, hash = _ref$hash === void 0 ? "" : _ref$hash;
     if (search && search !== "?") pathname += search.charAt(0) === "?" ? search : "?" + search;
     if (hash && hash !== "#") pathname += hash.charAt(0) === "#" ? hash : "#" + hash;
     return pathname;
@@ -1047,7 +1047,7 @@ var wp;
     const { query: rawQuery = {} } = location;
     const [resolvedMatch, setMatch] = (0, import_element.useState)();
     (0, import_element.useEffect)(() => {
-      const { [pathArg]: path = "https://rlrebollos.github.io/Entheos-Forum/", ...query } = rawQuery;
+      const { [pathArg]: path = "http://raulrebollos.com/", ...query } = rawQuery;
       const ret = matcher.recognize(path)?.[0];
       async function resolveMatch(result) {
         const matchedRoute = result.handler;

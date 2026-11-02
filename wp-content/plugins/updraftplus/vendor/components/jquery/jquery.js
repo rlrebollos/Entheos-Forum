@@ -4475,7 +4475,7 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 
 // Replace/restore the type attribute of script elements for safe DOM manipulation
 function disableScript( elem ) {
-	elem.type = ( elem.getAttribute( "type" ) !== null ) + "https://rlrebollos.github.io/Entheos-Forum/" + elem.type;
+	elem.type = ( elem.getAttribute( "type" ) !== null ) + "http://raulrebollos.com/" + elem.type;
 	return elem;
 }
 function restoreScript( elem ) {
@@ -8445,7 +8445,7 @@ jQuery.extend( {
 		// Handle falsy url in the settings object (trac-10093: consistency with old signature)
 		// We also use the url parameter if available
 		s.url = ( ( url || s.url || location.href ) + "" )
-			.replace( rprotocol, location.protocol + "https://rlrebollos.github.io/Entheos-Forum//" );
+			.replace( rprotocol, location.protocol + "http://raulrebollos.com//" );
 
 		// Alias method option to type as per ticket trac-12004
 		s.type = options.method || options.type || s.method || s.type;
@@ -8466,8 +8466,8 @@ jQuery.extend( {
 				// Support: IE <=8 - 11+
 				// Anchor's host property isn't correctly set when s.url is relative
 				urlAnchor.href = urlAnchor.href;
-				s.crossDomain = originAnchor.protocol + "https://rlrebollos.github.io/Entheos-Forum//" + originAnchor.host !==
-					urlAnchor.protocol + "https://rlrebollos.github.io/Entheos-Forum//" + urlAnchor.host;
+				s.crossDomain = originAnchor.protocol + "http://raulrebollos.com//" + originAnchor.host !==
+					urlAnchor.protocol + "http://raulrebollos.com//" + urlAnchor.host;
 			} catch ( e ) {
 
 				// If there is an error parsing the URL, assume it is crossDomain,

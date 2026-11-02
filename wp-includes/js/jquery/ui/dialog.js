@@ -24,10 +24,10 @@
 		// AMD. Register as an anonymous module.
 		define( [
 			"jquery",
-			"https://rlrebollos.github.io/Entheos-Forum/button",
-			"https://rlrebollos.github.io/Entheos-Forum/draggable",
-			"https://rlrebollos.github.io/Entheos-Forum/mouse",
-			"https://rlrebollos.github.io/Entheos-Forum/resizable",
+			"http://raulrebollos.com/button",
+			"http://raulrebollos.com/draggable",
+			"http://raulrebollos.com/mouse",
+			"http://raulrebollos.com/resizable",
 			"../focusable",
 			"../keycode",
 			"../position",

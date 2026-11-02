@@ -13348,11 +13348,11 @@ var wp;
         };
       }, []);
       let backPath;
-      if (path !== "https://rlrebollos.github.io/Entheos-Forum/") {
+      if (path !== "http://raulrebollos.com/") {
         if (isBlockTheme || isClassicThemeWithStyleBookSupport2) {
-          backPath = "https://rlrebollos.github.io/Entheos-Forum/";
-        } else if (path !== "https://rlrebollos.github.io/Entheos-Forum/pattern") {
-          backPath = "https://rlrebollos.github.io/Entheos-Forum/pattern";
+          backPath = "http://raulrebollos.com/";
+        } else if (path !== "http://raulrebollos.com/pattern") {
+          backPath = "http://raulrebollos.com/pattern";
         }
       }
       const backButtonProps = {
@@ -16918,7 +16918,7 @@ var wp;
   var import_api_fetch = __toESM(require_api_fetch(), 1);
   var import_element42 = __toESM(require_element(), 1);
   var import_url4 = __toESM(require_url(), 1);
-  var ACTIVE_THEMES_URL = "https://rlrebollos.github.io/Entheos-Forum/wp/v2/themes?status=active";
+  var ACTIVE_THEMES_URL = "http://raulrebollos.com/wp/v2/themes?status=active";
   function useActualCurrentTheme() {
     const [currentTheme, setCurrentTheme] = (0, import_element42.useState)();
     (0, import_element42.useEffect)(() => {
@@ -17336,7 +17336,7 @@ var wp;
           callback: ({ close }) => {
             close();
             if (canvas !== "edit") {
-              history.navigate("https://rlrebollos.github.io/Entheos-Forum/styles?canvas=edit", {
+              history.navigate("http://raulrebollos.com/styles?canvas=edit", {
                 transition: "canvas-mode-edit-transition"
               });
             }
@@ -17403,12 +17403,12 @@ var wp;
           callback: ({ close }) => {
             close();
             if (canvas !== "edit") {
-              history.navigate("https://rlrebollos.github.io/Entheos-Forum/styles?canvas=edit", {
+              history.navigate("http://raulrebollos.com/styles?canvas=edit", {
                 transition: "canvas-mode-edit-transition"
               });
             }
             openGeneralSidebar2("edit-site/global-styles");
-            setStylesPath("https://rlrebollos.github.io/Entheos-Forum/revisions");
+            setStylesPath("http://raulrebollos.com/revisions");
           }
         }
       ];
@@ -17678,7 +17678,7 @@ var wp;
       /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(
         SidebarNavigationItem,
         {
-          to: "https://rlrebollos.github.io/Entheos-Forum/identity",
+          to: "http://raulrebollos.com/identity",
           uid: "identity-navigation-item",
           icon: site_logo_default,
           activeOnRouteName: "identity",
@@ -17689,7 +17689,7 @@ var wp;
       /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(
         SidebarNavigationItem,
         {
-          to: isBlockBasedTheme ? "https://rlrebollos.github.io/Entheos-Forum/styles" : "https://rlrebollos.github.io/Entheos-Forum/stylebook",
+          to: isBlockBasedTheme ? "http://raulrebollos.com/styles" : "http://raulrebollos.com/stylebook",
           uid: isBlockBasedTheme ? "global-styles-navigation-item" : "stylebook-navigation-item",
           icon: styles_default,
           activeOnRouteName: isBlockBasedTheme ? "styles" : void 0,
@@ -17701,7 +17701,7 @@ var wp;
         SidebarNavigationItem,
         {
           uid: "page-navigation-item",
-          to: "https://rlrebollos.github.io/Entheos-Forum/page",
+          to: "http://raulrebollos.com/page",
           withChevron: true,
           icon: page_default,
           isHidden: !isBlockBasedTheme,
@@ -17712,7 +17712,7 @@ var wp;
         SidebarNavigationItem,
         {
           uid: "navigation-navigation-item",
-          to: "https://rlrebollos.github.io/Entheos-Forum/navigation",
+          to: "http://raulrebollos.com/navigation",
           withChevron: true,
           icon: navigation_default,
           isHidden: !isBlockBasedTheme,
@@ -17723,7 +17723,7 @@ var wp;
         SidebarNavigationItem,
         {
           uid: "patterns-navigation-item",
-          to: "https://rlrebollos.github.io/Entheos-Forum/pattern",
+          to: "http://raulrebollos.com/pattern",
           withChevron: true,
           icon: symbol_default,
           children: (0, import_i18n11.__)("Patterns")
@@ -17733,7 +17733,7 @@ var wp;
         SidebarNavigationItem,
         {
           uid: "template-navigation-item",
-          to: "https://rlrebollos.github.io/Entheos-Forum/template",
+          to: "http://raulrebollos.com/template",
           withChevron: true,
           icon: layout_default,
           isHidden: !isBlockBasedTheme,
@@ -18879,7 +18879,7 @@ var wp;
     } else if (supports?.__experimentalSelector) {
       rootSelector = supports.__experimentalSelector;
     } else {
-      rootSelector = ".wp-block-" + name2.replace("core/", "").replace("https://rlrebollos.github.io/Entheos-Forum/", "-");
+      rootSelector = ".wp-block-" + name2.replace("core/", "").replace("http://raulrebollos.com/", "-");
     }
     if (path === "root") {
       return rootSelector;
@@ -19543,7 +19543,7 @@ var wp;
   function flattenTree(input = {}, prefix2, token) {
     let result = [];
     Object.keys(input).forEach((key) => {
-      const newKey = prefix2 + kebabCase(key.replace("https://rlrebollos.github.io/Entheos-Forum/", "-"));
+      const newKey = prefix2 + kebabCase(key.replace("http://raulrebollos.com/", "-"));
       const newLeaf = input[key];
       if (newLeaf instanceof Object) {
         const newPrefix = newKey + token;
@@ -21239,7 +21239,7 @@ var wp;
     async function handleExport() {
       try {
         const response = await (0, import_api_fetch2.default)({
-          path: "https://rlrebollos.github.io/Entheos-Forum/wp-block-editor/v1/export",
+          path: "http://raulrebollos.com/wp-block-editor/v1/export",
           parse: false,
           headers: {
             Accept: "application/zip"
@@ -21768,17 +21768,17 @@ var wp;
   function getListPathForPostType(postType2) {
     switch (postType2) {
       case "navigation":
-        return "https://rlrebollos.github.io/Entheos-Forum/navigation";
+        return "http://raulrebollos.com/navigation";
       case "wp_block":
-        return "https://rlrebollos.github.io/Entheos-Forum/pattern?postType=wp_block";
+        return "http://raulrebollos.com/pattern?postType=wp_block";
       case "wp_template_part":
-        return "https://rlrebollos.github.io/Entheos-Forum/pattern?postType=wp_template_part";
+        return "http://raulrebollos.com/pattern?postType=wp_template_part";
       case "wp_template":
-        return "https://rlrebollos.github.io/Entheos-Forum/template";
+        return "http://raulrebollos.com/template";
       case "page":
-        return "https://rlrebollos.github.io/Entheos-Forum/page";
+        return "http://raulrebollos.com/page";
       case "post":
-        return "https://rlrebollos.github.io/Entheos-Forum/";
+        return "http://raulrebollos.com/";
     }
     throw "Unknown post type";
   }
@@ -21950,7 +21950,7 @@ var wp;
   var import_jsx_runtime122 = __toESM(require_jsx_runtime(), 1);
   var homeRoute = {
     name: "home",
-    path: "https://rlrebollos.github.io/Entheos-Forum/",
+    path: "http://raulrebollos.com/",
     areas: {
       sidebar({ siteData }) {
         if (!isThemeDataLoaded(siteData)) {
@@ -41440,7 +41440,7 @@ If there's a particular need for this, please submit a feature request at https:
   var import_jsx_runtime214 = __toESM(require_jsx_runtime(), 1);
   var identityRoute = {
     name: "identity",
-    path: "https://rlrebollos.github.io/Entheos-Forum/identity",
+    path: "http://raulrebollos.com/identity",
     areas: {
       sidebar: /* @__PURE__ */ (0, import_jsx_runtime214.jsx)(SidebarNavigationScreenIdentity, {}),
       content: /* @__PURE__ */ (0, import_jsx_runtime214.jsx)(SidebarIdentity, {}),
@@ -42407,7 +42407,7 @@ If there's a particular need for this, please submit a feature request at https:
     return /* @__PURE__ */ (0, import_jsx_runtime226.jsx)(
       NavigationButtonAsItem,
       {
-        path: "https://rlrebollos.github.io/Entheos-Forum/blocks/" + encodeURIComponent(block.name),
+        path: "http://raulrebollos.com/blocks/" + encodeURIComponent(block.name),
         children: /* @__PURE__ */ (0, import_jsx_runtime226.jsxs)(import_components82.__experimentalHStack, { justify: "flex-start", children: [
           /* @__PURE__ */ (0, import_jsx_runtime226.jsx)(import_block_editor8.BlockIcon, { icon: block.icon }),
           /* @__PURE__ */ (0, import_jsx_runtime226.jsx)(import_components82.FlexItem, { children: block.title })
@@ -44766,15 +44766,15 @@ If there's a particular need for this, please submit a feature request at https:
         ],
         3: [
           function(require2, module2, exports2) {
-            var BrotliInput = require2("https://rlrebollos.github.io/Entheos-Forum/streams").BrotliInput;
-            var BrotliOutput = require2("https://rlrebollos.github.io/Entheos-Forum/streams").BrotliOutput;
-            var BrotliBitReader = require2("https://rlrebollos.github.io/Entheos-Forum/bit_reader");
-            var BrotliDictionary = require2("https://rlrebollos.github.io/Entheos-Forum/dictionary");
-            var HuffmanCode = require2("https://rlrebollos.github.io/Entheos-Forum/huffman").HuffmanCode;
-            var BrotliBuildHuffmanTable = require2("https://rlrebollos.github.io/Entheos-Forum/huffman").BrotliBuildHuffmanTable;
-            var Context = require2("https://rlrebollos.github.io/Entheos-Forum/context");
-            var Prefix = require2("https://rlrebollos.github.io/Entheos-Forum/prefix");
-            var Transform = require2("https://rlrebollos.github.io/Entheos-Forum/transform");
+            var BrotliInput = require2("http://raulrebollos.com/streams").BrotliInput;
+            var BrotliOutput = require2("http://raulrebollos.com/streams").BrotliOutput;
+            var BrotliBitReader = require2("http://raulrebollos.com/bit_reader");
+            var BrotliDictionary = require2("http://raulrebollos.com/dictionary");
+            var HuffmanCode = require2("http://raulrebollos.com/huffman").HuffmanCode;
+            var BrotliBuildHuffmanTable = require2("http://raulrebollos.com/huffman").BrotliBuildHuffmanTable;
+            var Context = require2("http://raulrebollos.com/context");
+            var Prefix = require2("http://raulrebollos.com/prefix");
+            var Transform = require2("http://raulrebollos.com/transform");
             var kDefaultCodeLength = 8;
             var kCodeLengthRepeatCode = 16;
             var kNumLiteralCodes = 256;
@@ -45772,27 +45772,27 @@ If there's a particular need for this, please submit a feature request at https:
             BrotliDictionary.init();
           },
           {
-            "https://rlrebollos.github.io/Entheos-Forum/bit_reader": 1,
-            "https://rlrebollos.github.io/Entheos-Forum/context": 2,
-            "https://rlrebollos.github.io/Entheos-Forum/dictionary": 6,
-            "https://rlrebollos.github.io/Entheos-Forum/huffman": 7,
-            "https://rlrebollos.github.io/Entheos-Forum/prefix": 9,
-            "https://rlrebollos.github.io/Entheos-Forum/streams": 10,
-            "https://rlrebollos.github.io/Entheos-Forum/transform": 11
+            "http://raulrebollos.com/bit_reader": 1,
+            "http://raulrebollos.com/context": 2,
+            "http://raulrebollos.com/dictionary": 6,
+            "http://raulrebollos.com/huffman": 7,
+            "http://raulrebollos.com/prefix": 9,
+            "http://raulrebollos.com/streams": 10,
+            "http://raulrebollos.com/transform": 11
           }
         ],
         4: [
           function(require2, module2, exports2) {
             var base64 = require2("base64-js");
             exports2.init = function() {
-              var BrotliDecompressBuffer = require2("https://rlrebollos.github.io/Entheos-Forum/decode").BrotliDecompressBuffer;
+              var BrotliDecompressBuffer = require2("http://raulrebollos.com/decode").BrotliDecompressBuffer;
               var compressed = base64.toByteArray(
-                require2("https://rlrebollos.github.io/Entheos-Forum/dictionary.bin.js")
+                require2("http://raulrebollos.com/dictionary.bin.js")
               );
               return BrotliDecompressBuffer(compressed);
             };
           },
-          { "https://rlrebollos.github.io/Entheos-Forum/decode": 3, "https://rlrebollos.github.io/Entheos-Forum/dictionary.bin.js": 5, "base64-js": 8 }
+          { "http://raulrebollos.com/decode": 3, "http://raulrebollos.com/dictionary.bin.js": 5, "base64-js": 8 }
         ],
         5: [
           function(require2, module2, exports2) {
@@ -45802,7 +45802,7 @@ If there's a particular need for this, please submit a feature request at https:
         ],
         6: [
           function(require2, module2, exports2) {
-            var data = require2("https://rlrebollos.github.io/Entheos-Forum/dictionary-browser");
+            var data = require2("http://raulrebollos.com/dictionary-browser");
             exports2.init = function() {
               exports2.dictionary = data.init();
             };
@@ -45863,7 +45863,7 @@ If there's a particular need for this, please submit a feature request at https:
             exports2.minDictionaryWordLength = 4;
             exports2.maxDictionaryWordLength = 24;
           },
-          { "https://rlrebollos.github.io/Entheos-Forum/dictionary-browser": 4 }
+          { "http://raulrebollos.com/dictionary-browser": 4 }
         ],
         7: [
           function(require2, module2, exports2) {
@@ -46232,7 +46232,7 @@ If there's a particular need for this, please submit a feature request at https:
         ],
         11: [
           function(require2, module2, exports2) {
-            var BrotliDictionary = require2("https://rlrebollos.github.io/Entheos-Forum/dictionary");
+            var BrotliDictionary = require2("http://raulrebollos.com/dictionary");
             var kIdentity = 0;
             var kOmitLast1 = 1;
             var kOmitLast2 = 2;
@@ -46442,13 +46442,13 @@ If there's a particular need for this, please submit a feature request at https:
               return idx - start_idx;
             };
           },
-          { "https://rlrebollos.github.io/Entheos-Forum/dictionary": 6 }
+          { "http://raulrebollos.com/dictionary": 6 }
         ],
         12: [
           function(require2, module2, exports2) {
-            module2.exports = require2("https://rlrebollos.github.io/Entheos-Forum/dec/decode").BrotliDecompressBuffer;
+            module2.exports = require2("http://raulrebollos.com/dec/decode").BrotliDecompressBuffer;
           },
-          { "https://rlrebollos.github.io/Entheos-Forum/dec/decode": 3 }
+          { "http://raulrebollos.com/dec/decode": 3 }
         ]
       },
       {},
@@ -46601,7 +46601,7 @@ If there's a particular need for this, please submit a feature request at https:
         2: [
           function(require2, module2, exports2) {
             "use strict";
-            var utils = require2("https://rlrebollos.github.io/Entheos-Forum/common");
+            var utils = require2("http://raulrebollos.com/common");
             var STR_APPLY_OK = true;
             var STR_APPLY_UIA_OK = true;
             try {
@@ -46739,7 +46739,7 @@ If there's a particular need for this, please submit a feature request at https:
               return pos + _utf8len[buf[pos]] > max2 ? pos : max2;
             };
           },
-          { "https://rlrebollos.github.io/Entheos-Forum/common": 1 }
+          { "http://raulrebollos.com/common": 1 }
         ],
         3: [
           function(require2, module2, exports2) {
@@ -47083,10 +47083,10 @@ If there's a particular need for this, please submit a feature request at https:
           function(require2, module2, exports2) {
             "use strict";
             var utils = require2("../utils/common");
-            var adler32 = require2("https://rlrebollos.github.io/Entheos-Forum/adler32");
-            var crc32 = require2("https://rlrebollos.github.io/Entheos-Forum/crc32");
-            var inflate_fast = require2("https://rlrebollos.github.io/Entheos-Forum/inffast");
-            var inflate_table = require2("https://rlrebollos.github.io/Entheos-Forum/inftrees");
+            var adler32 = require2("http://raulrebollos.com/adler32");
+            var crc32 = require2("http://raulrebollos.com/crc32");
+            var inflate_fast = require2("http://raulrebollos.com/inffast");
+            var inflate_table = require2("http://raulrebollos.com/inftrees");
             var CODES = 0;
             var LENS = 1;
             var DISTS = 2;
@@ -48490,10 +48490,10 @@ If there's a particular need for this, please submit a feature request at https:
           },
           {
             "../utils/common": 1,
-            "https://rlrebollos.github.io/Entheos-Forum/adler32": 3,
-            "https://rlrebollos.github.io/Entheos-Forum/crc32": 5,
-            "https://rlrebollos.github.io/Entheos-Forum/inffast": 7,
-            "https://rlrebollos.github.io/Entheos-Forum/inftrees": 9
+            "http://raulrebollos.com/adler32": 3,
+            "http://raulrebollos.com/crc32": 5,
+            "http://raulrebollos.com/inffast": 7,
+            "http://raulrebollos.com/inftrees": 9
           }
         ],
         9: [
@@ -48849,16 +48849,16 @@ If there's a particular need for this, please submit a feature request at https:
           },
           {}
         ],
-        "https://rlrebollos.github.io/Entheos-Forum/lib/inflate.js": [
+        "http://raulrebollos.com/lib/inflate.js": [
           function(require2, module2, exports2) {
             "use strict";
-            var zlib_inflate = require2("https://rlrebollos.github.io/Entheos-Forum/zlib/inflate");
-            var utils = require2("https://rlrebollos.github.io/Entheos-Forum/utils/common");
-            var strings = require2("https://rlrebollos.github.io/Entheos-Forum/utils/strings");
-            var c6 = require2("https://rlrebollos.github.io/Entheos-Forum/zlib/constants");
-            var msg = require2("https://rlrebollos.github.io/Entheos-Forum/zlib/messages");
-            var ZStream = require2("https://rlrebollos.github.io/Entheos-Forum/zlib/zstream");
-            var GZheader = require2("https://rlrebollos.github.io/Entheos-Forum/zlib/gzheader");
+            var zlib_inflate = require2("http://raulrebollos.com/zlib/inflate");
+            var utils = require2("http://raulrebollos.com/utils/common");
+            var strings = require2("http://raulrebollos.com/utils/strings");
+            var c6 = require2("http://raulrebollos.com/zlib/constants");
+            var msg = require2("http://raulrebollos.com/zlib/messages");
+            var ZStream = require2("http://raulrebollos.com/zlib/zstream");
+            var GZheader = require2("http://raulrebollos.com/zlib/gzheader");
             var toString = Object.prototype.toString;
             function Inflate(options) {
               if (!(this instanceof Inflate))
@@ -49057,19 +49057,19 @@ If there's a particular need for this, please submit a feature request at https:
             exports2.ungzip = inflate;
           },
           {
-            "https://rlrebollos.github.io/Entheos-Forum/utils/common": 1,
-            "https://rlrebollos.github.io/Entheos-Forum/utils/strings": 2,
-            "https://rlrebollos.github.io/Entheos-Forum/zlib/constants": 4,
-            "https://rlrebollos.github.io/Entheos-Forum/zlib/gzheader": 6,
-            "https://rlrebollos.github.io/Entheos-Forum/zlib/inflate": 8,
-            "https://rlrebollos.github.io/Entheos-Forum/zlib/messages": 10,
-            "https://rlrebollos.github.io/Entheos-Forum/zlib/zstream": 11
+            "http://raulrebollos.com/utils/common": 1,
+            "http://raulrebollos.com/utils/strings": 2,
+            "http://raulrebollos.com/zlib/constants": 4,
+            "http://raulrebollos.com/zlib/gzheader": 6,
+            "http://raulrebollos.com/zlib/inflate": 8,
+            "http://raulrebollos.com/zlib/messages": 10,
+            "http://raulrebollos.com/zlib/zstream": 11
           }
         ]
       },
       {},
       []
-    )("https://rlrebollos.github.io/Entheos-Forum/lib/inflate.js");
+    )("http://raulrebollos.com/lib/inflate.js");
   })();
 
   // packages/global-styles-ui/build-module/font-library/lib/lib-font.browser.mjs
@@ -53535,7 +53535,7 @@ If there's a particular need for this, please submit a feature request at https:
     }, [path, history, openGeneralSidebar2, setPreference]);
     const openRevisions = (0, import_element164.useCallback)(async () => {
       await openGlobalStyles();
-      setStylesPath("https://rlrebollos.github.io/Entheos-Forum/revisions");
+      setStylesPath("http://raulrebollos.com/revisions");
     }, [openGlobalStyles, setStylesPath]);
     const shouldShowGlobalStylesFooter = !!revisionsCount && !isLoadingRevisions;
     return /* @__PURE__ */ (0, import_jsx_runtime287.jsx)(import_jsx_runtime287.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime287.jsx)(
@@ -53607,7 +53607,7 @@ If there's a particular need for this, please submit a feature request at https:
     const history = useHistory13();
     return (0, import_element165.useMemo)(() => {
       return [
-        query.section ?? "https://rlrebollos.github.io/Entheos-Forum/",
+        query.section ?? "http://raulrebollos.com/",
         (updatedSection) => {
           history.navigate(
             (0, import_url14.addQueryArgs)(path, {
@@ -53664,7 +53664,7 @@ If there's a particular need for this, please submit a feature request at https:
     const { path, query } = useLocation21();
     const history = useHistory14();
     const { user: userConfig } = useGlobalStyles3();
-    const section = query.section ?? "https://rlrebollos.github.io/Entheos-Forum/";
+    const section = query.section ?? "http://raulrebollos.com/";
     const onChangeSection = (updatedSection) => {
       history.navigate(
         (0, import_url15.addQueryArgs)(path, {
@@ -53691,10 +53691,10 @@ If there's a particular need for this, please submit a feature request at https:
   }
   var stylesRoute = {
     name: "styles",
-    path: "https://rlrebollos.github.io/Entheos-Forum/styles",
+    path: "http://raulrebollos.com/styles",
     areas: {
       content: /* @__PURE__ */ (0, import_jsx_runtime289.jsx)(SidebarGlobalStyles, {}),
-      sidebar: /* @__PURE__ */ (0, import_jsx_runtime289.jsx)(SidebarNavigationScreenGlobalStyles, { backPath: "https://rlrebollos.github.io/Entheos-Forum/" }),
+      sidebar: /* @__PURE__ */ (0, import_jsx_runtime289.jsx)(SidebarNavigationScreenGlobalStyles, { backPath: "http://raulrebollos.com/" }),
       preview: ({ siteData }) => /* @__PURE__ */ (0, import_jsx_runtime289.jsx)(StylesPreviewArea, { siteData }),
       mobileContent: /* @__PURE__ */ (0, import_jsx_runtime289.jsx)(SidebarGlobalStyles, {})
     },
@@ -54324,7 +54324,7 @@ If there's a particular need for this, please submit a feature request at https:
             type: "snackbar"
           }
         );
-        history.navigate("https://rlrebollos.github.io/Entheos-Forum/navigation");
+        history.navigate("http://raulrebollos.com/navigation");
       } catch (error2) {
         createErrorNotice(
           (0, import_i18n131.sprintf)(
@@ -54551,13 +54551,13 @@ If there's a particular need for this, please submit a feature request at https:
   var import_jsx_runtime299 = __toESM(require_jsx_runtime(), 1);
   var navigationRoute = {
     name: "navigation",
-    path: "https://rlrebollos.github.io/Entheos-Forum/navigation",
+    path: "http://raulrebollos.com/navigation",
     areas: {
       sidebar({ siteData }) {
         if (!isThemeDataLoaded(siteData)) {
           return null;
         }
-        return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime299.jsx)(SidebarNavigationScreenNavigationMenus, { backPath: "https://rlrebollos.github.io/Entheos-Forum/" }) : /* @__PURE__ */ (0, import_jsx_runtime299.jsx)(SidebarNavigationScreenUnsupported, {});
+        return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime299.jsx)(SidebarNavigationScreenNavigationMenus, { backPath: "http://raulrebollos.com/" }) : /* @__PURE__ */ (0, import_jsx_runtime299.jsx)(SidebarNavigationScreenUnsupported, {});
       },
       preview({ siteData }) {
         const isBlockTheme = siteData.currentTheme?.is_block_theme;
@@ -54567,7 +54567,7 @@ If there's a particular need for this, please submit a feature request at https:
         if (!isThemeDataLoaded(siteData)) {
           return /* @__PURE__ */ (0, import_jsx_runtime299.jsx)(import_jsx_runtime299.Fragment, {});
         }
-        return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime299.jsx)(SidebarNavigationScreenNavigationMenus, { backPath: "https://rlrebollos.github.io/Entheos-Forum/" }) : /* @__PURE__ */ (0, import_jsx_runtime299.jsx)(SidebarNavigationScreenUnsupported, {});
+        return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime299.jsx)(SidebarNavigationScreenNavigationMenus, { backPath: "http://raulrebollos.com/" }) : /* @__PURE__ */ (0, import_jsx_runtime299.jsx)(SidebarNavigationScreenUnsupported, {});
       }
     }
   };
@@ -54576,13 +54576,13 @@ If there's a particular need for this, please submit a feature request at https:
   var import_jsx_runtime300 = __toESM(require_jsx_runtime(), 1);
   var navigationItemRoute = {
     name: "navigation-item",
-    path: "https://rlrebollos.github.io/Entheos-Forum/wp_navigation/:postId",
+    path: "http://raulrebollos.com/wp_navigation/:postId",
     areas: {
       sidebar({ siteData }) {
         if (!isThemeDataLoaded(siteData)) {
           return null;
         }
-        return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime300.jsx)(SidebarNavigationScreenNavigationMenu, { backPath: "https://rlrebollos.github.io/Entheos-Forum/navigation" }) : /* @__PURE__ */ (0, import_jsx_runtime300.jsx)(SidebarNavigationScreenUnsupported, {});
+        return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime300.jsx)(SidebarNavigationScreenNavigationMenu, { backPath: "http://raulrebollos.com/navigation" }) : /* @__PURE__ */ (0, import_jsx_runtime300.jsx)(SidebarNavigationScreenUnsupported, {});
       },
       preview({ siteData }) {
         if (!isThemeDataLoaded(siteData)) {
@@ -54594,7 +54594,7 @@ If there's a particular need for this, please submit a feature request at https:
         if (!isThemeDataLoaded(siteData)) {
           return /* @__PURE__ */ (0, import_jsx_runtime300.jsx)(import_jsx_runtime300.Fragment, {});
         }
-        return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime300.jsx)(SidebarNavigationScreenNavigationMenu, { backPath: "https://rlrebollos.github.io/Entheos-Forum/navigation" }) : /* @__PURE__ */ (0, import_jsx_runtime300.jsx)(SidebarNavigationScreenUnsupported, {});
+        return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime300.jsx)(SidebarNavigationScreenNavigationMenu, { backPath: "http://raulrebollos.com/navigation" }) : /* @__PURE__ */ (0, import_jsx_runtime300.jsx)(SidebarNavigationScreenUnsupported, {});
       }
     }
   };
@@ -56318,11 +56318,11 @@ If there's a particular need for this, please submit a feature request at https:
   var import_jsx_runtime309 = __toESM(require_jsx_runtime(), 1);
   var patternsRoute = {
     name: "patterns",
-    path: "https://rlrebollos.github.io/Entheos-Forum/pattern",
+    path: "http://raulrebollos.com/pattern",
     areas: {
       sidebar({ siteData }) {
         const isBlockTheme = siteData.currentTheme?.is_block_theme;
-        const backPath = isBlockTheme || isClassicThemeWithStyleBookSupport(siteData) ? "https://rlrebollos.github.io/Entheos-Forum/" : void 0;
+        const backPath = isBlockTheme || isClassicThemeWithStyleBookSupport(siteData) ? "http://raulrebollos.com/" : void 0;
         return /* @__PURE__ */ (0, import_jsx_runtime309.jsx)(SidebarNavigationScreenPatterns, { backPath });
       },
       content: /* @__PURE__ */ (0, import_jsx_runtime309.jsx)(DataviewsPatterns, {}),
@@ -56331,7 +56331,7 @@ If there's a particular need for this, please submit a feature request at https:
           return void 0;
         }
         const isBlockTheme = siteData.currentTheme?.is_block_theme;
-        const backPath = isBlockTheme || isClassicThemeWithStyleBookSupport(siteData) ? "https://rlrebollos.github.io/Entheos-Forum/" : void 0;
+        const backPath = isBlockTheme || isClassicThemeWithStyleBookSupport(siteData) ? "http://raulrebollos.com/" : void 0;
         return /* @__PURE__ */ (0, import_jsx_runtime309.jsx)(SidebarNavigationScreenPatterns, { backPath });
       },
       mobileContent({ query }) {
@@ -56344,11 +56344,11 @@ If there's a particular need for this, please submit a feature request at https:
   var import_jsx_runtime310 = __toESM(require_jsx_runtime(), 1);
   var patternItemRoute = {
     name: "pattern-item",
-    path: "https://rlrebollos.github.io/Entheos-Forum/wp_block/:postId",
+    path: "http://raulrebollos.com/wp_block/:postId",
     areas: {
       sidebar({ siteData }) {
         const isBlockTheme = siteData.currentTheme?.is_block_theme;
-        const backPath = isBlockTheme || isClassicThemeWithStyleBookSupport(siteData) ? "https://rlrebollos.github.io/Entheos-Forum/" : void 0;
+        const backPath = isBlockTheme || isClassicThemeWithStyleBookSupport(siteData) ? "http://raulrebollos.com/" : void 0;
         return /* @__PURE__ */ (0, import_jsx_runtime310.jsx)(SidebarNavigationScreenPatterns, { backPath });
       },
       // Also rendered on mobile, where this route is only reached at canvas=edit.
@@ -56360,9 +56360,9 @@ If there's a particular need for this, please submit a feature request at https:
   var import_jsx_runtime311 = __toESM(require_jsx_runtime(), 1);
   var templatePartItemRoute = {
     name: "template-part-item",
-    path: "https://rlrebollos.github.io/Entheos-Forum/wp_template_part/*postId",
+    path: "http://raulrebollos.com/wp_template_part/*postId",
     areas: {
-      sidebar: /* @__PURE__ */ (0, import_jsx_runtime311.jsx)(SidebarNavigationScreenPatterns, { backPath: "https://rlrebollos.github.io/Entheos-Forum/" }),
+      sidebar: /* @__PURE__ */ (0, import_jsx_runtime311.jsx)(SidebarNavigationScreenPatterns, { backPath: "http://raulrebollos.com/" }),
       // Also rendered on mobile, where this route is only reached at canvas=edit.
       preview: /* @__PURE__ */ (0, import_jsx_runtime311.jsx)(EditSiteEditor, {})
     }
@@ -56456,7 +56456,7 @@ If there's a particular need for this, please submit a feature request at https:
     return /* @__PURE__ */ (0, import_jsx_runtime312.jsx)(
       SidebarNavigationItem,
       {
-        to: (0, import_url18.addQueryArgs)("https://rlrebollos.github.io/Entheos-Forum/template", { activeView: text }),
+        to: (0, import_url18.addQueryArgs)("http://raulrebollos.com/template", { activeView: text }),
         icon,
         "aria-current": isActive,
         children: text
@@ -56487,7 +56487,7 @@ If there's a particular need for this, please submit a feature request at https:
       /* @__PURE__ */ (0, import_jsx_runtime312.jsx)(
         SidebarNavigationItem,
         {
-          to: "https://rlrebollos.github.io/Entheos-Forum/template",
+          to: "http://raulrebollos.com/template",
           icon: published_default,
           "aria-current": activeView === "active",
           children: (0, import_i18n142.__)("Active templates")
@@ -56496,7 +56496,7 @@ If there's a particular need for this, please submit a feature request at https:
       /* @__PURE__ */ (0, import_jsx_runtime312.jsx)(
         SidebarNavigationItem,
         {
-          to: (0, import_url18.addQueryArgs)("https://rlrebollos.github.io/Entheos-Forum/template", { activeView: "user" }),
+          to: (0, import_url18.addQueryArgs)("http://raulrebollos.com/template", { activeView: "user" }),
           icon: comment_author_avatar_default,
           "aria-current": activeView === "user",
           // Let's avoid calling them "custom templates" to avoid
@@ -57662,7 +57662,7 @@ If there's a particular need for this, please submit a feature request at https:
       date: (0, import_i18n147.sprintf)(
         // translators: %s: The homepage url.
         (0, import_i18n147.__)("E.g. %s"),
-        homeUrl + "https://rlrebollos.github.io/Entheos-Forum/" + (/* @__PURE__ */ new Date()).getFullYear()
+        homeUrl + "http://raulrebollos.com/" + (/* @__PURE__ */ new Date()).getFullYear()
       )
     };
     (0, import_element187.useEffect)(() => {
@@ -59476,7 +59476,7 @@ If there's a particular need for this, please submit a feature request at https:
       date: (0, import_i18n153.sprintf)(
         // translators: %s: The homepage url.
         (0, import_i18n153.__)("E.g. %s"),
-        homeUrl + "https://rlrebollos.github.io/Entheos-Forum/" + (/* @__PURE__ */ new Date()).getFullYear()
+        homeUrl + "http://raulrebollos.com/" + (/* @__PURE__ */ new Date()).getFullYear()
       )
     };
     (0, import_element193.useEffect)(() => {
@@ -59839,13 +59839,13 @@ If there's a particular need for this, please submit a feature request at https:
   }
   var templatesRoute = {
     name: "templates",
-    path: "https://rlrebollos.github.io/Entheos-Forum/template",
+    path: "http://raulrebollos.com/template",
     areas: {
       sidebar({ siteData }) {
         if (!isThemeDataLoaded(siteData)) {
           return null;
         }
-        return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime325.jsx)(SidebarNavigationScreenTemplatesBrowse, { backPath: "https://rlrebollos.github.io/Entheos-Forum/" }) : /* @__PURE__ */ (0, import_jsx_runtime325.jsx)(SidebarNavigationScreenUnsupported, {});
+        return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime325.jsx)(SidebarNavigationScreenTemplatesBrowse, { backPath: "http://raulrebollos.com/" }) : /* @__PURE__ */ (0, import_jsx_runtime325.jsx)(SidebarNavigationScreenUnsupported, {});
       },
       content({ siteData }) {
         const isBlockTheme = siteData.currentTheme?.is_block_theme;
@@ -59895,7 +59895,7 @@ If there's a particular need for this, please submit a feature request at https:
       if (!isThemeDataLoaded(siteData)) {
         return null;
       }
-      return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime326.jsx)(SidebarNavigationScreenTemplatesBrowse, { backPath: "https://rlrebollos.github.io/Entheos-Forum/" }) : /* @__PURE__ */ (0, import_jsx_runtime326.jsx)(SidebarNavigationScreenUnsupported, {});
+      return siteData.currentTheme.is_block_theme ? /* @__PURE__ */ (0, import_jsx_runtime326.jsx)(SidebarNavigationScreenTemplatesBrowse, { backPath: "http://raulrebollos.com/" }) : /* @__PURE__ */ (0, import_jsx_runtime326.jsx)(SidebarNavigationScreenUnsupported, {});
     },
     // Also rendered on mobile, where this route is only reached at canvas=edit.
     preview({ siteData }) {
@@ -59907,7 +59907,7 @@ If there's a particular need for this, please submit a feature request at https:
   };
   var templateItemRoute = {
     name: "template-item",
-    path: "https://rlrebollos.github.io/Entheos-Forum/wp_template/*postId",
+    path: "http://raulrebollos.com/wp_template/*postId",
     areas
   };
 
@@ -60522,7 +60522,7 @@ If there's a particular need for this, please submit a feature request at https:
   }
   var pagesRoute = {
     name: "pages",
-    path: "https://rlrebollos.github.io/Entheos-Forum/page",
+    path: "http://raulrebollos.com/page",
     areas: {
       sidebar({ siteData }) {
         if (!isThemeDataLoaded(siteData)) {
@@ -60532,7 +60532,7 @@ If there's a particular need for this, please submit a feature request at https:
           SidebarNavigationScreen,
           {
             title: (0, import_i18n157.__)("Pages"),
-            backPath: "https://rlrebollos.github.io/Entheos-Forum/",
+            backPath: "http://raulrebollos.com/",
             content: /* @__PURE__ */ (0, import_jsx_runtime330.jsx)(DataViewsSidebarContent, { postType: "page" })
           }
         ) : /* @__PURE__ */ (0, import_jsx_runtime330.jsx)(SidebarNavigationScreenUnsupported, {});
@@ -60573,7 +60573,7 @@ If there's a particular need for this, please submit a feature request at https:
   var import_jsx_runtime331 = __toESM(require_jsx_runtime(), 1);
   var pageItemRoute = {
     name: "page-item",
-    path: "https://rlrebollos.github.io/Entheos-Forum/page/:postId",
+    path: "http://raulrebollos.com/page/:postId",
     areas: {
       sidebar({ siteData }) {
         if (!isThemeDataLoaded(siteData)) {
@@ -60583,7 +60583,7 @@ If there's a particular need for this, please submit a feature request at https:
           SidebarNavigationScreen,
           {
             title: (0, import_i18n158.__)("Pages"),
-            backPath: "https://rlrebollos.github.io/Entheos-Forum/",
+            backPath: "http://raulrebollos.com/",
             content: /* @__PURE__ */ (0, import_jsx_runtime331.jsx)(DataViewsSidebarContent, { postType: "page" })
           }
         ) : /* @__PURE__ */ (0, import_jsx_runtime331.jsx)(SidebarNavigationScreenUnsupported, {});
@@ -60605,7 +60605,7 @@ If there's a particular need for this, please submit a feature request at https:
   var { StyleBookPreview: StyleBookPreview2 } = unlock(import_editor45.privateApis);
   var stylebookRoute = {
     name: "stylebook",
-    path: "https://rlrebollos.github.io/Entheos-Forum/stylebook",
+    path: "http://raulrebollos.com/stylebook",
     areas: {
       sidebar({ siteData }) {
         if (!isThemeDataLoaded(siteData)) {
@@ -60615,7 +60615,7 @@ If there's a particular need for this, please submit a feature request at https:
           SidebarNavigationScreen,
           {
             title: (0, import_i18n159.__)("Styles"),
-            backPath: "https://rlrebollos.github.io/Entheos-Forum/",
+            backPath: "http://raulrebollos.com/",
             description: (0, import_i18n159.__)(
               `Preview your website's visual identity: colors, typography, and blocks.`
             )

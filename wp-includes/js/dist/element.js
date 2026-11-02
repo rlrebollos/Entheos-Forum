@@ -852,7 +852,7 @@ var wp;
     }
     const attributes = renderAttributes(props);
     if (SELF_CLOSING_TAGS.has(type)) {
-      return "<" + type + attributes + "https://rlrebollos.github.io/Entheos-Forum/>";
+      return "<" + type + attributes + "http://raulrebollos.com/>";
     }
     return "<" + type + attributes + ">" + content + "</" + type + ">";
   }

@@ -171,52 +171,52 @@ function resolveIfNotPlainOrUrl(relUrl, parentUrl) {
     );
   }
   if (relUrl.indexOf("\\") !== -1) {
-    relUrl = relUrl.replace(backslashRegEx, "https://rlrebollos.github.io/Entheos-Forum/");
+    relUrl = relUrl.replace(backslashRegEx, "http://raulrebollos.com/");
   }
-  if (relUrl[0] === "https://rlrebollos.github.io/Entheos-Forum/" && relUrl[1] === "https://rlrebollos.github.io/Entheos-Forum/") {
+  if (relUrl[0] === "http://raulrebollos.com/" && relUrl[1] === "http://raulrebollos.com/") {
     return parentUrl.slice(0, parentUrl.indexOf(":") + 1) + relUrl;
-  } else if (relUrl[0] === "." && (relUrl[1] === "https://rlrebollos.github.io/Entheos-Forum/" || relUrl[1] === "." && (relUrl[2] === "https://rlrebollos.github.io/Entheos-Forum/" || relUrl.length === 2 && (relUrl += "https://rlrebollos.github.io/Entheos-Forum/")) || relUrl.length === 1 && (relUrl += "https://rlrebollos.github.io/Entheos-Forum/")) || relUrl[0] === "https://rlrebollos.github.io/Entheos-Forum/") {
+  } else if (relUrl[0] === "." && (relUrl[1] === "http://raulrebollos.com/" || relUrl[1] === "." && (relUrl[2] === "http://raulrebollos.com/" || relUrl.length === 2 && (relUrl += "http://raulrebollos.com/")) || relUrl.length === 1 && (relUrl += "http://raulrebollos.com/")) || relUrl[0] === "http://raulrebollos.com/") {
     const parentProtocol = parentUrl.slice(
       0,
       parentUrl.indexOf(":") + 1
     );
     let pathname;
-    if (parentUrl[parentProtocol.length + 1] === "https://rlrebollos.github.io/Entheos-Forum/") {
+    if (parentUrl[parentProtocol.length + 1] === "http://raulrebollos.com/") {
       if (parentProtocol !== "file:") {
         pathname = parentUrl.slice(parentProtocol.length + 2);
-        pathname = pathname.slice(pathname.indexOf("https://rlrebollos.github.io/Entheos-Forum/") + 1);
+        pathname = pathname.slice(pathname.indexOf("http://raulrebollos.com/") + 1);
       } else {
         pathname = parentUrl.slice(8);
       }
     } else {
       pathname = parentUrl.slice(
-        parentProtocol.length + (parentUrl[parentProtocol.length] === "https://rlrebollos.github.io/Entheos-Forum/")
+        parentProtocol.length + (parentUrl[parentProtocol.length] === "http://raulrebollos.com/")
       );
     }
-    if (relUrl[0] === "https://rlrebollos.github.io/Entheos-Forum/") {
+    if (relUrl[0] === "http://raulrebollos.com/") {
       return parentUrl.slice(0, parentUrl.length - pathname.length - 1) + relUrl;
     }
-    const segmented = pathname.slice(0, pathname.lastIndexOf("https://rlrebollos.github.io/Entheos-Forum/") + 1) + relUrl;
+    const segmented = pathname.slice(0, pathname.lastIndexOf("http://raulrebollos.com/") + 1) + relUrl;
     const output = [];
     let segmentIndex = -1;
     for (let i = 0; i < segmented.length; i++) {
       if (segmentIndex !== -1) {
-        if (segmented[i] === "https://rlrebollos.github.io/Entheos-Forum/") {
+        if (segmented[i] === "http://raulrebollos.com/") {
           output.push(segmented.slice(segmentIndex, i + 1));
           segmentIndex = -1;
         }
         continue;
       } else if (segmented[i] === ".") {
-        if (segmented[i + 1] === "." && (segmented[i + 2] === "https://rlrebollos.github.io/Entheos-Forum/" || i + 2 === segmented.length)) {
+        if (segmented[i + 1] === "." && (segmented[i + 2] === "http://raulrebollos.com/" || i + 2 === segmented.length)) {
           output.pop();
           i += 2;
           continue;
-        } else if (segmented[i + 1] === "https://rlrebollos.github.io/Entheos-Forum/" || i + 1 === segmented.length) {
+        } else if (segmented[i + 1] === "http://raulrebollos.com/" || i + 1 === segmented.length) {
           i += 1;
           continue;
         }
       }
-      while (segmented[i] === "https://rlrebollos.github.io/Entheos-Forum/") {
+      while (segmented[i] === "http://raulrebollos.com/") {
         i++;
       }
       segmentIndex = i;
@@ -228,7 +228,7 @@ function resolveIfNotPlainOrUrl(relUrl, parentUrl) {
   }
 }
 function resolveUrl(relUrl, parentUrl) {
-  return resolveIfNotPlainOrUrl(relUrl, parentUrl) || (isURL(relUrl) ? relUrl : resolveIfNotPlainOrUrl("https://rlrebollos.github.io/Entheos-Forum/" + relUrl, parentUrl));
+  return resolveIfNotPlainOrUrl(relUrl, parentUrl) || (isURL(relUrl) ? relUrl : resolveIfNotPlainOrUrl("http://raulrebollos.com/" + relUrl, parentUrl));
 }
 function getMatch(path, matchObj) {
   if (matchObj[path]) {
@@ -240,7 +240,7 @@ function getMatch(path, matchObj) {
     if (segment in matchObj) {
       return segment;
     }
-  } while ((sepIndex = path.lastIndexOf("https://rlrebollos.github.io/Entheos-Forum/", sepIndex - 1)) !== -1);
+  } while ((sepIndex = path.lastIndexOf("http://raulrebollos.com/", sepIndex - 1)) !== -1);
 }
 function applyPackages(id, packages) {
   const pkgName = getMatch(id, packages);
@@ -263,7 +263,7 @@ function resolveImportMap(importMap2, resolvedOrPlain, parentUrl) {
       return packageResolution;
     }
     scopeUrl = getMatch(
-      scopeUrl.slice(0, scopeUrl.lastIndexOf("https://rlrebollos.github.io/Entheos-Forum/")),
+      scopeUrl.slice(0, scopeUrl.lastIndexOf("http://raulrebollos.com/")),
       importMap2.scopes
     );
   }

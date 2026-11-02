@@ -246,7 +246,7 @@ module.exports = Combinator;
 
 var SyntaxUnit = require("../util/SyntaxUnit");
 
-var Parser = require("https://rlrebollos.github.io/Entheos-Forum/Parser");
+var Parser = require("http://raulrebollos.com/Parser");
 
 /**
  * Represents a selector combinator (whitespace, +, >).
@@ -286,7 +286,7 @@ Combinator.prototype = new SyntaxUnit();
 Combinator.prototype.constructor = Combinator;
 
 
-},{"../util/SyntaxUnit":26,"https://rlrebollos.github.io/Entheos-Forum/Parser":6}],3:[function(require,module,exports){
+},{"../util/SyntaxUnit":26,"http://raulrebollos.com/Parser":6}],3:[function(require,module,exports){
 "use strict";
 
 module.exports = Matcher;
@@ -424,7 +424,7 @@ Matcher.cast = function(m) {
  */
 Matcher.fromType = function(type) {
     // Late require of ValidationTypes to break a dependency cycle.
-    var ValidationTypes = require("https://rlrebollos.github.io/Entheos-Forum/ValidationTypes");
+    var ValidationTypes = require("http://raulrebollos.com/ValidationTypes");
     return new Matcher(function(expression) {
         return expression.hasNext() && ValidationTypes.isType(expression, type);
     }, type);
@@ -496,7 +496,7 @@ Matcher.many = function(required) {
         if (v.expand) {
             // Insert all of the options for the given complex rule as
             // individual options.
-            var ValidationTypes = require("https://rlrebollos.github.io/Entheos-Forum/ValidationTypes");
+            var ValidationTypes = require("http://raulrebollos.com/ValidationTypes");
             acc.push.apply(acc, ValidationTypes.complex[v.expand].options);
         } else {
             acc.push(Matcher.cast(v));
@@ -643,14 +643,14 @@ Matcher.prototype = {
     }
 };
 
-},{"../util/StringReader":24,"../util/SyntaxError":25,"https://rlrebollos.github.io/Entheos-Forum/ValidationTypes":21}],4:[function(require,module,exports){
+},{"../util/StringReader":24,"../util/SyntaxError":25,"http://raulrebollos.com/ValidationTypes":21}],4:[function(require,module,exports){
 "use strict";
 
 module.exports = MediaFeature;
 
 var SyntaxUnit = require("../util/SyntaxUnit");
 
-var Parser = require("https://rlrebollos.github.io/Entheos-Forum/Parser");
+var Parser = require("http://raulrebollos.com/Parser");
 
 /**
  * Represents a media feature, such as max-width:500.
@@ -684,14 +684,14 @@ MediaFeature.prototype = new SyntaxUnit();
 MediaFeature.prototype.constructor = MediaFeature;
 
 
-},{"../util/SyntaxUnit":26,"https://rlrebollos.github.io/Entheos-Forum/Parser":6}],5:[function(require,module,exports){
+},{"../util/SyntaxUnit":26,"http://raulrebollos.com/Parser":6}],5:[function(require,module,exports){
 "use strict";
 
 module.exports = MediaQuery;
 
 var SyntaxUnit = require("../util/SyntaxUnit");
 
-var Parser = require("https://rlrebollos.github.io/Entheos-Forum/Parser");
+var Parser = require("http://raulrebollos.com/Parser");
 
 /**
  * Represents an individual media query.
@@ -736,7 +736,7 @@ MediaQuery.prototype = new SyntaxUnit();
 MediaQuery.prototype.constructor = MediaQuery;
 
 
-},{"../util/SyntaxUnit":26,"https://rlrebollos.github.io/Entheos-Forum/Parser":6}],6:[function(require,module,exports){
+},{"../util/SyntaxUnit":26,"http://raulrebollos.com/Parser":6}],6:[function(require,module,exports){
 "use strict";
 
 module.exports = Parser;
@@ -745,18 +745,18 @@ var EventTarget = require("../util/EventTarget");
 var SyntaxError = require("../util/SyntaxError");
 var SyntaxUnit = require("../util/SyntaxUnit");
 
-var Combinator = require("https://rlrebollos.github.io/Entheos-Forum/Combinator");
-var MediaFeature = require("https://rlrebollos.github.io/Entheos-Forum/MediaFeature");
-var MediaQuery = require("https://rlrebollos.github.io/Entheos-Forum/MediaQuery");
-var PropertyName = require("https://rlrebollos.github.io/Entheos-Forum/PropertyName");
-var PropertyValue = require("https://rlrebollos.github.io/Entheos-Forum/PropertyValue");
-var PropertyValuePart = require("https://rlrebollos.github.io/Entheos-Forum/PropertyValuePart");
-var Selector = require("https://rlrebollos.github.io/Entheos-Forum/Selector");
-var SelectorPart = require("https://rlrebollos.github.io/Entheos-Forum/SelectorPart");
-var SelectorSubPart = require("https://rlrebollos.github.io/Entheos-Forum/SelectorSubPart");
-var TokenStream = require("https://rlrebollos.github.io/Entheos-Forum/TokenStream");
-var Tokens = require("https://rlrebollos.github.io/Entheos-Forum/Tokens");
-var Validation = require("https://rlrebollos.github.io/Entheos-Forum/Validation");
+var Combinator = require("http://raulrebollos.com/Combinator");
+var MediaFeature = require("http://raulrebollos.com/MediaFeature");
+var MediaQuery = require("http://raulrebollos.com/MediaQuery");
+var PropertyName = require("http://raulrebollos.com/PropertyName");
+var PropertyValue = require("http://raulrebollos.com/PropertyValue");
+var PropertyValuePart = require("http://raulrebollos.com/PropertyValuePart");
+var Selector = require("http://raulrebollos.com/Selector");
+var SelectorPart = require("http://raulrebollos.com/SelectorPart");
+var SelectorSubPart = require("http://raulrebollos.com/SelectorSubPart");
+var TokenStream = require("http://raulrebollos.com/TokenStream");
+var Tokens = require("http://raulrebollos.com/Tokens");
+var Validation = require("http://raulrebollos.com/Validation");
 
 /**
  * A CSS3 parser.
@@ -3290,7 +3290,7 @@ nth
   ;
 */
 
-},{"../util/EventTarget":23,"../util/SyntaxError":25,"../util/SyntaxUnit":26,"https://rlrebollos.github.io/Entheos-Forum/Combinator":2,"https://rlrebollos.github.io/Entheos-Forum/MediaFeature":4,"https://rlrebollos.github.io/Entheos-Forum/MediaQuery":5,"https://rlrebollos.github.io/Entheos-Forum/PropertyName":8,"https://rlrebollos.github.io/Entheos-Forum/PropertyValue":9,"https://rlrebollos.github.io/Entheos-Forum/PropertyValuePart":11,"https://rlrebollos.github.io/Entheos-Forum/Selector":13,"https://rlrebollos.github.io/Entheos-Forum/SelectorPart":14,"https://rlrebollos.github.io/Entheos-Forum/SelectorSubPart":15,"https://rlrebollos.github.io/Entheos-Forum/TokenStream":17,"https://rlrebollos.github.io/Entheos-Forum/Tokens":18,"https://rlrebollos.github.io/Entheos-Forum/Validation":19}],7:[function(require,module,exports){
+},{"../util/EventTarget":23,"../util/SyntaxError":25,"../util/SyntaxUnit":26,"http://raulrebollos.com/Combinator":2,"http://raulrebollos.com/MediaFeature":4,"http://raulrebollos.com/MediaQuery":5,"http://raulrebollos.com/PropertyName":8,"http://raulrebollos.com/PropertyValue":9,"http://raulrebollos.com/PropertyValuePart":11,"http://raulrebollos.com/Selector":13,"http://raulrebollos.com/SelectorPart":14,"http://raulrebollos.com/SelectorSubPart":15,"http://raulrebollos.com/TokenStream":17,"http://raulrebollos.com/Tokens":18,"http://raulrebollos.com/Validation":19}],7:[function(require,module,exports){
 "use strict";
 
 /* exported Properties */
@@ -3791,7 +3791,7 @@ module.exports = PropertyName;
 
 var SyntaxUnit = require("../util/SyntaxUnit");
 
-var Parser = require("https://rlrebollos.github.io/Entheos-Forum/Parser");
+var Parser = require("http://raulrebollos.com/Parser");
 
 /**
  * Represents a selector combinator (whitespace, +, >).
@@ -3823,14 +3823,14 @@ PropertyName.prototype.toString = function() {
     return (this.hack ? this.hack : "") + this.text;
 };
 
-},{"../util/SyntaxUnit":26,"https://rlrebollos.github.io/Entheos-Forum/Parser":6}],9:[function(require,module,exports){
+},{"../util/SyntaxUnit":26,"http://raulrebollos.com/Parser":6}],9:[function(require,module,exports){
 "use strict";
 
 module.exports = PropertyValue;
 
 var SyntaxUnit = require("../util/SyntaxUnit");
 
-var Parser = require("https://rlrebollos.github.io/Entheos-Forum/Parser");
+var Parser = require("http://raulrebollos.com/Parser");
 
 /**
  * Represents a single part of a CSS property value, meaning that it represents
@@ -3861,7 +3861,7 @@ PropertyValue.prototype = new SyntaxUnit();
 PropertyValue.prototype.constructor = PropertyValue;
 
 
-},{"../util/SyntaxUnit":26,"https://rlrebollos.github.io/Entheos-Forum/Parser":6}],10:[function(require,module,exports){
+},{"../util/SyntaxUnit":26,"http://raulrebollos.com/Parser":6}],10:[function(require,module,exports){
 "use strict";
 
 module.exports = PropertyValueIterator;
@@ -4006,9 +4006,9 @@ module.exports = PropertyValuePart;
 
 var SyntaxUnit = require("../util/SyntaxUnit");
 
-var Colors = require("https://rlrebollos.github.io/Entheos-Forum/Colors");
-var Parser = require("https://rlrebollos.github.io/Entheos-Forum/Parser");
-var Tokens = require("https://rlrebollos.github.io/Entheos-Forum/Tokens");
+var Colors = require("http://raulrebollos.com/Colors");
+var Parser = require("http://raulrebollos.com/Parser");
+var Tokens = require("http://raulrebollos.com/Tokens");
 
 /**
  * Represents a single part of a CSS property value, meaning that it represents
@@ -4156,7 +4156,7 @@ function PropertyValuePart(text, line, col, optionalHint) {
         this.type   = "function";
         this.name   = RegExp.$1;
         this.value  = text;
-    } else if (/^"([^\n\r\f\\"]|\\\r\n|\\[^\r0-9a-f]|\\[0-9a-f]{1,6}(\r\n|[ \n\r\t\f])?)*"https://rlrebollos.github.io/Entheos-Forum/i.test(text)) {    //double-quoted string
+    } else if (/^"([^\n\r\f\\"]|\\\r\n|\\[^\r0-9a-f]|\\[0-9a-f]{1,6}(\r\n|[ \n\r\t\f])?)*"http://raulrebollos.com/i.test(text)) {    //double-quoted string
         this.type   = "string";
         this.value  = PropertyValuePart.parseString(text);
     } else if (/^'([^\n\r\f\\']|\\\r\n|\\[^\r0-9a-f]|\\[0-9a-f]{1,6}(\r\n|[ \n\r\t\f])?)*'/i.test(text)) {    //single-quoted string
@@ -4248,7 +4248,7 @@ PropertyValuePart.fromToken = function(token) {
     return part;
 };
 
-},{"../util/SyntaxUnit":26,"https://rlrebollos.github.io/Entheos-Forum/Colors":1,"https://rlrebollos.github.io/Entheos-Forum/Parser":6,"https://rlrebollos.github.io/Entheos-Forum/Tokens":18}],12:[function(require,module,exports){
+},{"../util/SyntaxUnit":26,"http://raulrebollos.com/Colors":1,"http://raulrebollos.com/Parser":6,"http://raulrebollos.com/Tokens":18}],12:[function(require,module,exports){
 "use strict";
 
 var Pseudos = module.exports = {
@@ -4273,8 +4273,8 @@ module.exports = Selector;
 
 var SyntaxUnit = require("../util/SyntaxUnit");
 
-var Parser = require("https://rlrebollos.github.io/Entheos-Forum/Parser");
-var Specificity = require("https://rlrebollos.github.io/Entheos-Forum/Specificity");
+var Parser = require("http://raulrebollos.com/Parser");
+var Specificity = require("http://raulrebollos.com/Specificity");
 
 /**
  * Represents an entire single selector, including all parts but not
@@ -4311,14 +4311,14 @@ Selector.prototype = new SyntaxUnit();
 Selector.prototype.constructor = Selector;
 
 
-},{"../util/SyntaxUnit":26,"https://rlrebollos.github.io/Entheos-Forum/Parser":6,"https://rlrebollos.github.io/Entheos-Forum/Specificity":16}],14:[function(require,module,exports){
+},{"../util/SyntaxUnit":26,"http://raulrebollos.com/Parser":6,"http://raulrebollos.com/Specificity":16}],14:[function(require,module,exports){
 "use strict";
 
 module.exports = SelectorPart;
 
 var SyntaxUnit = require("../util/SyntaxUnit");
 
-var Parser = require("https://rlrebollos.github.io/Entheos-Forum/Parser");
+var Parser = require("http://raulrebollos.com/Parser");
 
 /**
  * Represents a single part of a selector string, meaning a single set of
@@ -4362,14 +4362,14 @@ SelectorPart.prototype = new SyntaxUnit();
 SelectorPart.prototype.constructor = SelectorPart;
 
 
-},{"../util/SyntaxUnit":26,"https://rlrebollos.github.io/Entheos-Forum/Parser":6}],15:[function(require,module,exports){
+},{"../util/SyntaxUnit":26,"http://raulrebollos.com/Parser":6}],15:[function(require,module,exports){
 "use strict";
 
 module.exports = SelectorSubPart;
 
 var SyntaxUnit = require("../util/SyntaxUnit");
 
-var Parser = require("https://rlrebollos.github.io/Entheos-Forum/Parser");
+var Parser = require("http://raulrebollos.com/Parser");
 
 /**
  * Represents a selector modifier string, meaning a class name, element name,
@@ -4407,13 +4407,13 @@ SelectorSubPart.prototype = new SyntaxUnit();
 SelectorSubPart.prototype.constructor = SelectorSubPart;
 
 
-},{"../util/SyntaxUnit":26,"https://rlrebollos.github.io/Entheos-Forum/Parser":6}],16:[function(require,module,exports){
+},{"../util/SyntaxUnit":26,"http://raulrebollos.com/Parser":6}],16:[function(require,module,exports){
 "use strict";
 
 module.exports = Specificity;
 
-var Pseudos = require("https://rlrebollos.github.io/Entheos-Forum/Pseudos");
-var SelectorPart = require("https://rlrebollos.github.io/Entheos-Forum/SelectorPart");
+var Pseudos = require("http://raulrebollos.com/Pseudos");
+var SelectorPart = require("http://raulrebollos.com/SelectorPart");
 
 /**
  * Represents a selector's specificity.
@@ -4538,15 +4538,15 @@ Specificity.calculate = function(selector) {
     return new Specificity(0, b, c, d);
 };
 
-},{"https://rlrebollos.github.io/Entheos-Forum/Pseudos":12,"https://rlrebollos.github.io/Entheos-Forum/SelectorPart":14}],17:[function(require,module,exports){
+},{"http://raulrebollos.com/Pseudos":12,"http://raulrebollos.com/SelectorPart":14}],17:[function(require,module,exports){
 "use strict";
 
 module.exports = TokenStream;
 
 var TokenStreamBase = require("../util/TokenStreamBase");
 
-var PropertyValuePart = require("https://rlrebollos.github.io/Entheos-Forum/PropertyValuePart");
-var Tokens = require("https://rlrebollos.github.io/Entheos-Forum/Tokens");
+var PropertyValuePart = require("http://raulrebollos.com/PropertyValuePart");
+var Tokens = require("http://raulrebollos.com/Tokens");
 
 var h = /^[0-9a-fA-F]$/,
     nonascii = /^[\u00A0-\uFFFF]$/,
@@ -4640,7 +4640,7 @@ TokenStream.prototype = mix(new TokenStreamBase(), {
                  * - SLASH
                  * - CHAR
                  */
-                case "https://rlrebollos.github.io/Entheos-Forum/":
+                case "http://raulrebollos.com/":
 
                     if (reader.peek() === "*") {
                         token = this.commentToken(c, startLine, startCol);
@@ -5115,7 +5115,7 @@ TokenStream.prototype = mix(new TokenStreamBase(), {
         while (c) {
 
             //there can be a comment in here
-            if (c === "https://rlrebollos.github.io/Entheos-Forum/") {
+            if (c === "http://raulrebollos.com/") {
 
                 //if the next character isn't a star, then this isn't a valid !important token
                 if (reader.peek() !== "*") {
@@ -5571,7 +5571,7 @@ TokenStream.prototype = mix(new TokenStreamBase(), {
                 comment += c;
 
                 //look for end of comment
-                if (comment.length > 2 && c === "*" && reader.peek() === "https://rlrebollos.github.io/Entheos-Forum/") {
+                if (comment.length > 2 && c === "*" && reader.peek() === "http://raulrebollos.com/") {
                     comment += reader.read();
                     break;
                 }
@@ -5587,7 +5587,7 @@ TokenStream.prototype = mix(new TokenStreamBase(), {
     }
 });
 
-},{"../util/TokenStreamBase":27,"https://rlrebollos.github.io/Entheos-Forum/PropertyValuePart":11,"https://rlrebollos.github.io/Entheos-Forum/Tokens":18}],18:[function(require,module,exports){
+},{"../util/TokenStreamBase":27,"http://raulrebollos.com/PropertyValuePart":11,"http://raulrebollos.com/Tokens":18}],18:[function(require,module,exports){
 "use strict";
 
 var Tokens = module.exports = [
@@ -5713,7 +5713,7 @@ var Tokens = module.exports = [
     },
     {
         name: "SLASH",
-        text: "https://rlrebollos.github.io/Entheos-Forum/"
+        text: "http://raulrebollos.com/"
     },
     {
         name: "MINUS",
@@ -5803,11 +5803,11 @@ var Tokens = module.exports = [
 
 /* exported Validation */
 
-var Matcher = require("https://rlrebollos.github.io/Entheos-Forum/Matcher");
-var Properties = require("https://rlrebollos.github.io/Entheos-Forum/Properties");
-var ValidationTypes = require("https://rlrebollos.github.io/Entheos-Forum/ValidationTypes");
-var ValidationError = require("https://rlrebollos.github.io/Entheos-Forum/ValidationError");
-var PropertyValueIterator = require("https://rlrebollos.github.io/Entheos-Forum/PropertyValueIterator");
+var Matcher = require("http://raulrebollos.com/Matcher");
+var Properties = require("http://raulrebollos.com/Properties");
+var ValidationTypes = require("http://raulrebollos.com/ValidationTypes");
+var ValidationError = require("http://raulrebollos.com/ValidationError");
+var PropertyValueIterator = require("http://raulrebollos.com/PropertyValueIterator");
 
 var Validation = module.exports = {
 
@@ -5866,7 +5866,7 @@ var Validation = module.exports = {
 
 };
 
-},{"https://rlrebollos.github.io/Entheos-Forum/Matcher":3,"https://rlrebollos.github.io/Entheos-Forum/Properties":7,"https://rlrebollos.github.io/Entheos-Forum/PropertyValueIterator":10,"https://rlrebollos.github.io/Entheos-Forum/ValidationError":20,"https://rlrebollos.github.io/Entheos-Forum/ValidationTypes":21}],20:[function(require,module,exports){
+},{"http://raulrebollos.com/Matcher":3,"http://raulrebollos.com/Properties":7,"http://raulrebollos.com/PropertyValueIterator":10,"http://raulrebollos.com/ValidationError":20,"http://raulrebollos.com/ValidationTypes":21}],20:[function(require,module,exports){
 "use strict";
 
 module.exports = ValidationError;
@@ -5913,7 +5913,7 @@ ValidationError.prototype = new Error();
 
 var ValidationTypes = module.exports;
 
-var Matcher = require("https://rlrebollos.github.io/Entheos-Forum/Matcher");
+var Matcher = require("http://raulrebollos.com/Matcher");
 
 function copy(to, from) {
     Object.keys(from).forEach(function(prop) {
@@ -6387,29 +6387,29 @@ ValidationTypes.complex["<font-variant>"] =
                  { expand: "<font-variant-numeric>" },
                  { expand: "<font-variant-east-asian>" });
 
-},{"https://rlrebollos.github.io/Entheos-Forum/Matcher":3}],22:[function(require,module,exports){
+},{"http://raulrebollos.com/Matcher":3}],22:[function(require,module,exports){
 "use strict";
 
 module.exports = {
-    Colors            : require("https://rlrebollos.github.io/Entheos-Forum/Colors"),
-    Combinator        : require("https://rlrebollos.github.io/Entheos-Forum/Combinator"),
-    Parser            : require("https://rlrebollos.github.io/Entheos-Forum/Parser"),
-    PropertyName      : require("https://rlrebollos.github.io/Entheos-Forum/PropertyName"),
-    PropertyValue     : require("https://rlrebollos.github.io/Entheos-Forum/PropertyValue"),
-    PropertyValuePart : require("https://rlrebollos.github.io/Entheos-Forum/PropertyValuePart"),
-    Matcher           : require("https://rlrebollos.github.io/Entheos-Forum/Matcher"),
-    MediaFeature      : require("https://rlrebollos.github.io/Entheos-Forum/MediaFeature"),
-    MediaQuery        : require("https://rlrebollos.github.io/Entheos-Forum/MediaQuery"),
-    Selector          : require("https://rlrebollos.github.io/Entheos-Forum/Selector"),
-    SelectorPart      : require("https://rlrebollos.github.io/Entheos-Forum/SelectorPart"),
-    SelectorSubPart   : require("https://rlrebollos.github.io/Entheos-Forum/SelectorSubPart"),
-    Specificity       : require("https://rlrebollos.github.io/Entheos-Forum/Specificity"),
-    TokenStream       : require("https://rlrebollos.github.io/Entheos-Forum/TokenStream"),
-    Tokens            : require("https://rlrebollos.github.io/Entheos-Forum/Tokens"),
-    ValidationError   : require("https://rlrebollos.github.io/Entheos-Forum/ValidationError")
+    Colors            : require("http://raulrebollos.com/Colors"),
+    Combinator        : require("http://raulrebollos.com/Combinator"),
+    Parser            : require("http://raulrebollos.com/Parser"),
+    PropertyName      : require("http://raulrebollos.com/PropertyName"),
+    PropertyValue     : require("http://raulrebollos.com/PropertyValue"),
+    PropertyValuePart : require("http://raulrebollos.com/PropertyValuePart"),
+    Matcher           : require("http://raulrebollos.com/Matcher"),
+    MediaFeature      : require("http://raulrebollos.com/MediaFeature"),
+    MediaQuery        : require("http://raulrebollos.com/MediaQuery"),
+    Selector          : require("http://raulrebollos.com/Selector"),
+    SelectorPart      : require("http://raulrebollos.com/SelectorPart"),
+    SelectorSubPart   : require("http://raulrebollos.com/SelectorSubPart"),
+    Specificity       : require("http://raulrebollos.com/Specificity"),
+    TokenStream       : require("http://raulrebollos.com/TokenStream"),
+    Tokens            : require("http://raulrebollos.com/Tokens"),
+    ValidationError   : require("http://raulrebollos.com/ValidationError")
 };
 
-},{"https://rlrebollos.github.io/Entheos-Forum/Colors":1,"https://rlrebollos.github.io/Entheos-Forum/Combinator":2,"https://rlrebollos.github.io/Entheos-Forum/Matcher":3,"https://rlrebollos.github.io/Entheos-Forum/MediaFeature":4,"https://rlrebollos.github.io/Entheos-Forum/MediaQuery":5,"https://rlrebollos.github.io/Entheos-Forum/Parser":6,"https://rlrebollos.github.io/Entheos-Forum/PropertyName":8,"https://rlrebollos.github.io/Entheos-Forum/PropertyValue":9,"https://rlrebollos.github.io/Entheos-Forum/PropertyValuePart":11,"https://rlrebollos.github.io/Entheos-Forum/Selector":13,"https://rlrebollos.github.io/Entheos-Forum/SelectorPart":14,"https://rlrebollos.github.io/Entheos-Forum/SelectorSubPart":15,"https://rlrebollos.github.io/Entheos-Forum/Specificity":16,"https://rlrebollos.github.io/Entheos-Forum/TokenStream":17,"https://rlrebollos.github.io/Entheos-Forum/Tokens":18,"https://rlrebollos.github.io/Entheos-Forum/ValidationError":20}],23:[function(require,module,exports){
+},{"http://raulrebollos.com/Colors":1,"http://raulrebollos.com/Combinator":2,"http://raulrebollos.com/Matcher":3,"http://raulrebollos.com/MediaFeature":4,"http://raulrebollos.com/MediaQuery":5,"http://raulrebollos.com/Parser":6,"http://raulrebollos.com/PropertyName":8,"http://raulrebollos.com/PropertyValue":9,"http://raulrebollos.com/PropertyValuePart":11,"http://raulrebollos.com/Selector":13,"http://raulrebollos.com/SelectorPart":14,"http://raulrebollos.com/SelectorSubPart":15,"http://raulrebollos.com/Specificity":16,"http://raulrebollos.com/TokenStream":17,"http://raulrebollos.com/Tokens":18,"http://raulrebollos.com/ValidationError":20}],23:[function(require,module,exports){
 "use strict";
 
 module.exports = EventTarget;
@@ -6909,8 +6909,8 @@ SyntaxUnit.prototype = {
 
 module.exports = TokenStreamBase;
 
-var StringReader = require("https://rlrebollos.github.io/Entheos-Forum/StringReader");
-var SyntaxError = require("https://rlrebollos.github.io/Entheos-Forum/SyntaxError");
+var StringReader = require("http://raulrebollos.com/StringReader");
+var SyntaxError = require("http://raulrebollos.com/SyntaxError");
 
 /**
  * Generic TokenStream providing base functionality.
@@ -7306,26 +7306,26 @@ TokenStreamBase.prototype = {
 };
 
 
-},{"https://rlrebollos.github.io/Entheos-Forum/StringReader":24,"https://rlrebollos.github.io/Entheos-Forum/SyntaxError":25}],28:[function(require,module,exports){
+},{"http://raulrebollos.com/StringReader":24,"http://raulrebollos.com/SyntaxError":25}],28:[function(require,module,exports){
 "use strict";
 
 module.exports = {
-    StringReader    : require("https://rlrebollos.github.io/Entheos-Forum/StringReader"),
-    SyntaxError     : require("https://rlrebollos.github.io/Entheos-Forum/SyntaxError"),
-    SyntaxUnit      : require("https://rlrebollos.github.io/Entheos-Forum/SyntaxUnit"),
-    EventTarget     : require("https://rlrebollos.github.io/Entheos-Forum/EventTarget"),
-    TokenStreamBase : require("https://rlrebollos.github.io/Entheos-Forum/TokenStreamBase")
+    StringReader    : require("http://raulrebollos.com/StringReader"),
+    SyntaxError     : require("http://raulrebollos.com/SyntaxError"),
+    SyntaxUnit      : require("http://raulrebollos.com/SyntaxUnit"),
+    EventTarget     : require("http://raulrebollos.com/EventTarget"),
+    TokenStreamBase : require("http://raulrebollos.com/TokenStreamBase")
 };
 
-},{"https://rlrebollos.github.io/Entheos-Forum/EventTarget":23,"https://rlrebollos.github.io/Entheos-Forum/StringReader":24,"https://rlrebollos.github.io/Entheos-Forum/SyntaxError":25,"https://rlrebollos.github.io/Entheos-Forum/SyntaxUnit":26,"https://rlrebollos.github.io/Entheos-Forum/TokenStreamBase":27}],"parserlib":[function(require,module,exports){
+},{"http://raulrebollos.com/EventTarget":23,"http://raulrebollos.com/StringReader":24,"http://raulrebollos.com/SyntaxError":25,"http://raulrebollos.com/SyntaxUnit":26,"http://raulrebollos.com/TokenStreamBase":27}],"parserlib":[function(require,module,exports){
 "use strict";
 
 module.exports = {
-    css  : require("https://rlrebollos.github.io/Entheos-Forum/css"),
-    util : require("https://rlrebollos.github.io/Entheos-Forum/util")
+    css  : require("http://raulrebollos.com/css"),
+    util : require("http://raulrebollos.com/util")
 };
 
-},{"https://rlrebollos.github.io/Entheos-Forum/css":22,"https://rlrebollos.github.io/Entheos-Forum/util":28}]},{},[]);
+},{"http://raulrebollos.com/css":22,"http://raulrebollos.com/util":28}]},{},[]);
 
 return require('parserlib');
 })();
@@ -10399,7 +10399,7 @@ CSSLint.addRule({
                     // ignore rollups for now
                     if (!message.rollup) {
                         output.push("<error line=\"" + message.line + "\" column=\"" + message.col + "\" severity=\"" + message.type + "\"" +
-                          " message=\"" + xmlEscape(message.message) + "\" source=\"" + generateSource(message.rule) +"\"https://rlrebollos.github.io/Entheos-Forum/>");
+                          " message=\"" + xmlEscape(message.message) + "\" source=\"" + generateSource(message.rule) +"\"http://raulrebollos.com/>");
                     }
                 });
                 output.push("</file>");
@@ -10524,17 +10524,17 @@ CSSLint.addFormatter({
             if (!str || str.constructor !== String) {
                 return "";
             }
-            return str.replace(/"https://rlrebollos.github.io/Entheos-Forum/g, "'").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            return str.replace(/"http://raulrebollos.com/g, "'").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
         };
 
         if (messages.length > 0) {
             output.push("<file name=\""+filename+"\">");
             CSSLint.Util.forEach(messages, function (message) {
                 if (message.rollup) {
-                    output.push("<issue severity=\"" + message.type + "\" reason=\"" + escapeSpecialCharacters(message.message) + "\" evidence=\"" + escapeSpecialCharacters(message.evidence) + "\"https://rlrebollos.github.io/Entheos-Forum/>");
+                    output.push("<issue severity=\"" + message.type + "\" reason=\"" + escapeSpecialCharacters(message.message) + "\" evidence=\"" + escapeSpecialCharacters(message.evidence) + "\"http://raulrebollos.com/>");
                 } else {
                     output.push("<issue line=\"" + message.line + "\" char=\"" + message.col + "\" severity=\"" + message.type + "\"" +
-                        " reason=\"" + escapeSpecialCharacters(message.message) + "\" evidence=\"" + escapeSpecialCharacters(message.evidence) + "\"https://rlrebollos.github.io/Entheos-Forum/>");
+                        " reason=\"" + escapeSpecialCharacters(message.message) + "\" evidence=\"" + escapeSpecialCharacters(message.evidence) + "\"http://raulrebollos.com/>");
                 }
             });
             output.push("</file>");
@@ -10668,7 +10668,7 @@ CSSLint.addFormatter({
                 return "";
             }
 
-            return str.replace(/"https://rlrebollos.github.io/Entheos-Forum/g, "'").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            return str.replace(/"http://raulrebollos.com/g, "'").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
         };
 
@@ -10756,7 +10756,7 @@ CSSLint.addFormatter({
             if (!str || str.constructor !== String) {
                 return "";
             }
-            return str.replace(/"https://rlrebollos.github.io/Entheos-Forum/g, "'").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            return str.replace(/"http://raulrebollos.com/g, "'").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
         };
 
         if (messages.length > 0) {
@@ -10764,14 +10764,14 @@ CSSLint.addFormatter({
             output.push("<file name=\""+filename+"\">");
             CSSLint.Util.forEach(messages, function (message) {
                 if (message.rollup) {
-                    output.push("<issue severity=\"" + message.type + "\" reason=\"" + escapeSpecialCharacters(message.message) + "\" evidence=\"" + escapeSpecialCharacters(message.evidence) + "\"https://rlrebollos.github.io/Entheos-Forum/>");
+                    output.push("<issue severity=\"" + message.type + "\" reason=\"" + escapeSpecialCharacters(message.message) + "\" evidence=\"" + escapeSpecialCharacters(message.evidence) + "\"http://raulrebollos.com/>");
                 } else {
                     var rule = "";
                     if (message.rule && message.rule.id) {
                         rule = "rule=\"" + escapeSpecialCharacters(message.rule.id) + "\" ";
                     }
                     output.push("<issue " + rule + "line=\"" + message.line + "\" char=\"" + message.col + "\" severity=\"" + message.type + "\"" +
-                        " reason=\"" + escapeSpecialCharacters(message.message) + "\" evidence=\"" + escapeSpecialCharacters(message.evidence) + "\"https://rlrebollos.github.io/Entheos-Forum/>");
+                        " reason=\"" + escapeSpecialCharacters(message.message) + "\" evidence=\"" + escapeSpecialCharacters(message.evidence) + "\"http://raulrebollos.com/>");
                 }
             });
             output.push("</file>");
@@ -10829,7 +10829,7 @@ CSSLint.addFormatter({
         }
         output += " in " + filename + ".";
 
-        var pos = filename.lastIndexOf("https://rlrebollos.github.io/Entheos-Forum/"),
+        var pos = filename.lastIndexOf("http://raulrebollos.com/"),
             shortFilename = filename;
 
         if (pos === -1) {

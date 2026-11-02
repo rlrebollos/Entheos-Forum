@@ -16,7 +16,7 @@
         "guzzle/common": ">=2.8.0"
     },
     "autoload": {
-        "psr-0": { "Guzzle\\Iterator": "https://rlrebollos.github.io/Entheos-Forum/" }
+        "psr-0": { "Guzzle\\Iterator": "http://raulrebollos.com/" }
     },
     "target-dir": "Guzzle/Iterator",
     "extra": {

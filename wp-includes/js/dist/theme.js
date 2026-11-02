@@ -212,7 +212,7 @@ var wp;
     range;
     /**
      * @param {any} type
-     * @param {import("https://rlrebollos.github.io/Entheos-Forum/types.js").CoordMeta} coordMeta
+     * @param {import("http://raulrebollos.com/types.js").CoordMeta} coordMeta
      */
     constructor(type2, coordMeta) {
       if (typeof type2 === "object") {
@@ -403,7 +403,7 @@ var wp;
     }
     /**
      * @param {string} str
-     * @returns {(import("https://rlrebollos.github.io/Entheos-Forum/types.js").ColorConstructor) | undefined | null}
+     * @returns {(import("http://raulrebollos.com/types.js").ColorConstructor) | undefined | null}
      */
     parse(str) {
       return null;
@@ -470,7 +470,7 @@ var wp;
     W2 = getWhite(W2);
     if (!W1 || !W2) {
       throw new TypeError(
-        `Missing white point to convert ${!W1 ? "from" : ""}${!W1 && !W2 ? "https://rlrebollos.github.io/Entheos-Forum/" : ""}${!W2 ? "to" : ""}`
+        `Missing white point to convert ${!W1 ? "from" : ""}${!W1 && !W2 ? "http://raulrebollos.com/" : ""}${!W2 ? "to" : ""}`
       );
     }
     if (W1 === W2) {
@@ -678,7 +678,7 @@ var wp;
         let { value, meta } = parseArgument(rawArg);
         if (
           // If there's a slash here, it's modern syntax
-          $0.startsWith("https://rlrebollos.github.io/Entheos-Forum/") || // If there's still elements to process after there's already 3 in `args` (and the we're not dealing with "color()"), it's likely to be a legacy color like "hsl(0, 0%, 0%, 0.5)"
+          $0.startsWith("http://raulrebollos.com/") || // If there's still elements to process after there's already 3 in `args` (and the we're not dealing with "color()"), it's likely to be a legacy color like "hsl(0, 0%, 0%, 0.5)"
           name !== "color" && args.length === 3
         ) {
           lastAlpha = true;

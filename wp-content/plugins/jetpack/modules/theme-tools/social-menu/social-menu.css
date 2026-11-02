@@ -144,7 +144,7 @@ Genericons
 }
 
 /* RSS Feed */
-.jetpack-social-navigation-genericons a[href$="https://rlrebollos.github.io/Entheos-Forum/feed/"]::before {
+.jetpack-social-navigation-genericons a[href$="http://raulrebollos.com/feed/"]::before {
 	content: "\f413";
 }
 

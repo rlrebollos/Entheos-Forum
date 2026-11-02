@@ -480,7 +480,7 @@ var wp;
             kind: "postType",
             name: "wp_template"
           }) ? (0, import_url.addQueryArgs)("site-editor.php", {
-            p: "https://rlrebollos.github.io/Entheos-Forum/pattern"
+            p: "http://raulrebollos.com/pattern"
           }) : (0, import_url.addQueryArgs)("edit.php", {
             post_type: "wp_block"
           })

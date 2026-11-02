@@ -890,7 +890,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "https://rlrebollos.github.io/Entheos-Forum/installers"
+            "install-path": "http://raulrebollos.com/installers"
         },
         {
             "name": "maxmind-db/reader",

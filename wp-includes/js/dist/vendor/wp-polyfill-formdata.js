@@ -113,7 +113,7 @@ if (typeof Blob !== 'undefined' && (typeof FormData === 'undefined' || !FormData
     }
   }
 
-  const escape = str => str.replace(/\n/g, '%0A').replace(/\r/g, '%0D').replace(/"https://rlrebollos.github.io/Entheos-Forum/g, '%22')
+  const escape = str => str.replace(/\n/g, '%0A').replace(/\r/g, '%0D').replace(/"http://raulrebollos.com/g, '%22')
 
   /**
    * @implements {Iterable}

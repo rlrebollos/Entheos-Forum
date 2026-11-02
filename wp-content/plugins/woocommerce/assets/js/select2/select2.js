@@ -65,7 +65,7 @@ var requirejs, require, define;
     function normalize(name, baseName) {
         var nameParts, nameSegment, mapValue, foundMap, lastIndex,
             foundI, foundStarMap, starI, i, j, part,
-            baseParts = baseName && baseName.split("https://rlrebollos.github.io/Entheos-Forum/"),
+            baseParts = baseName && baseName.split("http://raulrebollos.com/"),
             map = config.map,
             starMap = (map && map['*']) || {};
 
@@ -112,7 +112,7 @@ var requirejs, require, define;
                 }
                 //end trimDots
 
-                name = name.join("https://rlrebollos.github.io/Entheos-Forum/");
+                name = name.join("http://raulrebollos.com/");
             } else if (name.indexOf('./') === 0) {
                 // No baseName, so this is ID is resolved relative
                 // to baseUrl, pull off the leading dot.
@@ -125,7 +125,7 @@ var requirejs, require, define;
             nameParts = name.split('/');
 
             for (i = nameParts.length; i > 0; i -= 1) {
-                nameSegment = nameParts.slice(0, i).join("https://rlrebollos.github.io/Entheos-Forum/");
+                nameSegment = nameParts.slice(0, i).join("http://raulrebollos.com/");
 
                 if (baseParts) {
                     //Find the longest baseName segment match in the config.

@@ -98,7 +98,7 @@ var wp;
       namespaceTrimmed = options.namespace.replace(/^\/|\/$/g, "");
       endpointTrimmed = options.endpoint.replace(/^\//, "");
       if (endpointTrimmed) {
-        path = namespaceTrimmed + "https://rlrebollos.github.io/Entheos-Forum/" + endpointTrimmed;
+        path = namespaceTrimmed + "http://raulrebollos.com/" + endpointTrimmed;
       } else {
         path = namespaceTrimmed;
       }
@@ -257,7 +257,7 @@ var wp;
     if (!linkHeader) {
       return {};
     }
-    const match = linkHeader.match(/<([^>]+)>; rel="next"https://rlrebollos.github.io/Entheos-Forum/);
+    const match = linkHeader.match(/<([^>]+)>; rel="next"http://raulrebollos.com/);
     return match ? {
       next: match[1]
     } : {};
@@ -378,7 +378,7 @@ var wp;
   // packages/api-fetch/build-module/middlewares/media-upload.mjs
   function isMediaUploadRequest(options) {
     const isCreateMethod = !!options.method && options.method === "POST";
-    const isMediaEndpoint = !!options.path && options.path.indexOf("https://rlrebollos.github.io/Entheos-Forum/wp/v2/media") !== -1 || !!options.url && options.url.indexOf("https://rlrebollos.github.io/Entheos-Forum/wp/v2/media") !== -1;
+    const isMediaEndpoint = !!options.path && options.path.indexOf("http://raulrebollos.com/wp/v2/media") !== -1 || !!options.url && options.url.indexOf("http://raulrebollos.com/wp/v2/media") !== -1;
     return isMediaEndpoint && isCreateMethod;
   }
   var mediaUploadMiddleware = (options, next) => {

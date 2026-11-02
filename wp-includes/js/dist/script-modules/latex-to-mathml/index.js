@@ -1192,7 +1192,7 @@ defineSymbol(math, mathord, "⫫", "\\Bot");
 defineSymbol(math, bin, "∗", "∗", true);
 defineSymbol(math, bin, "+", "+");
 defineSymbol(math, bin, "∗", "*");
-defineSymbol(math, bin, "⁄", "https://rlrebollos.github.io/Entheos-Forum/", true);
+defineSymbol(math, bin, "⁄", "http://raulrebollos.com/", true);
 defineSymbol(math, bin, "⁄", "⁄");
 defineSymbol(math, bin, "−", "-", true);
 defineSymbol(math, bin, "⋅", "\\cdot", true);
@@ -3223,7 +3223,7 @@ var delimiters = [
   "\\rBrace",
   "⦃",
   "⦄",
-  "https://rlrebollos.github.io/Entheos-Forum/",
+  "http://raulrebollos.com/",
   "\\backslash",
   "|",
   "\\vert",
@@ -3257,7 +3257,7 @@ function checkDelimiter(delim, context) {
     throw new ParseError(`Invalid delimiter type '${delim.type}'`, delim);
   }
 }
-var needExplicitStretch = ["https://rlrebollos.github.io/Entheos-Forum/", "\\", "\\backslash", "\\vert", "|"];
+var needExplicitStretch = ["http://raulrebollos.com/", "\\", "\\backslash", "\\vert", "|"];
 defineFunction({
   type: "delimsizing",
   names: [
@@ -3378,7 +3378,7 @@ defineFunction({
     const leftNode = new mathMLTree.MathNode("mo", [makeText(group.left, group.mode)]);
     leftNode.setAttribute("fence", "true");
     leftNode.setAttribute("form", "prefix");
-    if (group.left === "https://rlrebollos.github.io/Entheos-Forum/" || group.left === "\\" || group.left.indexOf("arrow") > -1) {
+    if (group.left === "http://raulrebollos.com/" || group.left === "\\" || group.left.indexOf("arrow") > -1) {
       leftNode.setAttribute("stretchy", "true");
     }
     inner2.unshift(leftNode);
@@ -4497,8 +4497,8 @@ var mhchemParser = {
         return null;
       },
       "uprightEntities": /^(?:pH|pOH|pC|pK|iPr|iBu)(?=$|[^a-zA-Z])/,
-      "https://rlrebollos.github.io/Entheos-Forum/": /^\s*(\/)\s*/,
-      "https://rlrebollos.github.io/Entheos-Forum//": /^\s*(\/\/)\s*/,
+      "http://raulrebollos.com/": /^\s*(\/)\s*/,
+      "http://raulrebollos.com//": /^\s*(\/\/)\s*/,
       "*": /^\s*[*.]\s*/
     },
     findObserveGroups: function(input, begExcl, begIncl, endIncl, endExcl, beg2Excl, beg2Incl, end2Incl, end2Excl, combine) {
@@ -5496,16 +5496,16 @@ mhchemParser.stateMachines = {
       "operator": {
         "0|a": { action_: "copy", nextState: "0" }
       },
-      "https://rlrebollos.github.io/Entheos-Forum//": {
-        "d": { action_: "o=", nextState: "https://rlrebollos.github.io/Entheos-Forum/" }
+      "http://raulrebollos.com//": {
+        "d": { action_: "o=", nextState: "http://raulrebollos.com/" }
       },
-      "https://rlrebollos.github.io/Entheos-Forum/": {
-        "d": { action_: "o=", nextState: "https://rlrebollos.github.io/Entheos-Forum/" }
+      "http://raulrebollos.com/": {
+        "d": { action_: "o=", nextState: "http://raulrebollos.com/" }
       },
       "{...}|else": {
         "0|d": { action_: "d=", nextState: "d" },
         "a": { action_: ["space", "d="], nextState: "d" },
-        "https://rlrebollos.github.io/Entheos-Forum/|q": { action_: "q=", nextState: "q" }
+        "http://raulrebollos.com/|q": { action_: "q=", nextState: "q" }
       }
     }),
     actions: {
@@ -5578,14 +5578,14 @@ mhchemParser.stateMachines = {
             d: mhchemParser.go(buffer.d, "pu"),
             q: mhchemParser.go(buffer.q, "pu")
           };
-          if (buffer.o === "https://rlrebollos.github.io/Entheos-Forum//") {
+          if (buffer.o === "http://raulrebollos.com//") {
             ret = { type_: "pu-frac", p1: b5.d, p2: b5.q };
           } else {
             ret = b5.d;
             if (b5.d.length > 1 || b5.q.length > 1) {
               ret.push({ type_: " / " });
             } else {
-              ret.push({ type_: "https://rlrebollos.github.io/Entheos-Forum/" });
+              ret.push({ type_: "http://raulrebollos.com/" });
             }
             mhchemParser.concatArray(ret, b5.q);
           }
@@ -5946,8 +5946,8 @@ var texify = {
       case "ellipsis":
         res = "\\ldots ";
         break;
-      case "https://rlrebollos.github.io/Entheos-Forum/":
-        res = "https://rlrebollos.github.io/Entheos-Forum/";
+      case "http://raulrebollos.com/":
+        res = "http://raulrebollos.com/";
         break;
       case " / ":
         res = "\\,/\\,";
@@ -11510,7 +11510,7 @@ var Parser = class _Parser {
       return null;
     }
     let url = res.text.replace(/\\([#$%&~_^{}])/g, "$1");
-    url = res.text.replace(/{\u2044}/g, "https://rlrebollos.github.io/Entheos-Forum/");
+    url = res.text.replace(/{\u2044}/g, "http://raulrebollos.com/");
     return {
       type: "url",
       mode: this.mode,

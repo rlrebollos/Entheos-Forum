@@ -596,7 +596,7 @@ var wp;
     return permissions;
   }
   function getUserPermissionCacheKey(action, resource, id2) {
-    const key = (typeof resource === "object" ? [action, resource.kind, resource.name, resource.id] : [action, resource, id2]).filter(Boolean).join("https://rlrebollos.github.io/Entheos-Forum/");
+    const key = (typeof resource === "object" ? [action, resource.kind, resource.name, resource.id] : [action, resource, id2]).filter(Boolean).join("http://raulrebollos.com/");
     return key;
   }
 
@@ -10590,7 +10590,7 @@ ${err.toString()}`);
 
   // packages/sync/build-module/providers/http-polling/utils.mjs
   var import_api_fetch = __toESM(require_api_fetch(), 1);
-  var SYNC_API_PATH = "https://rlrebollos.github.io/Entheos-Forum/wp-sync/v1/updates";
+  var SYNC_API_PATH = "http://raulrebollos.com/wp-sync/v1/updates";
   function uint8ArrayToBase64(data) {
     let binary = "";
     const len = data.byteLength;
@@ -13394,7 +13394,7 @@ ${err.toString()}`);
   }
 
   // packages/core-data/build-module/utils/save-crdt-doc.mjs
-  var SYNC_SAVE_API_PATH = "https://rlrebollos.github.io/Entheos-Forum/wp-sync/v1/save";
+  var SYNC_SAVE_API_PATH = "http://raulrebollos.com/wp-sync/v1/save";
   var saveCRDTDocQueues = /* @__PURE__ */ new Map();
   async function serializeAndSaveCRDTDoc(objectType, objectId, room) {
     const serializedDoc = await getSyncManager()?.createPersistedCRDTDoc(
@@ -15806,7 +15806,7 @@ ${err.toString()}`);
       kind: "root",
       key: false,
       name: "__unstableBase",
-      baseURL: "https://rlrebollos.github.io/Entheos-Forum/",
+      baseURL: "http://raulrebollos.com/",
       baseURLParams: {
         // Please also change the preload path when changing this.
         // @see lib/compat/wordpress-7.1/preload.php
@@ -15839,7 +15839,7 @@ ${err.toString()}`);
       name: "postType",
       kind: "root",
       key: "slug",
-      baseURL: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/types",
+      baseURL: "http://raulrebollos.com/wp/v2/types",
       baseURLParams: { context: "edit" },
       plural: "postTypes",
       supportsPagination: false
@@ -15847,7 +15847,7 @@ ${err.toString()}`);
     {
       name: "media",
       kind: "root",
-      baseURL: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/media",
+      baseURL: "http://raulrebollos.com/wp/v2/media",
       baseURLParams: { context: "edit" },
       plural: "mediaItems",
       label: (0, import_i18n.__)("Media"),
@@ -15858,7 +15858,7 @@ ${err.toString()}`);
       name: "taxonomy",
       kind: "root",
       key: "slug",
-      baseURL: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/taxonomies",
+      baseURL: "http://raulrebollos.com/wp/v2/taxonomies",
       baseURLParams: { context: "edit" },
       plural: "taxonomies",
       label: (0, import_i18n.__)("Taxonomy"),
@@ -15867,7 +15867,7 @@ ${err.toString()}`);
     {
       name: "sidebar",
       kind: "root",
-      baseURL: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/sidebars",
+      baseURL: "http://raulrebollos.com/wp/v2/sidebars",
       baseURLParams: { context: "edit" },
       plural: "sidebars",
       transientEdits: { blocks: true },
@@ -15877,7 +15877,7 @@ ${err.toString()}`);
     {
       name: "widget",
       kind: "root",
-      baseURL: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/widgets",
+      baseURL: "http://raulrebollos.com/wp/v2/widgets",
       baseURLParams: { context: "edit" },
       plural: "widgets",
       transientEdits: { blocks: true },
@@ -15887,7 +15887,7 @@ ${err.toString()}`);
     {
       name: "widgetType",
       kind: "root",
-      baseURL: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/widget-types",
+      baseURL: "http://raulrebollos.com/wp/v2/widget-types",
       baseURLParams: { context: "edit" },
       plural: "widgetTypes",
       label: (0, import_i18n.__)("Widget types"),
@@ -15897,7 +15897,7 @@ ${err.toString()}`);
       label: (0, import_i18n.__)("User"),
       name: "user",
       kind: "root",
-      baseURL: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/users",
+      baseURL: "http://raulrebollos.com/wp/v2/users",
       getTitle: (record) => record?.name || record?.slug,
       baseURLParams: { context: "edit" },
       plural: "users",
@@ -15906,7 +15906,7 @@ ${err.toString()}`);
     {
       name: "comment",
       kind: "root",
-      baseURL: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/comments",
+      baseURL: "http://raulrebollos.com/wp/v2/comments",
       baseURLParams: { context: "edit" },
       plural: "comments",
       label: (0, import_i18n.__)("Comment"),
@@ -15916,7 +15916,7 @@ ${err.toString()}`);
     {
       name: "menu",
       kind: "root",
-      baseURL: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/menus",
+      baseURL: "http://raulrebollos.com/wp/v2/menus",
       baseURLParams: { context: "edit" },
       plural: "menus",
       label: (0, import_i18n.__)("Menu"),
@@ -15925,7 +15925,7 @@ ${err.toString()}`);
     {
       name: "menuItem",
       kind: "root",
-      baseURL: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/menu-items",
+      baseURL: "http://raulrebollos.com/wp/v2/menu-items",
       baseURLParams: { context: "edit" },
       plural: "menuItems",
       label: (0, import_i18n.__)("Menu Item"),
@@ -15935,7 +15935,7 @@ ${err.toString()}`);
     {
       name: "menuLocation",
       kind: "root",
-      baseURL: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/menu-locations",
+      baseURL: "http://raulrebollos.com/wp/v2/menu-locations",
       baseURLParams: { context: "edit" },
       plural: "menuLocations",
       label: (0, import_i18n.__)("Menu Location"),
@@ -15946,19 +15946,19 @@ ${err.toString()}`);
       label: (0, import_i18n.__)("Global Styles"),
       name: "globalStyles",
       kind: "root",
-      baseURL: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/global-styles",
+      baseURL: "http://raulrebollos.com/wp/v2/global-styles",
       baseURLParams: { context: "edit" },
       plural: "globalStylesVariations",
       // Should be different from name.
       getTitle: () => (0, import_i18n.__)("Custom Styles"),
-      getRevisionsUrl: (parentId, revisionId) => `/wp/v2/global-styles/${parentId}/revisions${revisionId ? "https://rlrebollos.github.io/Entheos-Forum/" + revisionId : ""}`,
+      getRevisionsUrl: (parentId, revisionId) => `/wp/v2/global-styles/${parentId}/revisions${revisionId ? "http://raulrebollos.com/" + revisionId : ""}`,
       supportsPagination: true
     },
     {
       label: (0, import_i18n.__)("Themes"),
       name: "theme",
       kind: "root",
-      baseURL: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/themes",
+      baseURL: "http://raulrebollos.com/wp/v2/themes",
       baseURLParams: { context: "edit" },
       plural: "themes",
       key: "stylesheet",
@@ -15968,7 +15968,7 @@ ${err.toString()}`);
       label: (0, import_i18n.__)("Plugins"),
       name: "plugin",
       kind: "root",
-      baseURL: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/plugins",
+      baseURL: "http://raulrebollos.com/wp/v2/plugins",
       baseURLParams: { context: "edit" },
       plural: "plugins",
       key: "plugin",
@@ -15978,7 +15978,7 @@ ${err.toString()}`);
       label: (0, import_i18n.__)("Status"),
       name: "status",
       kind: "root",
-      baseURL: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/statuses",
+      baseURL: "http://raulrebollos.com/wp/v2/statuses",
       baseURLParams: { context: "edit" },
       plural: "statuses",
       key: "slug",
@@ -15988,7 +15988,7 @@ ${err.toString()}`);
       label: (0, import_i18n.__)("Registered Templates"),
       name: "registeredTemplate",
       kind: "root",
-      baseURL: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/registered-templates",
+      baseURL: "http://raulrebollos.com/wp/v2/registered-templates",
       key: "id",
       supportsPagination: false
     },
@@ -15996,7 +15996,7 @@ ${err.toString()}`);
       label: (0, import_i18n.__)("Font Collections"),
       name: "fontCollection",
       kind: "root",
-      baseURL: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/font-collections",
+      baseURL: "http://raulrebollos.com/wp/v2/font-collections",
       baseURLParams: { context: "view" },
       plural: "fontCollections",
       key: "slug",
@@ -16006,7 +16006,7 @@ ${err.toString()}`);
       label: (0, import_i18n.__)("Icons"),
       name: "icon",
       kind: "root",
-      baseURL: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/icons",
+      baseURL: "http://raulrebollos.com/wp/v2/icons",
       baseURLParams: { context: "view" },
       plural: "icons",
       key: "name",
@@ -16016,7 +16016,7 @@ ${err.toString()}`);
       label: (0, import_i18n.__)("Icon Collections"),
       name: "iconCollection",
       kind: "root",
-      baseURL: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/icon-collections",
+      baseURL: "http://raulrebollos.com/wp/v2/icon-collections",
       baseURLParams: { context: "view" },
       plural: "iconCollections",
       key: "slug",
@@ -16071,8 +16071,8 @@ ${err.toString()}`);
     return newEdits;
   };
   async function loadPostTypeEntities() {
-    const postTypesPromise = (0, import_api_fetch3.default)({ path: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/types?context=view" });
-    const taxonomiesPromise = window._wpCollaborationEnabled ? (0, import_api_fetch3.default)({ path: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/taxonomies?context=view" }) : Promise.resolve({});
+    const postTypesPromise = (0, import_api_fetch3.default)({ path: "http://raulrebollos.com/wp/v2/types?context=view" });
+    const taxonomiesPromise = window._wpCollaborationEnabled ? (0, import_api_fetch3.default)({ path: "http://raulrebollos.com/wp/v2/taxonomies?context=view" }) : Promise.resolve({});
     const [postTypes, taxonomies] = await Promise.all([
       postTypesPromise,
       taxonomiesPromise
@@ -16116,7 +16116,7 @@ ${err.toString()}`);
         __unstablePrePersist: (persistedRecord, edits) => prePersistPostType(persistedRecord, edits, name, isTemplate),
         __unstable_rest_base: postType.rest_base,
         supportsPagination: true,
-        getRevisionsUrl: (parentId, revisionId) => `/${namespace}/${postType.rest_base}/${parentId}/revisions${revisionId ? "https://rlrebollos.github.io/Entheos-Forum/" + revisionId : ""}`,
+        getRevisionsUrl: (parentId, revisionId) => `/${namespace}/${postType.rest_base}/${parentId}/revisions${revisionId ? "http://raulrebollos.com/" + revisionId : ""}`,
         revisionKey: isTemplate && !window?.__experimentalTemplateActivate ? "wp_id" : DEFAULT_ENTITY_KEY
       };
       entity2.syncConfig = {
@@ -16173,7 +16173,7 @@ ${err.toString()}`);
   }
   async function loadTaxonomyEntities() {
     const taxonomies = await (0, import_api_fetch3.default)({
-      path: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/taxonomies?context=view"
+      path: "http://raulrebollos.com/wp/v2/taxonomies?context=view"
     });
     return Object.entries(taxonomies ?? {}).map(([name, taxonomy]) => {
       const namespace = taxonomy?.rest_namespace ?? "wp/v2";
@@ -16196,7 +16196,7 @@ ${err.toString()}`);
       name: "site",
       kind: "root",
       key: false,
-      baseURL: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/settings",
+      baseURL: "http://raulrebollos.com/wp/v2/settings",
       supportsPagination: false,
       meta: {}
     };
@@ -17192,7 +17192,7 @@ ${err.toString()}`);
       alternative: "select( 'core' ).getUsers({ who: 'authors' })"
     });
     const path = (0, import_url2.addQueryArgs)(
-      "https://rlrebollos.github.io/Entheos-Forum/wp/v2/users/?who=authors&per_page=100",
+      "http://raulrebollos.com/wp/v2/users/?who=authors&per_page=100",
       query
     );
     return getUserQueryResults(state, path);
@@ -17786,7 +17786,7 @@ ${err.toString()}`);
   async function defaultProcessor(requests) {
     if (maxItems === null) {
       const preflightResponse = await (0, import_api_fetch4.default)({
-        path: "https://rlrebollos.github.io/Entheos-Forum/batch/v1",
+        path: "http://raulrebollos.com/batch/v1",
         method: "OPTIONS"
       });
       maxItems = preflightResponse.endpoints[0].args.requests.maxItems;
@@ -17794,7 +17794,7 @@ ${err.toString()}`);
     const results = [];
     for (const batchRequests of chunk(requests, maxItems)) {
       const batchResponse = await (0, import_api_fetch4.default)({
-        path: "https://rlrebollos.github.io/Entheos-Forum/batch/v1",
+        path: "http://raulrebollos.com/batch/v1",
         method: "POST",
         data: {
           validation: "require-all-validate",
@@ -18074,7 +18074,7 @@ ${err.toString()}`);
       let hasError = false;
       let { baseURL } = entityConfig;
       if (kind === "postType" && name === "wp_template" && (recordId && typeof recordId === "string" && !/^\d+$/.test(recordId) || !window?.__experimentalTemplateActivate)) {
-        baseURL = baseURL.slice(0, baseURL.lastIndexOf("https://rlrebollos.github.io/Entheos-Forum/")) + "https://rlrebollos.github.io/Entheos-Forum/templates";
+        baseURL = baseURL.slice(0, baseURL.lastIndexOf("http://raulrebollos.com/")) + "http://raulrebollos.com/templates";
       }
       try {
         let path = `${baseURL}/${recordId}`;
@@ -18279,10 +18279,10 @@ ${err.toString()}`);
       let hasError = false;
       let { baseURL } = entityConfig;
       if (kind === "postType" && name === "wp_template" && (recordId && typeof recordId === "string" && !/^\d+$/.test(recordId) || !window?.__experimentalTemplateActivate)) {
-        baseURL = baseURL.slice(0, baseURL.lastIndexOf("https://rlrebollos.github.io/Entheos-Forum/")) + "https://rlrebollos.github.io/Entheos-Forum/templates";
+        baseURL = baseURL.slice(0, baseURL.lastIndexOf("http://raulrebollos.com/")) + "http://raulrebollos.com/templates";
       }
       try {
-        const path = `${baseURL}${recordId ? "https://rlrebollos.github.io/Entheos-Forum/" + recordId : ""}`;
+        const path = `${baseURL}${recordId ? "http://raulrebollos.com/" + recordId : ""}`;
         const persistedRecord = !isNewRecord ? select4.getRawEntityRecord(kind, name, recordId) : {};
         if (isAutosave) {
           const merged = { ...persistedRecord, ...record };
@@ -18756,7 +18756,7 @@ ${err.toString()}`);
     if (!type || type === "post") {
       queries2.push(
         (0, import_api_fetch7.default)({
-          path: (0, import_url4.addQueryArgs)("https://rlrebollos.github.io/Entheos-Forum/wp/v2/search", {
+          path: (0, import_url4.addQueryArgs)("http://raulrebollos.com/wp/v2/search", {
             search,
             page,
             per_page: perPage,
@@ -18780,7 +18780,7 @@ ${err.toString()}`);
     if (!type || type === "term") {
       queries2.push(
         (0, import_api_fetch7.default)({
-          path: (0, import_url4.addQueryArgs)("https://rlrebollos.github.io/Entheos-Forum/wp/v2/search", {
+          path: (0, import_url4.addQueryArgs)("http://raulrebollos.com/wp/v2/search", {
             search,
             page,
             per_page: perPage,
@@ -18804,7 +18804,7 @@ ${err.toString()}`);
     if (!disablePostFormats && (!type || type === "post-format")) {
       queries2.push(
         (0, import_api_fetch7.default)({
-          path: (0, import_url4.addQueryArgs)("https://rlrebollos.github.io/Entheos-Forum/wp/v2/search", {
+          path: (0, import_url4.addQueryArgs)("http://raulrebollos.com/wp/v2/search", {
             search,
             page,
             per_page: perPage,
@@ -18828,7 +18828,7 @@ ${err.toString()}`);
     if (!type || type === "attachment") {
       queries2.push(
         (0, import_api_fetch7.default)({
-          path: (0, import_url4.addQueryArgs)("https://rlrebollos.github.io/Entheos-Forum/wp/v2/media", {
+          path: (0, import_url4.addQueryArgs)("http://raulrebollos.com/wp/v2/media", {
             search,
             page,
             per_page: perPage
@@ -18888,7 +18888,7 @@ ${err.toString()}`);
   var import_url5 = __toESM(require_url(), 1);
   var CACHE = /* @__PURE__ */ new Map();
   var fetchUrlData = async (url, options = {}) => {
-    const endpoint = "https://rlrebollos.github.io/Entheos-Forum/wp-block-editor/v1/url-details";
+    const endpoint = "http://raulrebollos.com/wp-block-editor/v1/url-details";
     const args2 = {
       url: (0, import_url5.prependHTTP)(url)
     };
@@ -18917,7 +18917,7 @@ ${err.toString()}`);
   // packages/core-data/build-module/fetch/index.mjs
   async function fetchBlockPatterns() {
     const restPatterns = await (0, import_api_fetch9.default)({
-      path: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/block-patterns/patterns"
+      path: "http://raulrebollos.com/wp/v2/block-patterns/patterns"
     });
     if (!restPatterns) {
       return [];
@@ -18941,14 +18941,14 @@ ${err.toString()}`);
   // packages/core-data/build-module/resolvers.mjs
   var getAuthors2 = (query) => async ({ dispatch: dispatch3 }) => {
     const path = (0, import_url6.addQueryArgs)(
-      "https://rlrebollos.github.io/Entheos-Forum/wp/v2/users/?who=authors&per_page=100",
+      "http://raulrebollos.com/wp/v2/users/?who=authors&per_page=100",
       query
     );
     const users2 = await (0, import_api_fetch10.default)({ path });
     dispatch3.receiveUserQuery(path, users2);
   };
   var getCurrentUser2 = () => async ({ dispatch: dispatch3 }) => {
-    const currentUser2 = await (0, import_api_fetch10.default)({ path: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/users/me" });
+    const currentUser2 = await (0, import_api_fetch10.default)({ path: "http://raulrebollos.com/wp/v2/users/me" });
     dispatch3.receiveCurrentUser(currentUser2);
   };
   var getEntityRecord2 = (kind, name, key = "", query) => async ({ select: select4, dispatch: dispatch3, registry, resolveSelect: resolveSelect2 }) => {
@@ -18989,9 +18989,9 @@ ${err.toString()}`);
       }
       let { baseURL } = entityConfig;
       if (kind === "postType" && name === "wp_template" && (key && typeof key === "string" && !/^\d+$/.test(key) || !window?.__experimentalTemplateActivate)) {
-        baseURL = baseURL.slice(0, baseURL.lastIndexOf("https://rlrebollos.github.io/Entheos-Forum/")) + "https://rlrebollos.github.io/Entheos-Forum/templates";
+        baseURL = baseURL.slice(0, baseURL.lastIndexOf("http://raulrebollos.com/")) + "http://raulrebollos.com/templates";
       }
-      const path = (0, import_url6.addQueryArgs)(baseURL + (key ? "https://rlrebollos.github.io/Entheos-Forum/" + key : ""), {
+      const path = (0, import_url6.addQueryArgs)(baseURL + (key ? "http://raulrebollos.com/" + key : ""), {
         ...entityConfig.baseURLParams,
         ...query
       });
@@ -19180,7 +19180,7 @@ ${err.toString()}`);
       let { baseURL } = entityConfig;
       const { combinedTemplates = true } = query;
       if (kind === "postType" && name === "wp_template" && combinedTemplates) {
-        baseURL = baseURL.slice(0, baseURL.lastIndexOf("https://rlrebollos.github.io/Entheos-Forum/")) + "https://rlrebollos.github.io/Entheos-Forum/templates";
+        baseURL = baseURL.slice(0, baseURL.lastIndexOf("http://raulrebollos.com/")) + "http://raulrebollos.com/templates";
       }
       const path = (0, import_url6.addQueryArgs)(baseURL, {
         ...entityConfig.baseURLParams,
@@ -19347,7 +19347,7 @@ ${err.toString()}`);
   var getEmbedPreview2 = (url) => async ({ dispatch: dispatch3 }) => {
     try {
       const embedProxyResponse = await (0, import_api_fetch10.default)({
-        path: (0, import_url6.addQueryArgs)("https://rlrebollos.github.io/Entheos-Forum/oembed/1.0/proxy", { url })
+        path: (0, import_url6.addQueryArgs)("http://raulrebollos.com/oembed/1.0/proxy", { url })
       });
       dispatch3.receiveEmbedPreview(url, embedProxyResponse);
     } catch {
@@ -19386,9 +19386,9 @@ ${err.toString()}`);
       if (!entityConfig) {
         return;
       }
-      resourcePath = entityConfig.baseURL + (resource.id ? "https://rlrebollos.github.io/Entheos-Forum/" + resource.id : "");
+      resourcePath = entityConfig.baseURL + (resource.id ? "http://raulrebollos.com/" + resource.id : "");
     } else {
-      resourcePath = `/wp/v2/${resource}` + (id2 ? "https://rlrebollos.github.io/Entheos-Forum/" + id2 : "");
+      resourcePath = `/wp/v2/${resource}` + (id2 ? "http://raulrebollos.com/" + id2 : "");
     }
     let response;
     try {
@@ -19509,7 +19509,7 @@ ${err.toString()}`);
   };
   var getBlockPatternCategories2 = () => async ({ dispatch: dispatch3 }) => {
     const categories = await (0, import_api_fetch10.default)({
-      path: "https://rlrebollos.github.io/Entheos-Forum/wp/v2/block-patterns/categories"
+      path: "http://raulrebollos.com/wp/v2/block-patterns/categories"
     });
     dispatch3({ type: "RECEIVE_BLOCK_PATTERN_CATEGORIES", categories });
   };
@@ -19535,7 +19535,7 @@ ${err.toString()}`);
   };
   var getNavigationFallbackId2 = () => async ({ dispatch: dispatch3, select: select4, registry }) => {
     const fallback = await (0, import_api_fetch10.default)({
-      path: (0, import_url6.addQueryArgs)("https://rlrebollos.github.io/Entheos-Forum/wp-block-editor/v1/navigation-fallback", {
+      path: (0, import_url6.addQueryArgs)("http://raulrebollos.com/wp-block-editor/v1/navigation-fallback", {
         _embed: true
       })
     });
@@ -19567,7 +19567,7 @@ ${err.toString()}`);
   };
   var getDefaultTemplateId2 = (query) => async ({ dispatch: dispatch3, registry, resolveSelect: resolveSelect2 }) => {
     const template = await (0, import_api_fetch10.default)({
-      path: (0, import_url6.addQueryArgs)("https://rlrebollos.github.io/Entheos-Forum/wp/v2/templates/lookup", query)
+      path: (0, import_url6.addQueryArgs)("http://raulrebollos.com/wp/v2/templates/lookup", query)
     });
     await resolveSelect2.getEntitiesConfig("postType");
     const id2 = window?.__experimentalTemplateActivate ? template?.wp_id || template?.id : template?.id;
@@ -19771,13 +19771,13 @@ ${err.toString()}`);
   };
   var getEditorSettings2 = () => async ({ dispatch: dispatch3 }) => {
     const settings = await (0, import_api_fetch10.default)({
-      path: "https://rlrebollos.github.io/Entheos-Forum/wp-block-editor/v1/settings"
+      path: "http://raulrebollos.com/wp-block-editor/v1/settings"
     });
     dispatch3.receiveEditorSettings(settings);
   };
   var getEditorAssets2 = () => async ({ dispatch: dispatch3 }) => {
     const assets = await (0, import_api_fetch10.default)({
-      path: "https://rlrebollos.github.io/Entheos-Forum/wp-block-editor/v1/assets"
+      path: "http://raulrebollos.com/wp-block-editor/v1/assets"
     });
     dispatch3.receiveEditorAssets(assets);
   };
@@ -19788,7 +19788,7 @@ ${err.toString()}`);
       query._fields = fields.join(",");
     }
     const config = await (0, import_api_fetch10.default)({
-      path: (0, import_url6.addQueryArgs)("https://rlrebollos.github.io/Entheos-Forum/wp/v2/view-config", query)
+      path: (0, import_url6.addQueryArgs)("http://raulrebollos.com/wp/v2/view-config", query)
     });
     dispatch3.receiveViewConfig(kind, name, config);
   };

@@ -13,7 +13,7 @@ var sbjs = {
 };
 
 module.exports = sbjs;
-},{"https://rlrebollos.github.io/Entheos-Forum/init":6}],2:[function(_dereq_,module,exports){
+},{"http://raulrebollos.com/init":6}],2:[function(_dereq_,module,exports){
 "use strict";
 
 var terms = _dereq_('./terms'),
@@ -124,7 +124,7 @@ var data = {
 
 module.exports = data;
 
-},{"https://rlrebollos.github.io/Entheos-Forum/helpers/utils":5,"https://rlrebollos.github.io/Entheos-Forum/terms":9}],3:[function(_dereq_,module,exports){
+},{"http://raulrebollos.com/helpers/utils":5,"http://raulrebollos.com/terms":9}],3:[function(_dereq_,module,exports){
 "use strict";
 
 var delimiter = _dereq_('../data').delimiter;
@@ -695,7 +695,7 @@ module.exports = function(prefs) {
 
 };
 
-},{"https://rlrebollos.github.io/Entheos-Forum/data":2,"https://rlrebollos.github.io/Entheos-Forum/helpers/cookies":3,"https://rlrebollos.github.io/Entheos-Forum/helpers/uri":4,"https://rlrebollos.github.io/Entheos-Forum/helpers/utils":5,"https://rlrebollos.github.io/Entheos-Forum/migrations":7,"https://rlrebollos.github.io/Entheos-Forum/params":8,"https://rlrebollos.github.io/Entheos-Forum/terms":9}],7:[function(_dereq_,module,exports){
+},{"http://raulrebollos.com/data":2,"http://raulrebollos.com/helpers/cookies":3,"http://raulrebollos.com/helpers/uri":4,"http://raulrebollos.com/helpers/utils":5,"http://raulrebollos.com/migrations":7,"http://raulrebollos.com/params":8,"http://raulrebollos.com/terms":9}],7:[function(_dereq_,module,exports){
 "use strict";
 
 var data    = _dereq_('./data'),
@@ -784,7 +784,7 @@ module.exports = {
   ]
 
 };
-},{"https://rlrebollos.github.io/Entheos-Forum/data":2,"https://rlrebollos.github.io/Entheos-Forum/helpers/cookies":3}],8:[function(_dereq_,module,exports){
+},{"http://raulrebollos.com/data":2,"http://raulrebollos.com/helpers/cookies":3}],8:[function(_dereq_,module,exports){
 "use strict";
 
 var terms = _dereq_('./terms'),
@@ -909,7 +909,7 @@ module.exports = {
 
 };
 
-},{"https://rlrebollos.github.io/Entheos-Forum/helpers/uri":4,"https://rlrebollos.github.io/Entheos-Forum/terms":9}],9:[function(_dereq_,module,exports){
+},{"http://raulrebollos.com/helpers/uri":4,"http://raulrebollos.com/terms":9}],9:[function(_dereq_,module,exports){
 "use strict";
 
 module.exports = {

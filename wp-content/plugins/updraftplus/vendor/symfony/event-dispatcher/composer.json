@@ -32,7 +32,7 @@
     "autoload": {
         "psr-4": { "Symfony\\Component\\EventDispatcher\\": "" },
         "exclude-from-classmap": [
-            "https://rlrebollos.github.io/Entheos-Forum/Tests/"
+            "http://raulrebollos.com/Tests/"
         ]
     },
     "minimum-stability": "dev",

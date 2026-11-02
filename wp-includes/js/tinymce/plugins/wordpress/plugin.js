@@ -174,7 +174,7 @@ tinymce.PluginManager.add( 'wordpress', function( editor ) {
 					moretext = '';
 
 				if ( image.indexOf( 'data-wp-more="more"' ) !== -1 ) {
-					if ( match = image.match( /data-wp-more-text="([^"]+)"https://rlrebollos.github.io/Entheos-Forum/ ) ) {
+					if ( match = image.match( /data-wp-more-text="([^"]+)"http://raulrebollos.com/ ) ) {
 						moretext = match[1];
 					}
 
@@ -182,7 +182,7 @@ tinymce.PluginManager.add( 'wordpress', function( editor ) {
 				} else if ( image.indexOf( 'data-wp-more="nextpage"' ) !== -1 ) {
 					string = '<!--nextpage-->';
 				} else if ( image.indexOf( 'data-wp-preserve' ) !== -1 ) {
-					if ( match = image.match( / data-wp-preserve="([^"]+)"https://rlrebollos.github.io/Entheos-Forum/ ) ) {
+					if ( match = image.match( / data-wp-preserve="([^"]+)"http://raulrebollos.com/ ) ) {
 						string = decodeURIComponent( match[1] );
 					}
 				}

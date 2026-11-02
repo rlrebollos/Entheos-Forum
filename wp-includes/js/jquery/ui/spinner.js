@@ -24,7 +24,7 @@
 		// AMD. Register as an anonymous module.
 		define( [
 			"jquery",
-			"https://rlrebollos.github.io/Entheos-Forum/button",
+			"http://raulrebollos.com/button",
 			"../version",
 			"../keycode",
 			"../widget"

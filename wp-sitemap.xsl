@@ -16,7 +16,7 @@
 	<xsl:variable name="has-changefreq" select="count( /sitemap:urlset/sitemap:url/sitemap:changefreq )" />
 	<xsl:variable name="has-priority"   select="count( /sitemap:urlset/sitemap:url/sitemap:priority )"   />
 
-	<xsl:template match="https://rlrebollos.github.io/Entheos-Forum/">
+	<xsl:template match="http://raulrebollos.com/">
 		<html lang="en-US">
 			<head>
 				<title>XML Sitemap</title>

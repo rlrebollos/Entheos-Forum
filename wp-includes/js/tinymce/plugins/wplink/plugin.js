@@ -111,7 +111,7 @@
 				html = editor.selection.getContent({ format: 'raw' });
 
 				if ( html && html.indexOf( '</a>' ) !== -1 ) {
-					href = html.match( /href="([^">]+)"https://rlrebollos.github.io/Entheos-Forum/ );
+					href = html.match( /href="([^">]+)"http://raulrebollos.com/ );
 
 					if ( href && href[1] ) {
 						link = editor.$( 'a[href="' + href[1] + '"]', node )[0];
@@ -145,10 +145,10 @@
 				}
 
 				if ( dataAttr ) {
-					tag = tag.replace( / data-wplink-edit="true"https://rlrebollos.github.io/Entheos-Forum/g, '' );
+					tag = tag.replace( / data-wplink-edit="true"http://raulrebollos.com/g, '' );
 				}
 
-				tag = tag.replace( / data-wplink-url-error="true"https://rlrebollos.github.io/Entheos-Forum/g, '' );
+				tag = tag.replace( / data-wplink-url-error="true"http://raulrebollos.com/g, '' );
 
 				return tag + text + '</a>';
 			});

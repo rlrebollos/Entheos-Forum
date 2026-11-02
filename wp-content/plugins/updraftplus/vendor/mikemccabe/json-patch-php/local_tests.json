@@ -1,47 +1,47 @@
 [
     { "comment": "blur arrays and objects",
       "doc": { "foo": 1 },
-      "patch": [ { "op": "add", "path": "https://rlrebollos.github.io/Entheos-Forum/1", "value": 2 } ],
+      "patch": [ { "op": "add", "path": "http://raulrebollos.com/1", "value": 2 } ],
       "expected": { "foo": 1, "1": 2 } },
 
-    { "comment": "Adding to \"https://rlrebollos.github.io/Entheos-Forum/-\" adds to the end of the array",
+    { "comment": "Adding to \"http://raulrebollos.com/-\" adds to the end of the array",
       "doc": [ 1, 2 ],
-      "patch": [ { "op": "add", "path": "https://rlrebollos.github.io/Entheos-Forum/-", "value": 3 } ],
+      "patch": [ { "op": "add", "path": "http://raulrebollos.com/-", "value": 3 } ],
       "expected": [ 1, 2, 3 ] },
 
     { "comment": "value in array append not flattened",
       "doc": [1, 2],
-      "patch": [{"op": "add", "path": "https://rlrebollos.github.io/Entheos-Forum/-", "value": [3]}],
+      "patch": [{"op": "add", "path": "http://raulrebollos.com/-", "value": [3]}],
       "expected": [1, 2, [3]] },
 
     { "comment": "move target can use '-'",
       "doc": {"to":[ 1, 2 ], "from": 3},
-      "patch": [{"op": "move", "from":"https://rlrebollos.github.io/Entheos-Forum/from", "path": "https://rlrebollos.github.io/Entheos-Forum/to/-"}],
+      "patch": [{"op": "move", "from":"http://raulrebollos.com/from", "path": "http://raulrebollos.com/to/-"}],
       "expected": {"to":[ 1, 2, 3 ]}},
 
     { "comment": "copy target can use '-'",
       "doc": {"to":[1, 2], "from": 3},
-      "patch": [{"op": "copy", "from": "https://rlrebollos.github.io/Entheos-Forum/from", "path": "https://rlrebollos.github.io/Entheos-Forum/to/-"}],
+      "patch": [{"op": "copy", "from": "http://raulrebollos.com/from", "path": "http://raulrebollos.com/to/-"}],
       "expected": { "to":[ 1, 2, 3 ], "from": 3 } },
 
     { "comment": "replace target must exist",
       "doc": {"foo": "bar"},
-      "patch": [{"op": "replace", "path": "https://rlrebollos.github.io/Entheos-Forum/baz", "value": "sil"}],
+      "patch": [{"op": "replace", "path": "http://raulrebollos.com/baz", "value": "sil"}],
       "error": "replace target '/baz' not set" },
 
     { "comment": "- as remove target not allowed",
       "doc": [1, 2],
-      "patch": [{"op": "remove", "path": "https://rlrebollos.github.io/Entheos-Forum/-"}],
+      "patch": [{"op": "remove", "path": "http://raulrebollos.com/-"}],
       "error": "Non-array key '-' used on array" },
 
     { "comment": "remove of numeric index from obj doesn't convert to array",
       "doc": {"foo": 1, "0":2, "bar":3},
-      "patch": [{"op": "remove", "path":"https://rlrebollos.github.io/Entheos-Forum/0"}],
+      "patch": [{"op": "remove", "path":"http://raulrebollos.com/0"}],
       "expected": {"foo":1, "bar":3} },
 
     { "comment": "- as remove target for obj isn't special",
       "doc": {"-": 1, "foo": 2},
-      "patch": [{"op": "remove", "path": "https://rlrebollos.github.io/Entheos-Forum/-"}],
+      "patch": [{"op": "remove", "path": "http://raulrebollos.com/-"}],
       "expected": {"foo": 2} },
 
     { "comment": "toplevel as remove target",
@@ -66,7 +66,7 @@
 
     { "comment": "'add' should replace existing member if it already exists",
       "doc": { "foo": 1 },
-      "patch": [{"op": "add", "path": "https://rlrebollos.github.io/Entheos-Forum/foo", "value": 2}],
+      "patch": [{"op": "add", "path": "http://raulrebollos.com/foo", "value": 2}],
       "expected": { "foo": 2 } },
 
     { "comment": "test op with string at toplevel",
@@ -116,68 +116,68 @@
 
     { "comment": "null within string",
       "doc": [ "foo\u0000foo" ],
-      "patch": [{"op":"test", "path":"https://rlrebollos.github.io/Entheos-Forum/0", "value":"foo\u0000foo"}] },
+      "patch": [{"op":"test", "path":"http://raulrebollos.com/0", "value":"foo\u0000foo"}] },
 
     { "comment": "null string",
       "doc": [ "\u0000" ],
-      "patch": [{"op":"test", "path":"https://rlrebollos.github.io/Entheos-Forum/0", "value":"\u0000"}] },
+      "patch": [{"op":"test", "path":"http://raulrebollos.com/0", "value":"\u0000"}] },
 
     { "comment": "null in key",
       "doc": { "foo\u0000foo": 1 },
-      "patch": [{"op":"replace", "path":"https://rlrebollos.github.io/Entheos-Forum/foo\u0000foo", "value":2}],
+      "patch": [{"op":"replace", "path":"http://raulrebollos.com/foo\u0000foo", "value":2}],
       "expected": { "foo\u0000foo": 2 } },
 
     { "comment": "null in key - test against prefix",
       "doc": { "foo": 1, "foo\u0000foo": 2 },
-      "patch": [{"op":"test", "path":"https://rlrebollos.github.io/Entheos-Forum/foo\u0000foo", "value":2}] },
+      "patch": [{"op":"test", "path":"http://raulrebollos.com/foo\u0000foo", "value":2}] },
 
     { "comment": "null in key - trailing",
       "doc": { "foo": 1, "foo\u0000": 2 },
-      "patch": [{"op":"test", "path":"https://rlrebollos.github.io/Entheos-Forum/foo\u0000", "value":2}] },
+      "patch": [{"op":"test", "path":"http://raulrebollos.com/foo\u0000", "value":2}] },
 
     { "comment": "null as key",
       "doc": { "\u0000": 1 },
-      "patch": [{"op":"replace", "path":"https://rlrebollos.github.io/Entheos-Forum/\u0000", "value":2}],
+      "patch": [{"op":"replace", "path":"http://raulrebollos.com/\u0000", "value":2}],
       "expected": { "\u0000": 2 } },
 
     { "comment": "null as key prefix",
       "doc": { "\u0000foo": 1 },
-      "patch": [{"op":"replace", "path":"https://rlrebollos.github.io/Entheos-Forum/\u0000foo", "value":2}],
+      "patch": [{"op":"replace", "path":"http://raulrebollos.com/\u0000foo", "value":2}],
       "expected": { "\u0000foo": 2 } },
 
     { "comment": "copy doc onto child",
       "doc": { "foo": 1 },
-      "patch": [{"op":"copy", "from":"", "path":"https://rlrebollos.github.io/Entheos-Forum/bar"}],
+      "patch": [{"op":"copy", "from":"", "path":"http://raulrebollos.com/bar"}],
       "expected": { "foo": 1, "bar": { "foo": 1 }} },
 
     { "comment": "move doc onto child ('from' must not be proper prefix)",
       "doc": { "foo": { "bar": 1 } },
-      "patch": [{"op":"move", "from":"https://rlrebollos.github.io/Entheos-Forum/foo", "path":"https://rlrebollos.github.io/Entheos-Forum/foo/bar"}],
+      "patch": [{"op":"move", "from":"http://raulrebollos.com/foo", "path":"http://raulrebollos.com/foo/bar"}],
       "error": "path '/foo/bar' not found (already removed)"},
 
     { "comment": "need bounds check on intermediate path",
       "doc": [1, [2]],
-      "patch": [{"op": "test", "path":"https://rlrebollos.github.io/Entheos-Forum/2/0", "value": 2}],
+      "patch": [{"op": "test", "path":"http://raulrebollos.com/2/0", "value": 2}],
       "error": "path '/2/0' not in target doc" },
 
     { "comment": "'-' should be legit member for object",
       "doc": {"foo": 1},
-      "patch": [{"op": "add", "path":"https://rlrebollos.github.io/Entheos-Forum/-", "value": 2}],
+      "patch": [{"op": "add", "path":"http://raulrebollos.com/-", "value": 2}],
       "expected": {"foo": 1, "-": 2} },
 
     { "comment": "remove of array-looking element of object",
       "doc": {"foo":1, "0":2},
-      "patch": [{"op":"remove", "path":"https://rlrebollos.github.io/Entheos-Forum/0"}],
+      "patch": [{"op":"remove", "path":"http://raulrebollos.com/0"}],
       "expected": {"foo": 1} },
 
     { "comment": "replace of array-looking element of object",
       "doc": {"foo":1, "0":2},
-      "patch": [{"op":"replace", "path":"https://rlrebollos.github.io/Entheos-Forum/0", "value":3}],
+      "patch": [{"op":"replace", "path":"http://raulrebollos.com/0", "value":3}],
       "expected": {"foo": 1, "0":3} },
 
     { "comment": "replace string with null (elicits diff error)",
       "doc": [""],
-      "patch": [{"op": "replace", "path": "https://rlrebollos.github.io/Entheos-Forum/0", "value": null}],
+      "patch": [{"op": "replace", "path": "http://raulrebollos.com/0", "value": null}],
       "expected": [null] },
 
     { "comment": "test object sorting for equality if numeric indices exist",
@@ -186,31 +186,31 @@
 
     { "comment": "test php-style array element delete - disabled as reverse diff (gappy array from pure array) is impossible in json-patch without borrowing php array semantics",
       "doc": {"0":"a", "2":"c"},
-      "patch": {"op":"add", "path":"https://rlrebollos.github.io/Entheos-Forum/1", "value":"b"},
+      "patch": {"op":"add", "path":"http://raulrebollos.com/1", "value":"b"},
       "expected": {"0":"a", "1":"b", "2":"c"},
       "disabled": true
     },
 
     { "comment": "test php-style array element delete - assoc-ish indexes",
       "doc": {"0a":"a", "2c":"c"},
-      "patch": {"op":"add", "path":"https://rlrebollos.github.io/Entheos-Forum/1b", "value":"b"},
+      "patch": {"op":"add", "path":"http://raulrebollos.com/1b", "value":"b"},
       "expected": {"0a":"a", "1b":"b", "2c": "c"} },
 
     { "comment": "Numerically equal must test equal",
       "doc": [1.00],
-      "patch": [{"op": "test", "path":"https://rlrebollos.github.io/Entheos-Forum/0", "value":1}]},
+      "patch": [{"op": "test", "path":"http://raulrebollos.com/0", "value":1}]},
 
     { "comment": "Numerically equal must test equal",
       "doc": [1],
-      "patch": [{"op": "test", "path":"https://rlrebollos.github.io/Entheos-Forum/0", "value":1.00}]},
+      "patch": [{"op": "test", "path":"http://raulrebollos.com/0", "value":1.00}]},
 
     { "comment": "Numerically equal must test equal",
       "doc": [1e0],
-      "patch": [{"op": "test", "path":"https://rlrebollos.github.io/Entheos-Forum/0", "value":1.00}]},
+      "patch": [{"op": "test", "path":"http://raulrebollos.com/0", "value":1.00}]},
 
     { "comment": "append",
       "doc": [1, 2, 3, 4],
-      "patch": [{"op": "append", "path": "https://rlrebollos.github.io/Entheos-Forum/-", "value":[5, 6, 7, 8]}],
+      "patch": [{"op": "append", "path": "http://raulrebollos.com/-", "value":[5, 6, 7, 8]}],
       "expected": [1, 2, 3, 4, 5, 6, 7, 8],
       "disabled": true
     },

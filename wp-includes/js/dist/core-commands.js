@@ -295,8 +295,8 @@ var wp;
     return debouncedValue;
   }
   var ROUTE_MAPPING = {
-    "https://rlrebollos.github.io/Entheos-Forum/template": "https://rlrebollos.github.io/Entheos-Forum/templates",
-    "https://rlrebollos.github.io/Entheos-Forum/pattern": "https://rlrebollos.github.io/Entheos-Forum/patterns"
+    "http://raulrebollos.com/template": "http://raulrebollos.com/templates",
+    "http://raulrebollos.com/pattern": "http://raulrebollos.com/patterns"
   };
   function getSiteEditorPage() {
     return window.__experimentalExtensibleSiteEditor ? "admin.php?page=site-editor-v2" : "site-editor.php";
@@ -308,7 +308,7 @@ var wp;
     for (const [oldPath, newPath] of Object.entries(ROUTE_MAPPING)) {
       if (path === oldPath || path.startsWith(oldPath + "?")) {
         if (path.includes("postType=wp_template_part")) {
-          return "https://rlrebollos.github.io/Entheos-Forum/template-parts";
+          return "http://raulrebollos.com/template-parts";
         }
         return path.replace(oldPath, newPath);
       }
@@ -490,14 +490,14 @@ var wp;
             if (isSiteEditor) {
               history.navigate(
                 mapRoute(
-                  "https://rlrebollos.github.io/Entheos-Forum/pattern?postType=wp_template_part&categoryId=all-parts"
+                  "http://raulrebollos.com/pattern?postType=wp_template_part&categoryId=all-parts"
                 )
               );
             } else {
               document.location = (0, import_url.addQueryArgs)(
                 getSiteEditorPage(),
                 {
-                  p: mapRoute("https://rlrebollos.github.io/Entheos-Forum/pattern"),
+                  p: mapRoute("http://raulrebollos.com/pattern"),
                   postType: "wp_template_part",
                   categoryId: "all-parts"
                 }
@@ -540,12 +540,12 @@ var wp;
           category: "view",
           callback: ({ close }) => {
             if (isSiteEditor) {
-              history.navigate("https://rlrebollos.github.io/Entheos-Forum/styles");
+              history.navigate("http://raulrebollos.com/styles");
             } else {
               document.location = (0, import_url.addQueryArgs)(
                 getSiteEditorPage(),
                 {
-                  p: "https://rlrebollos.github.io/Entheos-Forum/styles"
+                  p: "http://raulrebollos.com/styles"
                 }
               );
             }
@@ -559,12 +559,12 @@ var wp;
           category: "view",
           callback: ({ close }) => {
             if (isSiteEditor) {
-              history.navigate("https://rlrebollos.github.io/Entheos-Forum/navigation");
+              history.navigate("http://raulrebollos.com/navigation");
             } else {
               document.location = (0, import_url.addQueryArgs)(
                 getSiteEditorPage(),
                 {
-                  p: "https://rlrebollos.github.io/Entheos-Forum/navigation"
+                  p: "http://raulrebollos.com/navigation"
                 }
               );
             }
@@ -578,12 +578,12 @@ var wp;
           category: "view",
           callback: ({ close }) => {
             if (isSiteEditor) {
-              history.navigate(mapRoute("https://rlrebollos.github.io/Entheos-Forum/template"));
+              history.navigate(mapRoute("http://raulrebollos.com/template"));
             } else {
               document.location = (0, import_url.addQueryArgs)(
                 getSiteEditorPage(),
                 {
-                  p: mapRoute("https://rlrebollos.github.io/Entheos-Forum/template")
+                  p: mapRoute("http://raulrebollos.com/template")
                 }
               );
             }
@@ -600,12 +600,12 @@ var wp;
           callback: ({ close }) => {
             if (canCreateTemplate) {
               if (isSiteEditor) {
-                history.navigate(mapRoute("https://rlrebollos.github.io/Entheos-Forum/pattern"));
+                history.navigate(mapRoute("http://raulrebollos.com/pattern"));
               } else {
                 document.location = (0, import_url.addQueryArgs)(
                   getSiteEditorPage(),
                   {
-                    p: mapRoute("https://rlrebollos.github.io/Entheos-Forum/pattern")
+                    p: mapRoute("http://raulrebollos.com/pattern")
                   }
                 );
               }
@@ -658,13 +658,13 @@ var wp;
           callback: ({ close }) => {
             close();
             if (isSiteEditor) {
-              history.navigate("https://rlrebollos.github.io/Entheos-Forum/styles?section=/css");
+              history.navigate("http://raulrebollos.com/styles?section=/css");
             } else {
               document.location = (0, import_url.addQueryArgs)(
                 getSiteEditorPage(),
                 {
-                  p: "https://rlrebollos.github.io/Entheos-Forum/styles",
-                  section: "https://rlrebollos.github.io/Entheos-Forum/css"
+                  p: "http://raulrebollos.com/styles",
+                  section: "http://raulrebollos.com/css"
                 }
               );
             }

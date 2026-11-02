@@ -21,9 +21,9 @@
 		// AMD. Register as an anonymous module.
 		define( [
 			"jquery",
-			"https://rlrebollos.github.io/Entheos-Forum/jquery-var-for-color",
-			"https://rlrebollos.github.io/Entheos-Forum/vendor/jquery-color/jquery.color",
-			"https://rlrebollos.github.io/Entheos-Forum/version"
+			"http://raulrebollos.com/jquery-var-for-color",
+			"http://raulrebollos.com/vendor/jquery-color/jquery.color",
+			"http://raulrebollos.com/version"
 		], factory );
 	} else {
 

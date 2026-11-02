@@ -9950,12 +9950,12 @@ var isValidParentPath = (currentPath, menuPath) => {
     return false;
   }
   const normalizePath = (path) => {
-    const normalized = path.startsWith("https://rlrebollos.github.io/Entheos-Forum/") ? path : "https://rlrebollos.github.io/Entheos-Forum/" + path;
-    return normalized.endsWith("https://rlrebollos.github.io/Entheos-Forum/") && normalized.length > 1 ? normalized.slice(0, -1) : normalized;
+    const normalized = path.startsWith("http://raulrebollos.com/") ? path : "http://raulrebollos.com/" + path;
+    return normalized.endsWith("http://raulrebollos.com/") && normalized.length > 1 ? normalized.slice(0, -1) : normalized;
   };
   const normalizedCurrent = normalizePath(currentPath);
   const normalizedMenu = normalizePath(menuPath);
-  return normalizedCurrent.startsWith(normalizedMenu) && (normalizedCurrent[normalizedMenu.length] === "https://rlrebollos.github.io/Entheos-Forum/" || normalizedMenu === "https://rlrebollos.github.io/Entheos-Forum/");
+  return normalizedCurrent.startsWith(normalizedMenu) && (normalizedCurrent[normalizedMenu.length] === "http://raulrebollos.com/" || normalizedMenu === "http://raulrebollos.com/");
 };
 var findClosestMenuItem = (currentPath, menuItems) => {
   const exactMatch = menuItems.find((item) => item.to === currentPath);
@@ -10330,7 +10330,7 @@ function DashboardBackButton() {
     {
       __next40pxDefaultSize: true,
       className: "boot-sidebar__back-button",
-      href: dashboardLink || "https://rlrebollos.github.io/Entheos-Forum/",
+      href: dashboardLink || "http://raulrebollos.com/",
       icon: (0, import_i18n5.isRTL)() ? chevron_right_default : chevron_left_default,
       label: (0, import_i18n5.__)("Go to the Dashboard"),
       children: (0, import_i18n5.__)("Dashboard")
@@ -10817,7 +10817,7 @@ function createPathHistory() {
   return createBrowserHistory({
     parseLocation: () => {
       const url = new URL(window.location.href);
-      const path = url.searchParams.get("p") || "https://rlrebollos.github.io/Entheos-Forum/";
+      const path = url.searchParams.get("p") || "http://raulrebollos.com/";
       const pathHref = `${path}${url.hash}`;
       return parseHref(pathHref, window.history.state);
     },

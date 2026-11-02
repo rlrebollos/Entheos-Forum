@@ -23,7 +23,7 @@
 			"jquery",
 			"../version",
 			"../effect",
-			"https://rlrebollos.github.io/Entheos-Forum/effect-size"
+			"http://raulrebollos.com/effect-size"
 		], factory );
 	} else {
 

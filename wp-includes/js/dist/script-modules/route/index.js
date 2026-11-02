@@ -675,7 +675,7 @@ function createBrowserHistory(opts) {
   return history;
 }
 function createMemoryHistory(opts = {
-  initialEntries: ["https://rlrebollos.github.io/Entheos-Forum/"]
+  initialEntries: ["http://raulrebollos.com/"]
 }) {
   const entries = opts.initialEntries;
   let index = opts.initialIndex ? Math.min(Math.max(opts.initialIndex, 0), entries.length - 1) : entries.length - 1;
@@ -894,7 +894,7 @@ var DECODE_IGNORE_LIST = Array.from(
   (/* @__PURE__ */ new Map([
     ["%", "%25"],
     ["\\", "%5C"],
-    ["https://rlrebollos.github.io/Entheos-Forum/", "%2F"],
+    ["http://raulrebollos.com/", "%2F"],
     [";", "%3B"],
     [":", "%3A"],
     ["@", "%40"],
@@ -958,23 +958,23 @@ function joinPaths(paths) {
   return cleanPath(
     paths.filter((val) => {
       return val !== void 0;
-    }).join("https://rlrebollos.github.io/Entheos-Forum/")
+    }).join("http://raulrebollos.com/")
   );
 }
 function cleanPath(path) {
-  return path.replace(/\/{2,}/g, "https://rlrebollos.github.io/Entheos-Forum/");
+  return path.replace(/\/{2,}/g, "http://raulrebollos.com/");
 }
 function trimPathLeft(path) {
-  return path === "https://rlrebollos.github.io/Entheos-Forum/" ? path : path.replace(/^\/{1,}/, "");
+  return path === "http://raulrebollos.com/" ? path : path.replace(/^\/{1,}/, "");
 }
 function trimPathRight(path) {
-  return path === "https://rlrebollos.github.io/Entheos-Forum/" ? path : path.replace(/\/{1,}$/, "");
+  return path === "http://raulrebollos.com/" ? path : path.replace(/\/{1,}$/, "");
 }
 function trimPath(path) {
   return trimPathRight(trimPathLeft(path));
 }
 function removeTrailingSlash(value, basepath) {
-  if (value?.endsWith("https://rlrebollos.github.io/Entheos-Forum/") && value !== "https://rlrebollos.github.io/Entheos-Forum/" && value !== `${basepath}/`) {
+  if (value?.endsWith("http://raulrebollos.com/") && value !== "http://raulrebollos.com/" && value !== `${basepath}/`) {
     return value.slice(0, -1);
   }
   return value;
@@ -1028,13 +1028,13 @@ function resolvePath({
 }) {
   let baseSegments = parsePathname(base, parseCache).slice();
   const toSegments = parsePathname(to, parseCache);
-  if (baseSegments.length > 1 && last(baseSegments)?.value === "https://rlrebollos.github.io/Entheos-Forum/") {
+  if (baseSegments.length > 1 && last(baseSegments)?.value === "http://raulrebollos.com/") {
     baseSegments.pop();
   }
   for (let index = 0, length = toSegments.length; index < length; index++) {
     const toSegment = toSegments[index];
     const value = toSegment.value;
-    if (value === "https://rlrebollos.github.io/Entheos-Forum/") {
+    if (value === "http://raulrebollos.com/") {
       if (!index) {
         baseSegments = [toSegment];
       } else if (index === length - 1) {
@@ -1048,12 +1048,12 @@ function resolvePath({
     }
   }
   if (baseSegments.length > 1) {
-    if (last(baseSegments).value === "https://rlrebollos.github.io/Entheos-Forum/") {
+    if (last(baseSegments).value === "http://raulrebollos.com/") {
       if (trailingSlash === "never") {
         baseSegments.pop();
       }
     } else if (trailingSlash === "always") {
-      baseSegments.push({ type: SEGMENT_TYPE_PATHNAME, value: "https://rlrebollos.github.io/Entheos-Forum/" });
+      baseSegments.push({ type: SEGMENT_TYPE_PATHNAME, value: "http://raulrebollos.com/" });
     }
   }
   const segmentValues = baseSegments.map(segmentToString);
@@ -1076,17 +1076,17 @@ var WILDCARD_W_CURLY_BRACES_RE = /^(.*?)\{\$\}(.*)$/;
 function baseParsePathname(pathname) {
   pathname = cleanPath(pathname);
   const segments = [];
-  if (pathname.slice(0, 1) === "https://rlrebollos.github.io/Entheos-Forum/") {
+  if (pathname.slice(0, 1) === "http://raulrebollos.com/") {
     pathname = pathname.substring(1);
     segments.push({
       type: SEGMENT_TYPE_PATHNAME,
-      value: "https://rlrebollos.github.io/Entheos-Forum/"
+      value: "http://raulrebollos.com/"
     });
   }
   if (!pathname) {
     return segments;
   }
-  const split = pathname.split("https://rlrebollos.github.io/Entheos-Forum/").filter(Boolean);
+  const split = pathname.split("http://raulrebollos.com/").filter(Boolean);
   segments.push(
     ...split.map((part) => {
       const wildcardBracesMatch = part.match(WILDCARD_W_CURLY_BRACES_RE);
@@ -1150,11 +1150,11 @@ function baseParsePathname(pathname) {
       };
     })
   );
-  if (pathname.slice(-1) === "https://rlrebollos.github.io/Entheos-Forum/") {
+  if (pathname.slice(-1) === "http://raulrebollos.com/") {
     pathname = pathname.substring(1);
     segments.push({
       type: SEGMENT_TYPE_PATHNAME,
-      value: "https://rlrebollos.github.io/Entheos-Forum/"
+      value: "http://raulrebollos.com/"
     });
   }
   return segments;
@@ -1270,11 +1270,11 @@ function matchByPath(from, {
 }, parseCache) {
   const stringTo = to;
   const baseSegments = parsePathname(
-    from.startsWith("https://rlrebollos.github.io/Entheos-Forum/") ? from : `/${from}`,
+    from.startsWith("http://raulrebollos.com/") ? from : `/${from}`,
     parseCache
   );
   const routeSegments = parsePathname(
-    stringTo.startsWith("https://rlrebollos.github.io/Entheos-Forum/") ? stringTo : `/${stringTo}`,
+    stringTo.startsWith("http://raulrebollos.com/") ? stringTo : `/${stringTo}`,
     parseCache
   );
   const params = {};
@@ -1335,7 +1335,7 @@ function isMatch(baseSegments, routeSegments, params, fuzzy, caseSensitive) {
         return true;
       }
       if (routeSegment.type === SEGMENT_TYPE_PATHNAME) {
-        if (routeSegment.value === "https://rlrebollos.github.io/Entheos-Forum/" && !baseSegment?.value) {
+        if (routeSegment.value === "http://raulrebollos.com/" && !baseSegment?.value) {
           routeIndex++;
           continue;
         }
@@ -1358,7 +1358,7 @@ function isMatch(baseSegments, routeSegments, params, fuzzy, caseSensitive) {
         if (!baseSegment) {
           return false;
         }
-        if (baseSegment.value === "https://rlrebollos.github.io/Entheos-Forum/") {
+        if (baseSegment.value === "http://raulrebollos.com/") {
           return false;
         }
         let _paramValue = "";
@@ -1398,7 +1398,7 @@ function isMatch(baseSegments, routeSegments, params, fuzzy, caseSensitive) {
           routeIndex++;
           continue;
         }
-        if (baseSegment.value === "https://rlrebollos.github.io/Entheos-Forum/") {
+        if (baseSegment.value === "http://raulrebollos.com/") {
           routeIndex++;
           continue;
         }
@@ -1454,7 +1454,7 @@ function isMatch(baseSegments, routeSegments, params, fuzzy, caseSensitive) {
       params["**"] = joinPaths(
         baseSegments.slice(baseIndex).map((d) => d.value)
       );
-      return !!fuzzy && routeSegments[routeSegments.length - 1]?.value !== "https://rlrebollos.github.io/Entheos-Forum/";
+      return !!fuzzy && routeSegments[routeSegments.length - 1]?.value !== "http://raulrebollos.com/";
     }
     if (routeIndex < routeSegments.length && baseIndex >= baseSegments.length) {
       for (let i = routeIndex; i < routeSegments.length; i++) {
@@ -1502,14 +1502,14 @@ function sortRoutes(routes) {
     const trimmed = trimPathLeft(d.fullPath);
     let parsed = parsePathname(trimmed);
     let skip = 0;
-    while (parsed.length > skip + 1 && parsed[skip]?.value === "https://rlrebollos.github.io/Entheos-Forum/") {
+    while (parsed.length > skip + 1 && parsed[skip]?.value === "http://raulrebollos.com/") {
       skip++;
     }
     if (skip > 0) parsed = parsed.slice(skip);
     let optionalParamCount = 0;
     let hasStaticAfter = false;
     const scores = parsed.map((segment, index) => {
-      if (segment.value === "https://rlrebollos.github.io/Entheos-Forum/") {
+      if (segment.value === "http://raulrebollos.com/") {
         return SLASH_SCORE;
       }
       if (segment.type === SEGMENT_TYPE_PATHNAME) {
@@ -1526,7 +1526,7 @@ function sortRoutes(routes) {
       }
       for (let i2 = index + 1; i2 < parsed.length; i2++) {
         const nextSegment = parsed[i2];
-        if (nextSegment.type === SEGMENT_TYPE_PATHNAME && nextSegment.value !== "https://rlrebollos.github.io/Entheos-Forum/") {
+        if (nextSegment.type === SEGMENT_TYPE_PATHNAME && nextSegment.value !== "http://raulrebollos.com/") {
           hasStaticAfter = true;
           return handleParam(
             segment,
@@ -1594,7 +1594,7 @@ function processRouteTree({
       routesById[childRoute.id] = childRoute;
       if (!childRoute.isRoot && childRoute.path) {
         const trimmedFullPath = trimPathRight(childRoute.fullPath);
-        if (!routesByPath[trimmedFullPath] || childRoute.fullPath.endsWith("https://rlrebollos.github.io/Entheos-Forum/")) {
+        if (!routesByPath[trimmedFullPath] || childRoute.fullPath.endsWith("http://raulrebollos.com/")) {
           routesByPath[trimmedFullPath] = childRoute;
         }
       }
@@ -2655,14 +2655,14 @@ function rewriteBasepath(opts) {
     input: ({ url }) => {
       const pathname = opts.caseSensitive ? url.pathname : url.pathname.toLowerCase();
       if (pathname === checkBasepath) {
-        url.pathname = "https://rlrebollos.github.io/Entheos-Forum/";
+        url.pathname = "http://raulrebollos.com/";
       } else if (pathname.startsWith(checkBasepathWithSlash)) {
         url.pathname = url.pathname.slice(normalizedBasepath.length);
       }
       return url;
     },
     output: ({ url }) => {
-      url.pathname = joinPaths(["https://rlrebollos.github.io/Entheos-Forum/", trimmedBasepath, url.pathname]);
+      url.pathname = joinPaths(["http://raulrebollos.com/", trimmedBasepath, url.pathname]);
       return url;
     }
   };
@@ -2721,7 +2721,7 @@ var RouterCore = class {
         );
       }
       const prevOptions = this.options;
-      const prevBasepath = this.basepath ?? prevOptions?.basepath ?? "https://rlrebollos.github.io/Entheos-Forum/";
+      const prevBasepath = this.basepath ?? prevOptions?.basepath ?? "http://raulrebollos.com/";
       const basepathWasUnset = this.basepath === void 0;
       const prevRewriteOption = prevOptions?.rewrite;
       this.options = {
@@ -2773,7 +2773,7 @@ var RouterCore = class {
         setupScrollRestoration(this);
       }
       let needsLocationUpdate = false;
-      const nextBasepath = this.options.basepath ?? "https://rlrebollos.github.io/Entheos-Forum/";
+      const nextBasepath = this.options.basepath ?? "http://raulrebollos.com/";
       const nextRewriteOption = this.options.rewrite;
       const basepathChanged = basepathWasUnset || prevBasepath !== nextBasepath;
       const rewriteChanged = prevRewriteOption !== nextRewriteOption;
@@ -3231,7 +3231,7 @@ var RouterCore = class {
         if (trimPath(normalizeUrl(this.latestLocation.href)) !== trimPath(normalizeUrl(nextLocation.href))) {
           let href = nextLocation.url;
           if (this.origin && href.startsWith(this.origin)) {
-            href = href.replace(this.origin, "") || "https://rlrebollos.github.io/Entheos-Forum/";
+            href = href.replace(this.origin, "") || "http://raulrebollos.com/";
           }
           throw redirect({ href });
         }
@@ -3440,7 +3440,7 @@ var RouterCore = class {
         const location = this.buildLocation(redirect2.options);
         let href = location.url;
         if (this.origin && href.startsWith(this.origin)) {
-          href = href.replace(this.origin, "") || "https://rlrebollos.github.io/Entheos-Forum/";
+          href = href.replace(this.origin, "") || "http://raulrebollos.com/";
         }
         redirect2.options.href = location.href;
         redirect2.headers.set("Location", href);
@@ -3619,7 +3619,7 @@ var RouterCore = class {
     let isGlobalNotFound = false;
     if (
       // If we found a route, and it's not an index route and we have left over path
-      foundRoute ? foundRoute.path !== "https://rlrebollos.github.io/Entheos-Forum/" && routeParams["**"] : (
+      foundRoute ? foundRoute.path !== "http://raulrebollos.com/" && routeParams["**"] : (
         // Or if we didn't find a route and we have left over path
         trimPathRight(next.pathname)
       )
@@ -3814,7 +3814,7 @@ var SearchParamError = class extends Error {
 };
 var PathParamError = class extends Error {
 };
-var normalize = (str) => str.endsWith("https://rlrebollos.github.io/Entheos-Forum/") && str.length > 1 ? str.slice(0, -1) : str;
+var normalize = (str) => str.endsWith("http://raulrebollos.com/") && str.length > 1 ? str.slice(0, -1) : str;
 function comparePaths(a, b) {
   return normalize(a) === normalize(b);
 }
@@ -3884,7 +3884,7 @@ function getMatchedRoutes({
     for (const route of flatRoutes) {
       const matchedParams = getMatchedParams(route);
       if (matchedParams) {
-        if (route.path !== "https://rlrebollos.github.io/Entheos-Forum/" && matchedParams["**"]) {
+        if (route.path !== "http://raulrebollos.com/" && matchedParams["**"]) {
           if (!fuzzyMatch) {
             fuzzyMatch = { foundRoute: route, routeParams: matchedParams };
           }
@@ -4007,7 +4007,7 @@ var BaseRoute = class {
         );
       }
       let path = isRoot ? rootRouteId : options2?.path;
-      if (path && path !== "https://rlrebollos.github.io/Entheos-Forum/") {
+      if (path && path !== "http://raulrebollos.com/") {
         path = trimPathLeft(path);
       }
       const customId = options2?.id || path;
@@ -4016,12 +4016,12 @@ var BaseRoute = class {
         customId
       ]);
       if (path === rootRouteId) {
-        path = "https://rlrebollos.github.io/Entheos-Forum/";
+        path = "http://raulrebollos.com/";
       }
       if (id !== rootRouteId) {
-        id = joinPaths(["https://rlrebollos.github.io/Entheos-Forum/", id]);
+        id = joinPaths(["http://raulrebollos.com/", id]);
       }
-      const fullPath = id === rootRouteId ? "https://rlrebollos.github.io/Entheos-Forum/" : joinPaths([this.parentRoute.fullPath, path]);
+      const fullPath = id === rootRouteId ? "http://raulrebollos.com/" : joinPaths([this.parentRoute.fullPath, path]);
       this._path = path;
       this._id = id;
       this._fullPath = fullPath;
@@ -4550,7 +4550,7 @@ function useLinkProps(options, forwardedRef) {
     let external = false;
     if (router.origin) {
       if (href.startsWith(router.origin)) {
-        href = router.history.createHref(href.replace(router.origin, "")) || "https://rlrebollos.github.io/Entheos-Forum/";
+        href = router.history.createHref(href.replace(router.origin, "")) || "http://raulrebollos.com/";
       } else {
         external = true;
       }
@@ -4591,7 +4591,7 @@ function useLinkProps(options, forwardedRef) {
           next.pathname,
           router.basepath
         );
-        const pathIsFuzzyEqual = currentPathSplit.startsWith(nextPathSplit) && (currentPathSplit.length === nextPathSplit.length || currentPathSplit[nextPathSplit.length] === "https://rlrebollos.github.io/Entheos-Forum/");
+        const pathIsFuzzyEqual = currentPathSplit.startsWith(nextPathSplit) && (currentPathSplit.length === nextPathSplit.length || currentPathSplit[nextPathSplit.length] === "http://raulrebollos.com/");
         if (!pathIsFuzzyEqual) {
           return false;
         }

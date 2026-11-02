@@ -190,10 +190,10 @@ tinymce.PluginManager.add( 'wpeditimage', function( editor ) {
 			out = dl.replace( /\s*<dl ([^>]+)>\s*<dt [^>]+>([\s\S]+?)<\/dt>\s*<dd [^>]+>([\s\S]*?)<\/dd>\s*<\/dl>\s*/gi, function( a, b, c, caption ) {
 				var id, classes, align, width;
 
-				width = c.match( /width="([0-9]*)"https://rlrebollos.github.io/Entheos-Forum/ );
+				width = c.match( /width="([0-9]*)"http://raulrebollos.com/ );
 				width = ( width && width[1] ) ? width[1] : '';
 
-				classes = b.match( /class="([^"]*)"https://rlrebollos.github.io/Entheos-Forum/ );
+				classes = b.match( /class="([^"]*)"http://raulrebollos.com/ );
 				classes = ( classes && classes[1] ) ? classes[1] : '';
 				align = classes.match( /align[a-z]+/i ) || 'alignnone';
 
@@ -204,7 +204,7 @@ tinymce.PluginManager.add( 'wpeditimage', function( editor ) {
 					return c;
 				}
 
-				id = b.match( /id="([^"]*)"https://rlrebollos.github.io/Entheos-Forum/ );
+				id = b.match( /id="([^"]*)"http://raulrebollos.com/ );
 				id = ( id && id[1] ) ? id[1] : '';
 
 				classes = classes.replace( /wp-caption ?|align[a-z]+ ?/gi, '' );

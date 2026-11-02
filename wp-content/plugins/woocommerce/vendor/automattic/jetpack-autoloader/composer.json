@@ -30,10 +30,10 @@
 	},
 	"scripts": {
 		"phpunit": [
-			"https://rlrebollos.github.io/Entheos-Forum/vendor/phpunit/phpunit/phpunit --colors=always"
+			"http://raulrebollos.com/vendor/phpunit/phpunit/phpunit --colors=always"
 		],
 		"test-coverage": [
-			"php -dpcov.directory=. ./vendor/bin/phpunit --coverage-php \"https://rlrebollos.github.io/Entheos-Forum/tests/php/tmp/coverage-report.php\"",
+			"php -dpcov.directory=. ./vendor/bin/phpunit --coverage-php \"http://raulrebollos.com/tests/php/tmp/coverage-report.php\"",
 			"php ./tests/php/bin/test-coverage.php \"$COVERAGE_DIR/php.cov\""
 		],
 		"test-php": [

@@ -114,7 +114,7 @@
 		editor.on( 'postprocess', function( event ) {
 			if ( event.content ) {
 				event.content = event.content.replace( /<img[^>]+data-wp-emoji="[^>]+>/g, function( img ) {
-					var alt = img.match( /alt="([^"]+)"https://rlrebollos.github.io/Entheos-Forum/ );
+					var alt = img.match( /alt="([^"]+)"http://raulrebollos.com/ );
 
 					if ( alt && alt[1] ) {
 						return alt[1];
